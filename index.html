@@ -4,32 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ricardo Barrón</title>
+  <title>Ricardo Barrón | Founder · Builder · Entrepreneur</title>
+
   <meta
     name="description"
-    content="Ricardo Barrón. Founder, builder and entrepreneur working across technology, real estate and creative industries."
+    content="Ricardo Barrón. Founder, entrepreneur and builder working across technology, real estate, fintech and creative industries."
   />
 
+  <meta name="theme-color" content="#0a0a09" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
     rel="stylesheet"
   />
 
   <style>
-    :root {
-      --black: #080808;
-      --white: #f4f1eb;
-      --muted: #929292;
-      --line: rgba(244, 241, 235, 0.16);
-      --soft: #171717;
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-    }
 
-    * {
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    *,
+    *::before,
+    *::after {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -40,10 +41,16 @@
     }
 
     body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--sans);
+      background: #0a0a09;
+      color: #f4f0e8;
+      font-family: "DM Sans", sans-serif;
       overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    img {
+      display: block;
+      width: 100%;
     }
 
     a {
@@ -55,181 +62,213 @@
       font: inherit;
     }
 
+    ::selection {
+      background: #b88932;
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --black: #0a0a09;
+      --black-soft: #11110f;
+      --cream: #f2eee5;
+      --cream-dark: #e8e1d5;
+      --white: #f8f6f1;
+      --muted: #aaa69f;
+      --gold: #b88932;
+      --gold-light: #d2aa61;
+      --line-dark: rgba(255,255,255,.14);
+      --line-light: rgba(10,10,9,.16);
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+
+      --container: 1380px;
+      --pad: clamp(24px, 5vw, 72px);
+    }
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
     .container {
-      width: min(1400px, calc(100% - 64px));
+      width: min(var(--container), calc(100% - (var(--pad) * 2)));
       margin: 0 auto;
     }
 
-    /* NAV */
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
-      padding: 24px 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(8,8,8,.95),
-        rgba(8,8,8,0)
-      );
-    }
-
-    .nav-inner {
-      width: min(1400px, calc(100% - 64px));
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: var(--serif);
-      font-size: 30px;
-      letter-spacing: -1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #aaa;
-      transition: color .25s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--white);
-    }
-
-    .socials {
-      display: flex;
-      gap: 18px;
-    }
-
-    .socials a {
-      font-size: 10px;
-      color: #999;
-      letter-spacing: 1px;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 110px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 70px;
-      align-items: center;
-      min-height: calc(100vh - 110px);
-    }
-
     .eyebrow {
+      color: var(--gold-light);
       font-size: 11px;
-      letter-spacing: 6px;
+      font-weight: 700;
+      letter-spacing: .28em;
       text-transform: uppercase;
-      color: #a5a5a5;
-      margin-bottom: 38px;
     }
 
-    .hero h1 {
+    .section-title {
       font-family: var(--serif);
-      font-size: clamp(76px, 9vw, 150px);
-      line-height: .82;
-      font-weight: 500;
-      letter-spacing: -6px;
-      max-width: 700px;
+      font-size: clamp(42px, 5vw, 72px);
+      font-weight: 400;
+      line-height: .98;
     }
 
-    .hero h1 span {
-      display: block;
-    }
-
-    .hero-line {
-      width: 70px;
+    .gold-line {
+      width: 42px;
       height: 1px;
-      background: var(--white);
-      margin: 48px 0 30px;
-      opacity: .7;
-    }
-
-    .hero-copy {
-      max-width: 530px;
-      color: #a4a4a4;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .hero-copy strong {
-      color: var(--white);
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 40px;
+      background: var(--gold);
+      margin: 26px 0;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      border: 1px solid #555;
-      padding: 15px 24px;
-      font-size: 10px;
+      gap: 22px;
+      border: 1px solid var(--gold);
+      padding: 15px 20px;
+      color: var(--white);
       text-transform: uppercase;
-      letter-spacing: 2.5px;
-      transition: all .25s ease;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      transition: .3s ease;
+    }
+
+    .button span {
+      color: var(--gold-light);
+      font-size: 16px;
+      transition: .3s ease;
     }
 
     .button:hover {
-      background: var(--white);
-      color: var(--black);
-      border-color: var(--white);
+      background: var(--gold);
+      color: #111;
     }
 
-    /* PHOTO */
+    .button:hover span {
+      color: #111;
+      transform: translateX(5px);
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .nav {
+      position: absolute;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 22px var(--pad);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    .logo {
+      font-family: var(--serif);
+      font-size: 35px;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(18px, 2.7vw, 46px);
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.82);
+      padding: 8px 0;
+      transition: .25s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .socials {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .socials a {
+      font-size: 11px;
+      font-weight: 700;
+      opacity: .85;
+      transition: .25s ease;
+    }
+
+    .socials a:hover {
+      color: var(--gold-light);
+      opacity: 1;
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #050505;
+    }
 
     .hero-image {
-      position: relative;
-      height: min(76vh, 820px);
-      min-height: 560px;
-      overflow: hidden;
-      background:
-        linear-gradient(145deg, #242424 0%, #111 55%, #282828 100%);
-    }
-
-    /*
-      AQUÍ DESPUÉS PONDREMOS TU FOTO.
-      Solo cambia:
-      background-image: url("TU-FOTO.jpg");
-    */
-
-    .hero-image::before {
-      content: "";
       position: absolute;
       inset: 0;
       background:
         linear-gradient(
-          135deg,
-          transparent 20%,
-          rgba(255,255,255,.04) 20.2%,
-          transparent 20.5%
-        );
-      opacity: .6;
+          90deg,
+          rgba(0,0,0,.98) 0%,
+          rgba(0,0,0,.92) 27%,
+          rgba(0,0,0,.4) 58%,
+          rgba(0,0,0,.18) 100%
+        ),
+        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2200&q=90")
+        center 20% / cover no-repeat;
+      filter: saturate(.8);
     }
 
     .hero-image::after {
@@ -237,530 +276,1079 @@
       position: absolute;
       inset: 0;
       background: linear-gradient(
-        to top,
-        rgba(0,0,0,.65),
-        transparent 45%
+        0deg,
+        rgba(0,0,0,.55),
+        transparent 40%
       );
     }
 
-    .image-monogram {
-      position: absolute;
-      bottom: 18px;
-      right: 28px;
+    .hero-content {
+      position: relative;
       z-index: 2;
-      font-family: var(--serif);
-      font-size: 100px;
-      color: rgba(255,255,255,.18);
-      letter-spacing: -8px;
+      width: min(var(--container), calc(100% - (var(--pad) * 2)));
+      margin: auto;
+      padding-bottom: 82px;
     }
 
-    .image-caption {
-      position: absolute;
-      bottom: 28px;
-      left: 30px;
-      z-index: 3;
-      font-size: 9px;
-      letter-spacing: 5px;
-      color: #bdbdbd;
+    .hero-copy {
+      width: min(650px, 55%);
+    }
+
+    .hero-name-small {
+      font-size: 12px;
+      letter-spacing: .55em;
+      font-weight: 600;
+      margin-bottom: 26px;
+      color: #ddd9d0;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(74px, 9vw, 145px);
+      font-weight: 400;
+      line-height: .79;
+      letter-spacing: -.065em;
+    }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-subtitle {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 32px;
+      font-size: 11px;
+      letter-spacing: .35em;
+      font-weight: 700;
       text-transform: uppercase;
     }
 
-    /* SECTION */
-
-    section {
-      padding: 150px 0;
-      border-top: 1px solid var(--line);
-    }
-
-    .section-header {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 50px;
-      margin-bottom: 80px;
-    }
-
-    .section-number {
+    .hero-subtitle b {
+      color: var(--gold-light);
       font-size: 10px;
-      letter-spacing: 3px;
-      color: #777;
     }
 
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(52px, 6vw, 92px);
-      line-height: .95;
-      font-weight: 400;
-      letter-spacing: -3px;
+    .hero-description {
+      max-width: 430px;
+      color: #c2beb6;
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 25px 0 28px;
     }
 
-    /* ABOUT */
+    .hero-side {
+      position: absolute;
+      z-index: 2;
+      right: 5%;
+      bottom: 90px;
+      width: 130px;
+      text-align: left;
+    }
+
+    .hero-side p {
+      color: #ddd8ce;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1.8;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+    }
+
+    .hero-arrow {
+      width: 1px;
+      height: 95px;
+      margin: 22px 0 0 14px;
+      background: rgba(255,255,255,.35);
+      position: relative;
+    }
+
+    .hero-arrow::after {
+      content: "↓";
+      position: absolute;
+      bottom: -14px;
+      left: -6px;
+      color: var(--gold-light);
+      font-size: 17px;
+    }
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    .about {
+      background: var(--cream);
+      color: #161512;
+      padding: 80px 0;
+    }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 100px;
-      margin-left: 210px;
+      grid-template-columns: .85fr 1fr .85fr;
+      gap: 55px;
+      align-items: center;
     }
 
-    .large-copy {
+    .about-copy h2 {
       font-family: var(--serif);
-      font-size: clamp(30px, 3vw, 46px);
-      line-height: 1.2;
+      font-size: clamp(42px, 4.2vw, 67px);
+      line-height: .98;
+      font-weight: 400;
+      max-width: 420px;
     }
 
-    .body-copy {
-      color: #999;
-      font-size: 16px;
+    .about-copy p {
+      margin-top: 28px;
+      max-width: 390px;
+      font-size: 13px;
       line-height: 1.8;
+      color: #555149;
     }
 
-    .body-copy p + p {
-      margin-top: 24px;
+    .text-link {
+      display: inline-flex;
+      margin-top: 25px;
+      color: #161512;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid #161512;
+      padding-bottom: 5px;
     }
 
-    /* PROJECTS */
+    .about-photo {
+      height: 430px;
+      overflow: hidden;
+    }
+
+    .about-photo img {
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
+    }
+
+    .about-details {
+      display: flex;
+      flex-direction: column;
+      gap: 27px;
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 13px;
+      align-items: center;
+    }
+
+    .detail-icon {
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--gold);
+      font-size: 14px;
+    }
+
+    .detail strong {
+      display: block;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .detail span {
+      color: #666159;
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       PROJECTS
+    ========================================================= */
 
     .projects {
-      margin-left: 210px;
+      background: var(--black);
+      padding: 85px 0;
     }
 
-    .project {
+    .projects-grid {
       display: grid;
-      grid-template-columns: 100px 1fr 250px;
-      gap: 35px;
-      align-items: center;
-      padding: 38px 0;
-      border-top: 1px solid var(--line);
-      transition: padding .3s ease;
+      grid-template-columns: .8fr 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: stretch;
     }
 
-    .project:last-child {
-      border-bottom: 1px solid var(--line);
+    .projects-intro {
+      padding: 10px 10px 10px 0;
     }
 
-    .project:hover {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    .project-number {
-      color: #666;
-      font-size: 11px;
-      letter-spacing: 2px;
-    }
-
-    .project-name {
+    .projects-intro h2 {
       font-family: var(--serif);
-      font-size: clamp(36px, 4vw, 64px);
-      letter-spacing: -2px;
+      font-size: clamp(42px, 4vw, 64px);
+      font-weight: 400;
+      line-height: 1;
+      max-width: 310px;
+      margin: 17px 0 28px;
+    }
+
+    .project-card {
+      min-height: 355px;
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 28px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: .4s ease;
+      background:
+        radial-gradient(
+          circle at 80% 15%,
+          rgba(184,137,50,.08),
+          transparent 30%
+        );
+    }
+
+    .project-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-6px);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      right: -60px;
+      top: -60px;
+      border: 1px solid rgba(184,137,50,.15);
+      border-radius: 50%;
+    }
+
+    .project-logo {
+      font-family: var(--serif);
+      font-size: 29px;
+      letter-spacing: .15em;
+      text-align: center;
+      margin-top: 25px;
+    }
+
+    .project-logo.arkus {
+      font-family: var(--sans);
+      font-weight: 500;
+      letter-spacing: .25em;
+    }
+
+    .project-category {
+      text-align: center;
+      color: var(--gold-light);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      margin-top: 10px;
     }
 
     .project-description {
-      color: #858585;
-      font-size: 12px;
-      line-height: 1.6;
-      text-align: right;
+      text-align: center;
+      color: #aaa59c;
+      font-size: 11px;
+      line-height: 1.7;
+      max-width: 220px;
+      margin: 28px auto;
     }
 
-    /* LATELY */
-
-    .lately-grid {
-      margin-left: 210px;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr;
-      gap: 80px;
-    }
-
-    .lately-main {
-      font-family: var(--serif);
-      font-size: clamp(40px, 5vw, 72px);
-      line-height: 1.05;
-    }
-
-    .lately-side {
-      color: #999;
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    .tag {
-      display: inline-block;
-      border: 1px solid #444;
-      padding: 9px 13px;
-      margin: 0 6px 8px 0;
+    .project-link {
+      text-align: center;
       font-size: 9px;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      color: #aaa;
     }
 
-    /* INSPIRE */
+    .project-link span {
+      color: var(--gold-light);
+      margin-left: 8px;
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       INSPIRE
+    ========================================================= */
+
+    .inspire {
+      background: var(--cream);
+      color: #161512;
+      padding: 45px 0;
+    }
 
     .inspire-grid {
-      margin-left: 210px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .inspire-card {
-      background: var(--black);
-      min-height: 250px;
-      padding: 35px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: background .3s ease;
-    }
-
-    .inspire-card:hover {
-      background: #111;
-    }
-
-    .inspire-card span {
-      color: #666;
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .inspire-card h3 {
-      font-family: var(--serif);
-      font-size: 34px;
-      font-weight: 400;
-    }
-
-    /* VISION */
-
-    .vision {
-      min-height: 80vh;
-      display: flex;
+      grid-template-columns: .65fr 1fr;
+      gap: 45px;
       align-items: center;
     }
 
-    .vision-text {
-      margin-left: 210px;
-      max-width: 1050px;
+    .inspire-title h2 {
       font-family: var(--serif);
-      font-size: clamp(48px, 7vw, 105px);
+      font-size: clamp(40px, 4vw, 62px);
       line-height: 1;
-      letter-spacing: -4px;
-    }
-
-    .vision-text em {
-      color: #777;
-      font-style: normal;
-    }
-
-    /* WORK */
-
-    .work-grid {
-      margin-left: 210px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line);
-    }
-
-    .work-card {
-      background: var(--black);
-      padding: 45px;
-      min-height: 220px;
-      transition: background .3s ease;
-    }
-
-    .work-card:hover {
-      background: #111;
-    }
-
-    .work-card span {
-      font-size: 10px;
-      color: #666;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .work-card h3 {
-      margin-top: 55px;
-      font-family: var(--serif);
-      font-size: 38px;
       font-weight: 400;
     }
 
-    /* CONTACT */
+    .inspire-items {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 0;
+    }
 
-    .contact {
-      min-height: 75vh;
+    .inspire-item {
+      min-height: 80px;
+      border-left: 1px solid var(--line-light);
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-align: center;
     }
 
-    .contact-content {
-      margin-left: 210px;
+    .inspire-icon {
+      font-size: 25px;
+      color: var(--gold);
     }
 
-    .contact-title {
+    .inspire-item span {
+      font-size: 8px;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       LATELY
+    ========================================================= */
+
+    .lately {
+      background: var(--black-soft);
+      padding: 75px 0;
+    }
+
+    .lately-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .lately-intro h2 {
       font-family: var(--serif);
-      font-size: clamp(70px, 10vw, 150px);
-      line-height: .9;
-      letter-spacing: -6px;
-      max-width: 1100px;
+      font-size: clamp(43px, 4vw, 62px);
+      line-height: 1;
+      font-weight: 400;
+      margin: 16px 0 28px;
     }
 
-    .contact-email {
-      display: inline-block;
-      margin-top: 60px;
+    .lately-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .lately-card {
+      min-height: 250px;
+      border: 1px solid rgba(255,255,255,.12);
+      position: relative;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .lately-card img {
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      object-fit: cover;
+      opacity: .48;
+      transition: .4s ease;
+    }
+
+    .lately-card:hover img {
+      transform: scale(1.05);
+      opacity: .7;
+    }
+
+    .lately-overlay {
+      position: absolute;
+      inset: 0;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background: linear-gradient(
+        transparent 25%,
+        rgba(0,0,0,.9) 100%
+      );
+    }
+
+    .lately-overlay strong {
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .lately-overlay span {
+      color: var(--gold-light);
+      font-size: 8px;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       FOCUS
+    ========================================================= */
+
+    .focus {
+      background: var(--black);
+      padding: 75px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: .7fr repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .focus-intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 3.8vw, 58px);
+      line-height: 1;
+      font-weight: 400;
+      margin-top: 16px;
+    }
+
+    .focus-column {
+      border-left: 1px solid rgba(255,255,255,.12);
+      padding-left: 25px;
+    }
+
+    .focus-column h3 {
+      font-family: var(--serif);
+      font-size: 21px;
+      font-weight: 400;
+      margin-bottom: 18px;
+    }
+
+    .focus-column ul {
+      list-style: none;
+    }
+
+    .focus-column li {
+      position: relative;
+      padding-left: 18px;
+      color: #a7a29a;
+      font-size: 10px;
+      line-height: 2.2;
+    }
+
+    .focus-column li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold-light);
+    }
+
+    /* =========================================================
+       FUTURE
+    ========================================================= */
+
+    .future {
+      background: var(--cream);
+      color: #161512;
+      padding: 75px 0;
+    }
+
+    .future-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.8fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .future-title h2 {
+      font-family: var(--serif);
+      font-size: clamp(43px, 4vw, 62px);
+      line-height: 1;
+      font-weight: 400;
+      max-width: 370px;
+    }
+
+    .future-items {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .future-item {
+      border-left: 1px solid var(--line-light);
+      padding: 0 25px;
+      text-align: center;
+    }
+
+    .future-icon {
+      color: var(--gold);
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .future-item h3 {
+      font-family: var(--serif);
       font-size: 18px;
-      border-bottom: 1px solid #666;
-      padding-bottom: 10px;
+      margin-bottom: 9px;
+      font-weight: 500;
     }
 
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 30px 0;
+    .future-item p {
+      color: #666159;
+      font-size: 9px;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      background: var(--black-soft);
+      padding: 70px 0 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr 1.2fr;
+      gap: 35px;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .contact-intro h2 {
+      font-family: var(--serif);
+      font-size: clamp(43px, 4vw, 62px);
+      line-height: 1;
+      font-weight: 400;
+      max-width: 340px;
+      margin: 15px 0 24px;
+    }
+
+    .contact-column {
+      border-left: 1px solid rgba(255,255,255,.12);
+      padding: 10px 0 45px 30px;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 35px 1fr;
+      gap: 10px;
+      margin-bottom: 25px;
+    }
+
+    .contact-row-icon {
+      color: var(--gold-light);
+      font-size: 18px;
+    }
+
+    .contact-row strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .contact-row span {
+      display: block;
+      color: #89857d;
+      font-size: 9px;
+      margin-top: 4px;
+    }
+
+    .contact-photo {
+      min-height: 330px;
+      overflow: hidden;
+    }
+
+    .contact-photo img {
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(30%);
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      background: #070706;
+      padding: 20px 0;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      color: #666;
-      font-size: 9px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
+      justify-content: space-between;
     }
 
-    /* MOBILE */
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 24px;
+    }
 
-    @media (max-width: 900px) {
+    .footer p {
+      color: #74716b;
+      font-size: 9px;
+    }
 
-      .container,
-      .nav-inner {
-        width: min(100% - 36px, 700px);
+    .footer-location {
+      color: #aaa59d !important;
+    }
+
+    .footer-location span {
+      color: var(--gold);
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+    ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity .8s ease,
+        transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+    ========================================================= */
+
+    @media (max-width: 1100px) {
+
+      .nav-links {
+        gap: 18px;
+      }
+
+      .socials {
+        display: none;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-details {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 15px;
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-intro {
+        grid-column: span 2;
+      }
+
+      .inspire-grid,
+      .lately-grid,
+      .future-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .inspire-items {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .lately-cards {
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .focus-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .focus-intro {
+        grid-column: span 2;
+        margin-bottom: 20px;
+      }
+
+      .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-intro {
+        grid-column: span 2;
+      }
+
+      .contact-photo {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+
+      :root {
+        --pad: 24px;
+      }
+
+      .nav {
+        padding-top: 18px;
       }
 
       .nav-links {
         display: none;
       }
 
+      .menu-button {
+        display: block;
+      }
+
       .hero {
-        padding-top: 100px;
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .hero h1 {
-        font-size: clamp(70px, 19vw, 110px);
-        letter-spacing: -4px;
+        min-height: 850px;
       }
 
       .hero-image {
-        height: 65vh;
-        min-height: 450px;
+        background:
+          linear-gradient(
+            0deg,
+            rgba(0,0,0,.96) 5%,
+            rgba(0,0,0,.65) 48%,
+            rgba(0,0,0,.25) 100%
+          ),
+          url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90")
+          center top / cover no-repeat;
       }
 
-      section {
-        padding: 100px 0;
+      .hero-content {
+        padding-bottom: 55px;
       }
 
-      .section-header {
-        display: block;
-        margin-bottom: 55px;
+      .hero-copy {
+        width: 100%;
       }
 
-      .section-title {
-        margin-top: 25px;
+      .hero-title {
+        font-size: clamp(64px, 19vw, 105px);
       }
 
-      .about-grid,
-      .projects,
-      .lately-grid,
-      .inspire-grid,
-      .vision-text,
-      .work-grid,
-      .contact-content {
-        margin-left: 0;
+      .hero-subtitle {
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
-      .about-grid,
-      .lately-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
+      .hero-side {
+        display: none;
       }
 
-      .project {
-        grid-template-columns: 50px 1fr;
-        gap: 15px;
+      .about {
+        padding: 60px 0;
       }
 
-      .project-description {
-        grid-column: 2;
-        text-align: left;
-      }
-
-      .inspire-grid {
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .work-grid {
+      .about-photo {
+        order: 2;
+        height: 350px;
+      }
+
+      .about-copy {
+        order: 1;
+      }
+
+      .about-details {
+        order: 3;
+        grid-column: auto;
         grid-template-columns: 1fr;
       }
 
-      .vision {
-        min-height: 65vh;
+      .projects-grid {
+        grid-template-columns: 1fr;
       }
 
-      .contact-title {
-        font-size: clamp(64px, 18vw, 120px);
+      .projects-intro {
+        grid-column: auto;
+      }
+
+      .project-card {
+        min-height: 310px;
+      }
+
+      .inspire-items {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .inspire-item {
+        border-bottom: 1px solid var(--line-light);
+      }
+
+      .lately-cards {
+        display: flex;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+      }
+
+      .lately-card {
+        min-width: 190px;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-intro {
+        grid-column: auto;
+      }
+
+      .future-items {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 0;
+      }
+
+      .future-item:nth-child(3) {
+        border-left: none;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-intro {
+        grid-column: auto;
+      }
+
+      .contact-photo {
+        grid-column: auto;
       }
 
       .footer-inner {
         flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
+        gap: 10px;
+        text-align: center;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
 
-  <nav>
+  <header class="nav">
     <div class="nav-inner">
 
       <a href="#inicio" class="logo">RB</a>
 
-      <div class="nav-links">
+      <nav class="nav-links">
         <a href="#inicio">Inicio</a>
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#lately">Lately</a>
-        <a href="#ideas">Ideas</a>
-        <a href="#vision">Hacia dónde voy</a>
+        <a href="#en-que-estoy">En qué estoy</a>
+        <a href="#hacia-donde-voy">Hacia dónde voy</a>
         <a href="#contacto">Contacto</a>
-      </div>
+      </nav>
 
       <div class="socials">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="LinkedIn">IN</a>
-        <a href="#" aria-label="X">X</a>
+        <a href="#" target="_blank">IG</a>
+        <a href="#" target="_blank">in</a>
+        <a href="#" target="_blank">X</a>
       </div>
+
+      <button class="menu-button" aria-label="Abrir menú">
+        ☰
+      </button>
 
     </div>
-  </nav>
+  </header>
 
 
-  <!-- HERO -->
+  <!-- =======================================================
+       HERO
+  ======================================================== -->
 
-  <main id="inicio">
+  <main>
 
-    <section class="hero">
-      <div class="container hero-grid">
+    <section class="hero" id="inicio">
 
-        <div>
+      <div class="hero-image"></div>
 
-          <div class="eyebrow">
-            Ricardo Barrón
+      <div class="hero-content">
+
+        <div class="hero-copy reveal">
+
+          <div class="hero-name-small">
+            R I C A R D O
           </div>
 
-          <h1>
-            <span>Build.</span>
-            <span>Learn.</span>
-            <span>Create.</span>
+          <h1 class="hero-title">
+            <span>BARRÓN</span>
           </h1>
 
-          <div class="hero-line"></div>
+          <div class="hero-subtitle">
+            <span>BUILD</span>
+            <b>•</b>
+            <span>LEARN</span>
+            <b>•</b>
+            <span>CREATE</span>
+            <b>•</b>
+            <span>IMPACT</span>
+          </div>
 
-          <p class="hero-copy">
-            Founder, entrepreneur and builder working across
-            <strong>technology, real estate and creative industries.</strong>
-            Building companies, learning constantly and creating
-            things that matter.
+          <p class="hero-description">
+            Tecnología. Personas. Real Estate. Eventos.
+            Una vida construyendo lo que viene.
           </p>
 
-          <div class="hero-actions">
-            <a href="#sobre-mi" class="button">
-              Sobre mí →
-            </a>
-
-            <a href="#proyectos" class="button">
-              Ver proyectos
-            </a>
-          </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-          <div class="image-caption">
-            Founder · Builder · Entrepreneur
-          </div>
-
-          <div class="image-monogram">
-            RB
-          </div>
+          <a href="#sobre-mi" class="button">
+            Sobre mí
+            <span>→</span>
+          </a>
 
         </div>
 
       </div>
+
+      <div class="hero-side">
+
+        <p>
+          Mejores<br>
+          ideas.<br>
+          Un México<br>
+          más grande.<br>
+          Juntos.
+        </p>
+
+        <div class="hero-arrow"></div>
+
+      </div>
+
     </section>
 
 
-    <!-- SOBRE MI -->
+    <!-- =====================================================
+         SOBRE MI
+    ====================================================== -->
 
-    <section id="sobre-mi">
+    <section class="about" id="sobre-mi">
 
       <div class="container">
-
-        <div class="section-header">
-
-          <div class="section-number">
-            01 / SOBRE MÍ
-          </div>
-
-          <h2 class="section-title">
-            No estoy buscando<br>
-            hacer una sola cosa.
-          </h2>
-
-        </div>
-
 
         <div class="about-grid">
 
-          <div class="large-copy">
-            Me interesa construir.
-            Empresas, productos,
-            ideas y oportunidades.
+          <div class="about-copy reveal">
+
+            <div class="eyebrow">
+              Sobre mí
+            </div>
+
+            <h2>
+              Un chamaco que quiere hacer cosas importantes.
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <p>
+              Estudiante, emprendedor y constructor.
+              Apasionado por resolver problemas reales
+              y crear impacto a través de la tecnología,
+              los negocios y las personas.
+            </p>
+
+            <a href="#contacto" class="text-link">
+              Conoce más →
+            </a>
+
           </div>
 
-          <div class="body-copy">
 
-            <p>
-              Soy Ricardo Barrón, founder y emprendedor.
-              Trabajo entre tecnología, real estate y nuevos
-              modelos de negocio.
-            </p>
+          <div class="about-photo reveal">
 
-            <p>
-              Me gusta entender cómo funcionan las cosas,
-              encontrar oportunidades donde otros ven problemas
-              y convertir ideas en proyectos reales.
-            </p>
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
+              alt="Ricardo trabajando"
+            />
 
-            <p>
-              Estoy construyendo mi carrera alrededor de una
-              idea sencilla: aprender rápido, construir mejor
-              y dejar algo que valga la pena.
-            </p>
+          </div>
+
+
+          <div class="about-details reveal">
+
+            <div class="detail">
+
+              <div class="detail-icon">⌂</div>
+
+              <div>
+                <strong>Estudiante</strong>
+                <span>Universidad de la Libertad · Business & Innovation</span>
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-icon">↗</div>
+
+              <div>
+                <strong>Emprendedor</strong>
+                <span>Founder & Builder</span>
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-icon">⌂</div>
+
+              <div>
+                <strong>Real Estate</strong>
+                <span>Apasionado por el sector inmobiliario</span>
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-icon">✦</div>
+
+              <div>
+                <strong>Aprendiz</strong>
+                <span>Siempre aprendiendo algo nuevo</span>
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-icon">◎</div>
+
+              <div>
+                <strong>Enfocado en Impacto</strong>
+                <span>Tecnología + Personas + Propósito</span>
+              </div>
+
+            </div>
 
           </div>
 
@@ -771,74 +1359,121 @@
     </section>
 
 
-    <!-- PROYECTOS -->
+    <!-- =====================================================
+         PROYECTOS
+    ====================================================== -->
 
-    <section id="proyectos">
+    <section class="projects" id="proyectos">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="projects-grid">
 
-          <div class="section-number">
-            02 / PROYECTOS
+          <div class="projects-intro reveal">
+
+            <div class="eyebrow">
+              Proyectos
+            </div>
+
+            <h2>
+              Lo que estoy construyendo.
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <a href="#contacto" class="button">
+              Ver todos los proyectos
+              <span>→</span>
+            </a>
+
           </div>
 
-          <h2 class="section-title">
-            Things I'm<br>
-            building.
-          </h2>
 
-        </div>
+          <!-- ARKUS -->
 
+          <article class="project-card reveal">
 
-        <div class="projects">
+            <div>
 
-          <a href="#" class="project">
+              <div class="project-logo arkus">
+                ARKUS
+              </div>
 
-            <div class="project-number">01</div>
+              <div class="project-category">
+                Fintech / Eventos
+              </div>
 
-            <div class="project-name">
-              Arkus
+              <p class="project-description">
+                Infraestructura financiera para eventos.
+                Pagos seguros que protegen a todas las partes.
+              </p>
+
             </div>
 
-            <div class="project-description">
-              Technology · Fintech · Events<br>
-              Founder / Product
+            <a href="#" class="project-link">
+              Ver Arkus
+              <span>→</span>
+            </a>
+
+          </article>
+
+
+          <!-- KUBO -->
+
+          <article class="project-card reveal">
+
+            <div>
+
+              <div class="project-logo">
+                KUBO
+              </div>
+
+              <div class="project-category">
+                Real Estate / AI
+              </div>
+
+              <p class="project-description">
+                Sistema operativo autónomo para
+                bienes raíces en Latinoamérica.
+              </p>
+
             </div>
 
-          </a>
+            <a href="#" class="project-link">
+              Ver Kubo
+              <span>→</span>
+            </a>
+
+          </article>
 
 
-          <a href="#" class="project">
+          <!-- FUTUROS -->
 
-            <div class="project-number">02</div>
+          <article class="project-card reveal">
 
-            <div class="project-name">
-              Real Estate
+            <div>
+
+              <div class="project-logo">
+                ◌
+              </div>
+
+              <div class="project-category">
+                Próximos proyectos
+              </div>
+
+              <p class="project-description">
+                Ideas en construcción.
+                Lo mejor está por venir.
+              </p>
+
             </div>
 
-            <div class="project-description">
-              Real Estate · Investment<br>
-              Advisory
-            </div>
+            <a href="#contacto" class="project-link">
+              Explorar
+              <span>→</span>
+            </a>
 
-          </a>
-
-
-          <a href="#" class="project">
-
-            <div class="project-number">03</div>
-
-            <div class="project-name">
-              Ventures
-            </div>
-
-            <div class="project-description">
-              New ideas · Experiments<br>
-              Future projects
-            </div>
-
-          </a>
+          </article>
 
         </div>
 
@@ -847,112 +1482,73 @@
     </section>
 
 
-    <!-- LATELY -->
+    <!-- =====================================================
+         INSPIRE
+    ====================================================== -->
 
-    <section id="lately">
-
-      <div class="container">
-
-        <div class="section-header">
-
-          <div class="section-number">
-            03 / LATELY
-          </div>
-
-          <h2 class="section-title">
-            What I'm<br>
-            doing now.
-          </h2>
-
-        </div>
-
-
-        <div class="lately-grid">
-
-          <div class="lately-main">
-            Building companies,
-            studying, meeting people
-            and figuring out what
-            comes next.
-          </div>
-
-          <div class="lately-side">
-
-            <p>
-              Actualmente estoy enfocado en desarrollar
-              proyectos, entender mejor el mundo de tecnología
-              y negocios y seguir construyendo una red de
-              personas con las que pueda crear cosas grandes.
-            </p>
-
-            <br>
-
-            <span class="tag">Technology</span>
-            <span class="tag">Startups</span>
-            <span class="tag">Real Estate</span>
-            <span class="tag">Investing</span>
-            <span class="tag">Design</span>
-            <span class="tag">Business</span>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- IDEAS -->
-
-    <section id="ideas">
+    <section class="inspire">
 
       <div class="container">
-
-        <div class="section-header">
-
-          <div class="section-number">
-            04 / IDEAS
-          </div>
-
-          <h2 class="section-title">
-            Things that<br>
-            inspire me.
-          </h2>
-
-        </div>
-
 
         <div class="inspire-grid">
 
-          <div class="inspire-card">
-            <span>01 / People</span>
-            <h3>People who build.</h3>
+          <div class="inspire-title">
+
+            <div class="eyebrow">
+              Things that
+            </div>
+
+            <h2>
+              inspire me.
+            </h2>
+
+            <div class="gold-line"></div>
+
           </div>
 
-          <div class="inspire-card">
-            <span>02 / Ideas</span>
-            <h3>Ideas that change industries.</h3>
-          </div>
 
-          <div class="inspire-card">
-            <span>03 / Technology</span>
-            <h3>Technology with purpose.</h3>
-          </div>
+          <div class="inspire-items">
 
-          <div class="inspire-card">
-            <span>04 / Books</span>
-            <h3>Books that change how I think.</h3>
-          </div>
+            <div class="inspire-item">
+              <div class="inspire-icon">⌘</div>
+              <span>Technology</span>
+            </div>
 
-          <div class="inspire-card">
-            <span>05 / Design</span>
-            <h3>Simple things, done exceptionally.</h3>
-          </div>
+            <div class="inspire-item">
+              <div class="inspire-icon">◉</div>
+              <span>AI</span>
+            </div>
 
-          <div class="inspire-card">
-            <span>06 / Curiosity</span>
-            <h3>Always asking why.</h3>
+            <div class="inspire-item">
+              <div class="inspire-icon">⌂</div>
+              <span>Real Estate</span>
+            </div>
+
+            <div class="inspire-item">
+              <div class="inspire-icon">↗</div>
+              <span>Finance</span>
+            </div>
+
+            <div class="inspire-item">
+              <div class="inspire-icon">◇</div>
+              <span>Creative</span>
+            </div>
+
+            <div class="inspire-item">
+              <div class="inspire-icon">✈</div>
+              <span>Travel</span>
+            </div>
+
+            <div class="inspire-item">
+              <div class="inspire-icon">○</div>
+              <span>Sports</span>
+            </div>
+
+            <div class="inspire-item">
+              <div class="inspire-icon">▢</div>
+              <span>Learning</span>
+            </div>
+
           </div>
 
         </div>
@@ -962,19 +1558,156 @@
     </section>
 
 
-    <!-- VISION -->
+    <!-- =====================================================
+         LATELY
+    ====================================================== -->
 
-    <section id="vision" class="vision">
+    <section class="lately" id="lately">
 
       <div class="container">
 
-        <div class="section-number">
-          05 / HACIA DÓNDE VOY
-        </div>
+        <div class="lately-grid">
 
-        <div class="vision-text">
-          I want to build things
-          that <em>outlive me.</em>
+          <div class="lately-intro reveal">
+
+            <div class="eyebrow">
+              Lately
+            </div>
+
+            <h2>
+              Momentos<br>
+              que importan.
+            </h2>
+
+            <div class="gold-line"></div>
+
+            <a href="#" class="button">
+              Ver más
+              <span>→</span>
+            </a>
+
+          </div>
+
+
+          <div class="lately-cards">
+
+
+            <article class="lately-card reveal">
+
+              <img
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
+                alt=""
+              />
+
+              <div class="lately-overlay">
+
+                <strong>
+                  FinTech World Cup
+                  México 2026
+                </strong>
+
+                <span>
+                  Winner
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="lately-card reveal">
+
+              <img
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
+                alt=""
+              />
+
+              <div class="lately-overlay">
+
+                <strong>
+                  Open Finance
+                  2050 VC Pitch
+                </strong>
+
+                <span>
+                  Top 10 Finalist
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="lately-card reveal">
+
+              <img
+                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
+                alt=""
+              />
+
+              <div class="lately-overlay">
+
+                <strong>
+                  Google Cloud
+                  Community Builder
+                </strong>
+
+                <span>
+                  Member
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="lately-card reveal">
+
+              <img
+                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
+                alt=""
+              />
+
+              <div class="lately-overlay">
+
+                <strong>
+                  Dubai FinTech
+                  Summit 2026
+                </strong>
+
+                <span>
+                  Representing Mexico
+                </span>
+
+              </div>
+
+            </article>
+
+
+            <article class="lately-card reveal">
+
+              <img
+                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
+                alt=""
+              />
+
+              <div class="lately-overlay">
+
+                <strong>
+                  Building
+                  connections
+                </strong>
+
+                <span>
+                  That create value
+                </span>
+
+              </div>
+
+            </article>
+
+          </div>
+
         </div>
 
       </div>
@@ -982,47 +1715,87 @@
     </section>
 
 
-    <!-- WORK WITH ME -->
+    <!-- =====================================================
+         EN QUÉ ESTOY
+    ====================================================== -->
 
-    <section id="work">
+    <section class="focus" id="en-que-estoy">
 
       <div class="container">
 
-        <div class="section-header">
+        <div class="focus-grid">
 
-          <div class="section-number">
-            06 / WORK WITH ME
+          <div class="focus-intro reveal">
+
+            <div class="eyebrow">
+              En qué estoy
+            </div>
+
+            <h2>
+              Lo que estoy enfocado en.
+            </h2>
+
           </div>
 
-          <h2 class="section-title">
-            Let's build<br>
-            something.
-          </h2>
 
-        </div>
+          <div class="focus-column reveal">
+
+            <h3>
+              Construyendo
+            </h3>
+
+            <ul>
+              <li>Arkus MVP & growth</li>
+              <li>Real Estate OS</li>
+              <li>Alianzas estratégicas</li>
+            </ul>
+
+          </div>
 
 
-        <div class="work-grid">
+          <div class="focus-column reveal">
 
-          <a href="#contacto" class="work-card">
-            <span>01 / Collaborate</span>
-            <h3>Build together.</h3>
-          </a>
+            <h3>
+              Aprendiendo
+            </h3>
 
-          <a href="#contacto" class="work-card">
-            <span>02 / Partnerships</span>
-            <h3>Explore an alliance.</h3>
-          </a>
+            <ul>
+              <li>AI & Automatización</li>
+              <li>Fintech & RegTech</li>
+              <li>Producto & Liderazgo</li>
+            </ul>
 
-          <a href="#contacto" class="work-card">
-            <span>03 / Speaking</span>
-            <h3>Invite me to speak.</h3>
-          </a>
+          </div>
 
-          <a href="#contacto" class="work-card">
-            <span>04 / Connect</span>
-            <h3>Let's meet.</h3>
-          </a>
+
+          <div class="focus-column reveal">
+
+            <h3>
+              Conectando
+            </h3>
+
+            <ul>
+              <li>Nuevas personas</li>
+              <li>Mentores & Partners</li>
+              <li>Oportunidades reales</li>
+            </ul>
+
+          </div>
+
+
+          <div class="focus-column reveal">
+
+            <h3>
+              Explorando
+            </h3>
+
+            <ul>
+              <li>Nuevos mercados</li>
+              <li>Inversiones</li>
+              <li>Proyectos creativos</li>
+            </ul>
+
+          </div>
 
         </div>
 
@@ -1031,60 +1804,407 @@
     </section>
 
 
-    <!-- CONTACTO -->
+    <!-- =====================================================
+         FUTURO
+    ====================================================== -->
 
-    <section id="contacto" class="contact">
+    <section class="future" id="hacia-donde-voy">
 
       <div class="container">
 
-        <div class="section-number">
-          CONTACTO
-        </div>
+        <div class="future-grid">
 
-        <div class="contact-content">
+          <div class="future-title reveal">
 
-          <div class="contact-title">
-            Let's talk.
+            <div class="eyebrow">
+              Hacia dónde voy
+            </div>
+
+            <h2>
+              El futuro que estoy construyendo.
+            </h2>
+
+            <div class="gold-line"></div>
+
           </div>
 
-          <a
-            class="contact-email"
-            href="mailto:avilaricardo278@icloud.com"
-          >
-            avilaricardo278@icloud.com
-          </a>
+
+          <div class="future-items">
+
+
+            <div class="future-item reveal">
+
+              <div class="future-icon">
+                ◎
+              </div>
+
+              <h3>
+                Internacional
+              </h3>
+
+              <p>
+                Llevar tecnología desde
+                Latinoamérica al mundo.
+              </p>
+
+            </div>
+
+
+            <div class="future-item reveal">
+
+              <div class="future-icon">
+                ⌂
+              </div>
+
+              <h3>
+                Empresas
+              </h3>
+
+              <p>
+                Construir compañías que
+                resuelvan problemas reales.
+              </p>
+
+            </div>
+
+
+            <div class="future-item reveal">
+
+              <div class="future-icon">
+                ↗
+              </div>
+
+              <h3>
+                Inversión
+              </h3>
+
+              <p>
+                Respaldar fundadores e ideas
+                con potencial global.
+              </p>
+
+            </div>
+
+
+            <div class="future-item reveal">
+
+              <div class="future-icon">
+                ☆
+              </div>
+
+              <h3>
+                Impacto
+              </h3>
+
+              <p>
+                Usar la tecnología para generar
+                un impacto positivo.
+              </p>
+
+            </div>
+
+          </div>
 
         </div>
 
       </div>
 
     </section>
+
+
+    <!-- =====================================================
+         CONTACTO
+    ====================================================== -->
+
+    <section class="contact" id="contacto">
+
+      <div class="container">
+
+        <div class="contact-grid">
+
+          <div class="contact-intro reveal">
+
+            <div class="eyebrow">
+              Conectemos
+            </div>
+
+            <h2>
+              Construyamos algo increíble.
+            </h2>
+
+            <p style="color:#89857d;font-size:11px;max-width:280px;line-height:1.8;">
+              Siempre abierto a nuevas ideas,
+              colaboraciones y oportunidades.
+            </p>
+
+            <a href="mailto:contacto@ricardobarron.com" class="button" style="margin-top:25px;">
+              Hablemos
+              <span>→</span>
+            </a>
+
+          </div>
+
+
+          <div class="contact-column reveal">
+
+            <div class="contact-row">
+
+              <div class="contact-row-icon">
+                ✉
+              </div>
+
+              <div>
+                <strong>
+                  Work with me
+                </strong>
+
+                <span>
+                  Colaboraciones y proyectos
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-row">
+
+              <div class="contact-row-icon">
+                ♫
+              </div>
+
+              <div>
+                <strong>
+                  Speaking
+                </strong>
+
+                <span>
+                  Eventos y conferencias
+                </span>
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="contact-column reveal">
+
+            <div class="contact-row">
+
+              <div class="contact-row-icon">
+                ◇
+              </div>
+
+              <div>
+                <strong>
+                  Partnerships
+                </strong>
+
+                <span>
+                  Alianzas estratégicas
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="contact-row">
+
+              <div class="contact-row-icon">
+                ▱
+              </div>
+
+              <div>
+                <strong>
+                  Media
+                </strong>
+
+                <span>
+                  Prensa y entrevistas
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-photo reveal">
+
+            <img
+              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90"
+              alt="Ricardo Barrón"
+            />
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
 
-  <footer>
+  <footer class="footer">
 
-    <div class="container footer-inner">
+    <div class="container">
 
-      <span>
-        © 2026 Ricardo Barrón
-      </span>
+      <div class="footer-inner">
 
-      <span>
-        Built with curiosity.
-      </span>
+        <div class="footer-logo">
+          RB
+        </div>
 
-      <span>
-        RB
-      </span>
+        <p>
+          © 2026 Ricardo Barrón. Todos los derechos reservados.
+        </p>
+
+        <p class="footer-location">
+          CDMX, MEX <span>◆</span>
+        </p>
+
+      </div>
 
     </div>
 
   </footer>
 
+
+  <!-- =======================================================
+       JAVASCRIPT
+  ======================================================== -->
+
+  <script>
+
+    /* -------------------------------------------------------
+       SCROLL REVEAL
+    ------------------------------------------------------- */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    revealElements.forEach((element) => {
+      observer.observe(element);
+    });
+
+
+    /* -------------------------------------------------------
+       MOBILE MENU
+    ------------------------------------------------------- */
+
+    const menuButton =
+      document.querySelector(".menu-button");
+
+    const navLinks =
+      document.querySelector(".nav-links");
+
+
+    menuButton.addEventListener("click", () => {
+
+      const isOpen =
+        navLinks.style.display === "flex";
+
+      if (isOpen) {
+
+        navLinks.style.display = "";
+
+      } else {
+
+        navLinks.style.display = "flex";
+
+        navLinks.style.position = "absolute";
+        navLinks.style.top = "70px";
+        navLinks.style.left = "24px";
+        navLinks.style.right = "24px";
+        navLinks.style.flexDirection = "column";
+        navLinks.style.alignItems = "flex-start";
+        navLinks.style.background = "rgba(10,10,9,.97)";
+        navLinks.style.padding = "25px";
+        navLinks.style.border = "1px solid rgba(255,255,255,.12)";
+        navLinks.style.gap = "20px";
+
+      }
+
+    });
+
+
+    /* -------------------------------------------------------
+       CLOSE MOBILE MENU WHEN CLICKING LINK
+    ------------------------------------------------------- */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach((link) => {
+
+        link.addEventListener("click", () => {
+
+          if (window.innerWidth <= 760) {
+            navLinks.style.display = "";
+          }
+
+        });
+
+      });
+
+
+    /* -------------------------------------------------------
+       SIMPLE PARALLAX HERO
+    ------------------------------------------------------- */
+
+    const heroImage =
+      document.querySelector(".hero-image");
+
+
+    window.addEventListener("scroll", () => {
+
+      if (window.innerWidth > 760) {
+
+        const scroll =
+          window.scrollY;
+
+        if (scroll < window.innerHeight) {
+
+          heroImage.style.transform =
+            `translateY(${scroll * 0.12}px)`;
+
+        }
+
+      }
+
+    });
+
+  </script>
 
 </body>
 </html>
