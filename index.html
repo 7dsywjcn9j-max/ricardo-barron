@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Ricardo Barrón | Founder · Builder · Entrepreneur</title>
+  <title>Ricardo Barrón</title>
+  <meta name="description" content="Ricardo Barrón. Founder, entrepreneur and builder working across technology, real estate and creative industries.">
 
-  <meta
-    name="description"
-    content="Ricardo Barrón. Founder, entrepreneur and builder working across technology, real estate and creative industries."
-  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -24,8 +24,8 @@
 
     body {
       background: #080808;
-      color: #f4f2ed;
-      font-family: Arial, Helvetica, sans-serif;
+      color: #f4f1eb;
+      font-family: "DM Sans", sans-serif;
       line-height: 1.5;
     }
 
@@ -34,374 +34,312 @@
       text-decoration: none;
     }
 
-    ::selection {
-      background: #f4f2ed;
-      color: #080808;
+    .container {
+      width: min(1400px, 92%);
+      margin: auto;
     }
 
     /* NAV */
 
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 100;
+      height: 92px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      padding: 24px 5vw;
-      mix-blend-mode: difference;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
     .logo {
-      font-family: Georgia, serif;
-      font-size: 24px;
-      letter-spacing: -1px;
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      letter-spacing: -2px;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
-      font-size: 10px;
+      gap: 38px;
+      font-size: 11px;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      color: #aaa;
     }
 
     .nav-links a {
-      opacity: .7;
-      transition: .3s;
+      transition: color .25s ease;
     }
 
     .nav-links a:hover {
-      opacity: 1;
+      color: white;
     }
 
     /* HERO */
 
     .hero {
-      min-height: 100vh;
-      padding: 150px 5vw 70px;
+      min-height: calc(100vh - 92px);
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 7vw;
+      gap: 70px;
       align-items: center;
+      padding: 70px 0;
     }
 
     .eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 5px;
+      font-size: 12px;
+      letter-spacing: 6px;
       color: #999;
-      margin-bottom: 30px;
+      margin-bottom: 42px;
+      text-transform: uppercase;
     }
 
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: clamp(70px, 9vw, 150px);
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(72px, 9vw, 145px);
       line-height: .82;
       letter-spacing: -7px;
+      font-weight: 500;
+      margin-bottom: 50px;
     }
 
     .hero-line {
-      width: 55px;
+      width: 90px;
       height: 1px;
-      background: #f4f2ed;
-      margin: 42px 0 25px;
+      background: #eee;
+      margin-bottom: 38px;
     }
 
     .hero-description {
-      max-width: 430px;
-      color: #a6a6a6;
-      font-size: 15px;
+      max-width: 520px;
+      color: #aaa;
+      font-size: 18px;
+      line-height: 1.65;
+      margin-bottom: 42px;
     }
 
-    .hero-buttons {
+    .buttons {
       display: flex;
-      gap: 12px;
-      margin-top: 35px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .button {
-      border: 1px solid #555;
-      padding: 13px 20px;
-      font-size: 10px;
+      border: 1px solid #666;
+      padding: 17px 28px;
+      font-size: 11px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      transition: .3s;
+      transition: all .25s ease;
     }
 
     .button:hover {
-      background: #f4f2ed;
+      background: #f4f1eb;
       color: #080808;
-      border-color: #f4f2ed;
+      border-color: #f4f1eb;
     }
 
-    .hero-image {
-      height: 620px;
+    /* PHOTO */
+
+    .hero-photo {
+      height: 720px;
+      background:
+        linear-gradient(145deg, #262626, #121212);
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, #171717, #343434 55%, #111);
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
     }
 
-    .hero-image::after {
-      content: "RB";
-      position: absolute;
-      right: 30px;
-      bottom: 10px;
-      font-family: Georgia, serif;
-      font-size: 65px;
-      color: rgba(255,255,255,.2);
+    .photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      padding: 30px;
     }
 
-    .image-note {
+    .photo-placeholder span {
+      font-family: "Playfair Display", serif;
+      font-size: 110px;
+      color: #444;
+      letter-spacing: -8px;
+    }
+
+    .photo-label {
       position: absolute;
-      left: 25px;
-      bottom: 25px;
-      font-size: 9px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
+      left: 35px;
+      bottom: 30px;
+      font-size: 11px;
+      letter-spacing: 5px;
       color: #aaa;
     }
 
     /* SECTIONS */
 
     section {
-      padding: 140px 5vw;
-      border-top: 1px solid #222;
+      padding: 150px 0;
+      border-top: 1px solid rgba(255,255,255,.08);
     }
 
-    .section-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 4px;
+    .section-number {
       color: #777;
-      margin-bottom: 50px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 7vw, 100px);
+      line-height: .95;
+      font-weight: 500;
+      letter-spacing: -4px;
+      margin-bottom: 60px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10vw;
+      gap: 100px;
     }
 
-    .big-text {
-      font-family: Georgia, serif;
-      font-size: clamp(38px, 5vw, 75px);
-      line-height: 1;
-      letter-spacing: -3px;
+    .large-text {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(30px, 4vw, 52px);
+      line-height: 1.15;
     }
 
-    .about-copy {
-      color: #aaa;
-      max-width: 500px;
-      font-size: 16px;
-    }
-
-    .about-copy p {
-      margin-bottom: 25px;
+    .body-text {
+      color: #999;
+      font-size: 18px;
+      line-height: 1.8;
     }
 
     /* PROJECTS */
 
-    .projects {
-      display: grid;
-      gap: 1px;
-      background: #292929;
-    }
-
     .project {
-      background: #080808;
       display: grid;
-      grid-template-columns: 80px 1fr auto;
+      grid-template-columns: 100px 1fr auto;
       gap: 40px;
       align-items: center;
-      padding: 35px 25px;
-      transition: .3s;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
+      transition: padding .3s ease;
+    }
+
+    .project:last-child {
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
     .project:hover {
-      background: #141414;
-      padding-left: 40px;
+      padding-left: 20px;
     }
 
     .project-number {
       color: #666;
-      font-size: 11px;
+      font-size: 12px;
+      letter-spacing: 3px;
     }
 
     .project-name {
-      font-family: Georgia, serif;
-      font-size: 42px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(35px, 5vw, 65px);
     }
 
     .project-type {
-      color: #777;
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-
-    /* LATEST */
-
-    .latest-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .latest-card {
-      border: 1px solid #252525;
-      padding: 30px;
-      min-height: 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: .3s;
-    }
-
-    .latest-card:hover {
-      transform: translateY(-5px);
-      border-color: #555;
-    }
-
-    .card-tag {
-      font-size: 9px;
+      color: #888;
+      font-size: 11px;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: #777;
     }
 
-    .latest-card h3 {
-      font-family: Georgia, serif;
-      font-size: 35px;
-      font-weight: 400;
-    }
+    /* RECOGNITION */
 
-    .latest-card p {
-      color: #888;
-      font-size: 13px;
-    }
-
-    /* IDEAS */
-
-    .ideas {
+    .recognition {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      gap: 8vw;
+      gap: 70px;
+      padding: 35px 0;
+      border-top: 1px solid rgba(255,255,255,.1);
     }
 
-    .ideas-title {
-      font-family: Georgia, serif;
-      font-size: clamp(50px, 6vw, 90px);
-      line-height: .9;
-      letter-spacing: -4px;
+    .recognition:last-child {
+      border-bottom: 1px solid rgba(255,255,255,.1);
     }
 
-    .ideas-list {
-      border-top: 1px solid #333;
+    .recognition-year {
+      color: #777;
+      letter-spacing: 3px;
+      font-size: 12px;
     }
 
-    .idea {
-      padding: 25px 0;
-      border-bottom: 1px solid #333;
-      display: flex;
-      justify-content: space-between;
-      color: #aaa;
-      transition: .3s;
+    .recognition-title {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-bottom: 10px;
     }
 
-    .idea:hover {
-      color: white;
-      padding-left: 10px;
+    .recognition-description {
+      color: #888;
     }
 
-    /* VISION */
+    /* INSPO */
 
-    .vision {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .vision-text {
-      font-family: Georgia, serif;
-      font-size: clamp(55px, 8vw, 130px);
-      line-height: .9;
-      letter-spacing: -6px;
-      max-width: 1100px;
-    }
-
-    .vision-text span {
-      color: #555;
-    }
-
-    /* WORK */
-
-    .work {
+    .inspiration-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10vw;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,255,255,.1);
+      border-left: 1px solid rgba(255,255,255,.1);
     }
 
-    .work-title {
-      font-family: Georgia, serif;
-      font-size: clamp(55px, 7vw, 100px);
-      line-height: .9;
+    .inspiration {
+      padding: 45px 25px;
+      border-right: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      transition: background .25s ease;
     }
 
-    .work-copy {
-      color: #aaa;
-      max-width: 450px;
-    }
-
-    .work-list {
-      margin-top: 35px;
-      border-top: 1px solid #333;
-    }
-
-    .work-item {
-      padding: 18px 0;
-      border-bottom: 1px solid #333;
-      font-size: 13px;
+    .inspiration:hover {
+      background: #f4f1eb;
+      color: #080808;
     }
 
     /* CONTACT */
 
     .contact {
-      text-align: center;
-      padding-bottom: 180px;
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
-    .contact h2 {
-      font-family: Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(70px, 12vw, 180px);
-      line-height: .8;
-      letter-spacing: -8px;
+    .contact-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(65px, 10vw, 150px);
+      line-height: .9;
+      letter-spacing: -7px;
+      margin-bottom: 60px;
     }
 
     .contact-email {
-      display: inline-block;
-      margin-top: 50px;
-      font-size: 13px;
+      font-size: 18px;
+      color: #aaa;
       border-bottom: 1px solid #555;
-      padding-bottom: 7px;
+      display: inline-block;
+      padding-bottom: 8px;
     }
 
-    /* FOOTER */
-
     footer {
-      border-top: 1px solid #222;
-      padding: 30px 5vw;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 30px 0;
       display: flex;
       justify-content: space-between;
       color: #666;
-      font-size: 9px;
-      text-transform: uppercase;
+      font-size: 11px;
       letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     /* MOBILE */
@@ -409,7 +347,7 @@
     @media (max-width: 800px) {
 
       nav {
-        padding: 20px;
+        height: 75px;
       }
 
       .nav-links {
@@ -418,59 +356,53 @@
 
       .hero {
         grid-template-columns: 1fr;
-        padding: 120px 20px 60px;
+        padding: 55px 0;
       }
 
-      .hero-image {
-        height: 450px;
-      }
-
-      h1 {
+      .hero h1 {
         font-size: 75px;
         letter-spacing: -4px;
       }
 
-      section {
-        padding: 90px 20px;
+      .hero-photo {
+        height: 520px;
       }
 
-      .about-grid,
-      .work,
-      .ideas {
+      .about-grid {
         grid-template-columns: 1fr;
         gap: 50px;
       }
 
+      section {
+        padding: 100px 0;
+      }
+
       .project {
-        grid-template-columns: 35px 1fr;
+        grid-template-columns: 45px 1fr;
         gap: 15px;
       }
 
       .project-type {
-        display: none;
+        grid-column: 2;
       }
 
-      .project-name {
-        font-size: 30px;
-      }
-
-      .latest-grid {
+      .recognition {
         grid-template-columns: 1fr;
+        gap: 15px;
       }
 
-      .vision-text {
-        font-size: 60px;
-        letter-spacing: -3px;
+      .inspiration-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .contact h2 {
-        font-size: 80px;
+      .contact-title {
+        font-size: 70px;
         letter-spacing: -4px;
       }
 
       footer {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
       }
     }
   </style>
@@ -478,31 +410,33 @@
 
 <body>
 
-  <!-- NAVIGATION -->
+  <div class="container">
 
-  <nav>
-    <a href="#inicio" class="logo">RB</a>
+    <!-- NAVIGATION -->
 
-    <div class="nav-links">
-      <a href="#inicio">Inicio</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#latest">Lately</a>
-      <a href="#ideas">Ideas</a>
-      <a href="#vision">Hacia dónde voy</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+    <nav>
+      <a href="#inicio" class="logo">RB</a>
+
+      <div class="nav-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#lately">Lately</a>
+        <a href="#ideas">Ideas</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
 
 
-  <!-- HERO -->
+    <!-- HERO -->
 
-  <main id="inicio">
-
-    <section class="hero">
+    <main id="inicio" class="hero">
 
       <div>
-        <div class="eyebrow">Ricardo Barrón</div>
+
+        <div class="eyebrow">
+          Ricardo Barrón
+        </div>
 
         <h1>
           Build.<br>
@@ -515,64 +449,74 @@
         <p class="hero-description">
           Founder, entrepreneur and builder working across
           technology, real estate and creative industries.
-          Building companies, learning constantly and creating
-          things that matter.
+          Building companies, learning constantly and
+          creating things that matter.
         </p>
 
-        <div class="hero-buttons">
-          <a href="#sobre-mi" class="button">Sobre mí →</a>
-          <a href="#proyectos" class="button">Ver proyectos</a>
+        <div class="buttons">
+          <a href="#sobre-mi" class="button">
+            Sobre mí →
+          </a>
+
+          <a href="#proyectos" class="button">
+            Ver proyectos
+          </a>
         </div>
+
       </div>
 
-      <div class="hero-image">
-        <div class="image-note">
-          Founder · Builder · Entrepreneur
+
+      <div class="hero-photo">
+
+        <!-- AQUÍ IRÁ TU FOTO -->
+
+        <div class="photo-placeholder">
+          <span>RB</span>
         </div>
+
+        <div class="photo-label">
+          FOUNDER · BUILDER · ENTREPRENEUR
+        </div>
+
       </div>
 
-    </section>
+    </main>
 
 
-    <!-- SOBRE MI -->
+    <!-- ABOUT -->
 
     <section id="sobre-mi">
 
-      <div class="section-label">01 — Sobre mí</div>
+      <div class="section-number">
+        01 / SOBRE MÍ
+      </div>
+
+      <h2 class="section-title">
+        Who I am.
+      </h2>
 
       <div class="about-grid">
 
-        <div class="big-text">
-          I build.<br>
-          I learn.<br>
-          I create.
+        <div class="large-text">
+          I build things that move.
         </div>
 
-        <div class="about-copy">
+        <div class="body-text">
+          Soy Ricardo Barrón, fundador, emprendedor y builder.
+          Me interesa construir empresas, productos y proyectos
+          que conecten tecnología, personas y oportunidades.
 
-          <p>
-            Soy Ricardo Barrón, fundador y emprendedor.
-            Trabajo entre tecnología, real estate y proyectos
-            creativos.
-          </p>
+          <br><br>
 
-          <p>
-            Me interesa construir empresas, entender cómo
-            funcionan las personas y convertir ideas en
-            proyectos reales.
-          </p>
+          Trabajo entre tecnología, real estate, finanzas y
+          creatividad. Me gusta aprender rápido, rodearme de
+          gente que sabe más que yo y convertir ideas en cosas
+          reales.
 
-          <p>
-            Creo en el liderazgo, la curiosidad, la resiliencia
-            y en aprender haciendo.
-          </p>
+          <br><br>
 
-          <p>
-            No estoy particularmente interesado en parecer
-            ocupado. Estoy interesado en construir algo que
-            valga la pena.
-          </p>
-
+          Actualmente estoy construyendo, explorando y
+          aprendiendo qué sigue.
         </div>
 
       </div>
@@ -580,238 +524,174 @@
     </section>
 
 
-    <!-- PROYECTOS -->
+    <!-- PROJECTS -->
 
     <section id="proyectos">
 
-      <div class="section-label">02 — Proyectos</div>
-
-      <div class="projects">
-
-        <a href="#" class="project">
-          <span class="project-number">01</span>
-
-          <span class="project-name">Arkus</span>
-
-          <span class="project-type">
-            Fintech · Technology
-          </span>
-        </a>
-
-        <a href="#" class="project">
-          <span class="project-number">02</span>
-
-          <span class="project-name">KUBO</span>
-
-          <span class="project-type">
-            Real Estate · AI
-          </span>
-        </a>
-
-        <a href="#" class="project">
-          <span class="project-number">03</span>
-
-          <span class="project-name">Real Estate</span>
-
-          <span class="project-type">
-            Property · Advisory
-          </span>
-        </a>
-
-        <a href="#" class="project">
-          <span class="project-number">04</span>
-
-          <span class="project-name">Creative</span>
-
-          <span class="project-type">
-            Film · Production
-          </span>
-        </a>
-
+      <div class="section-number">
+        02 / WHAT I'M BUILDING
       </div>
+
+      <h2 class="section-title">
+        Projects.
+      </h2>
+
+
+      <a href="#" class="project">
+
+        <div class="project-number">01</div>
+
+        <div class="project-name">
+          Arkus
+        </div>
+
+        <div class="project-type">
+          Fintech · Events
+        </div>
+
+      </a>
+
+
+      <a href="#" class="project">
+
+        <div class="project-number">02</div>
+
+        <div class="project-name">
+          Real Estate
+        </div>
+
+        <div class="project-type">
+          Real Estate · Investments
+        </div>
+
+      </a>
+
+
+      <a href="#" class="project">
+
+        <div class="project-number">03</div>
+
+        <div class="project-name">
+          New Ventures
+        </div>
+
+        <div class="project-type">
+          Ideas · Experiments
+        </div>
+
+      </a>
 
     </section>
 
 
-    <!-- LATEST -->
-
-    <section id="latest">
-
-      <div class="section-label">03 — Lately</div>
-
-      <div class="latest-grid">
-
-        <article class="latest-card">
-
-          <span class="card-tag">Now</span>
-
-          <h3>Building</h3>
-
-          <p>
-            Construyendo proyectos en tecnología,
-            real estate y nuevas empresas.
-          </p>
-
-        </article>
-
-        <article class="latest-card">
-
-          <span class="card-tag">Learning</span>
-
-          <h3>Exploring</h3>
-
-          <p>
-            Aprendiendo sobre negocios, tecnología,
-            liderazgo e inteligencia artificial.
-          </p>
-
-        </article>
-
-        <article class="latest-card">
-
-          <span class="card-tag">Creating</span>
-
-          <h3>Creating</h3>
-
-          <p>
-            Trabajando también en proyectos creativos
-            y producción audiovisual.
-          </p>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-    <!-- IDEAS -->
-
-    <section id="ideas">
-
-      <div class="section-label">04 — Things that inspire me</div>
-
-      <div class="ideas">
-
-        <div class="ideas-title">
-          Things<br>
-          that<br>
-          inspire<br>
-          me.
-        </div>
-
-        <div class="ideas-list">
-
-          <div class="idea">
-            <span>People who build from zero</span>
-            <span>01</span>
-          </div>
-
-          <div class="idea">
-            <span>Technology that changes behavior</span>
-            <span>02</span>
-          </div>
-
-          <div class="idea">
-            <span>Great companies</span>
-            <span>03</span>
-          </div>
-
-          <div class="idea">
-            <span>Leadership</span>
-            <span>04</span>
-          </div>
-
-          <div class="idea">
-            <span>Creative work</span>
-            <span>05</span>
-          </div>
-
-          <div class="idea">
-            <span>Competition & tournaments</span>
-            <span>06</span>
-          </div>
-
-          <div class="idea">
-            <span>Learning from people</span>
-            <span>07</span>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- VISION -->
-
-    <section id="vision" class="vision">
-
-      <div>
-
-        <div class="section-label">
-          05 — Hacia dónde voy
-        </div>
-
-        <div class="vision-text">
-          Build things<br>
-          that <span>outlive</span><br>
-          the moment.
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- WORK WITH ME -->
+    <!-- RECOGNITION -->
 
     <section>
 
-      <div class="section-label">06 — Work with me</div>
+      <div class="section-number">
+        03 / RECOGNITION
+      </div>
 
-      <div class="work">
+      <h2 class="section-title">
+        Recognition.
+      </h2>
 
-        <div class="work-title">
-          Let's<br>
-          build<br>
-          something.
+
+      <div class="recognition">
+
+        <div class="recognition-year">
+          2026
         </div>
 
-        <div class="work-copy">
-
-          <p>
-            Estoy abierto a conversaciones que puedan
-            convertirse en proyectos, alianzas o nuevas
-            oportunidades.
-          </p>
-
-          <div class="work-list">
-
-            <div class="work-item">
-              Strategic partnerships
-            </div>
-
-            <div class="work-item">
-              Business collaborations
-            </div>
-
-            <div class="work-item">
-              Speaking & events
-            </div>
-
-            <div class="work-item">
-              Creative projects
-            </div>
-
-            <div class="work-item">
-              Technology & startups
-            </div>
-
+        <div>
+          <div class="recognition-title">
+            Fintech World Cup Mexico
           </div>
 
+          <div class="recognition-description">
+            Winner · Mexico
+          </div>
         </div>
+
+      </div>
+
+
+      <div class="recognition">
+
+        <div class="recognition-year">
+          2026
+        </div>
+
+        <div>
+          <div class="recognition-title">
+            Dubai FinTech Summit
+          </div>
+
+          <div class="recognition-description">
+            Representing Mexico · Grand Finale
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- AQUÍ AGREGAREMOS LOS DEMÁS RECONOCIMIENTOS -->
+
+    </section>
+
+
+    <!-- LATELY -->
+
+    <section id="lately">
+
+      <div class="section-number">
+        04 / LATELY
+      </div>
+
+      <h2 class="section-title">
+        What I'm<br>
+        working on.
+      </h2>
+
+      <div class="body-text" style="max-width:700px;">
+        Building companies. Developing ideas.
+        Meeting interesting people. Learning.
+        Trying things that might work.
+
+        <br><br>
+
+        This is where I'll share what I'm currently
+        working on, thinking about and exploring.
+      </div>
+
+    </section>
+
+
+    <!-- INSPIRATION -->
+
+    <section id="ideas">
+
+      <div class="section-number">
+        05 / THINGS THAT INSPIRE ME
+      </div>
+
+      <h2 class="section-title">
+        Things that<br>
+        inspire me.
+      </h2>
+
+
+      <div class="inspiration-grid">
+
+        <div class="inspiration">Technology</div>
+        <div class="inspiration">Entrepreneurship</div>
+        <div class="inspiration">Architecture</div>
+        <div class="inspiration">Real Estate</div>
+
+        <div class="inspiration">Finance</div>
+        <div class="inspiration">Design</div>
+        <div class="inspiration">People</div>
+        <div class="inspiration">Ideas</div>
 
       </div>
 
@@ -822,36 +702,40 @@
 
     <section id="contacto" class="contact">
 
-      <div class="section-label">07 — Contacto</div>
+      <div class="section-number">
+        06 / WORK WITH ME
+      </div>
 
-      <h2>
-        Let's<br>
-        talk.
+      <h2 class="contact-title">
+        Let's build<br>
+        something.
       </h2>
 
       <a
-        href="mailto:avilaricardo278@icloud.com"
         class="contact-email"
+        href="mailto:avilaricardo278@icloud.com"
       >
         avilaricardo278@icloud.com
       </a>
 
     </section>
 
-  </main>
 
+    <!-- FOOTER -->
 
-  <footer>
+    <footer>
 
-    <span>© 2026 Ricardo Barrón</span>
+      <div>
+        © 2026 Ricardo Barrón
+      </div>
 
-    <span>
-      Curious · Ambitious · Resilient
-    </span>
+      <div>
+        RB · Mexico City
+      </div>
 
-    <span>RB</span>
+    </footer>
 
-  </footer>
+  </div>
 
 </body>
 </html>
