@@ -4,33 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Ricardo Barrón | Founder · Builder · Entrepreneur</title>
+  <title>Ricardo Barrón | Founder · Entrepreneur · Investor</title>
 
   <meta
     name="description"
-    content="Ricardo Barrón. Founder, entrepreneur and builder working across technology, real estate, fintech and creative industries."
+    content="Ricardo Barrón. Founder, entrepreneur, investor and builder working across technology, fintech, real estate and emerging industries."
   />
 
-  <meta name="theme-color" content="#0a0a09" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
     rel="stylesheet"
   />
 
   <style>
+    :root {
+      --black: #090909;
+      --black-soft: #111111;
+      --cream: #f3eee5;
+      --white: #f8f6f1;
+      --gold: #c9963e;
+      --gold-light: #dfb76c;
+      --gray: #aaa7a0;
+      --line-dark: rgba(255,255,255,.14);
+      --line-light: rgba(0,0,0,.14);
 
-    /* =========================================================
-       RESET
-    ========================================================= */
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
 
-    *,
-    *::before,
-    *::after {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -41,16 +46,10 @@
     }
 
     body {
-      background: #0a0a09;
-      color: #f4f0e8;
-      font-family: "DM Sans", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--sans);
       overflow-x: hidden;
-      line-height: 1.5;
-    }
-
-    img {
-      display: block;
-      width: 100%;
     }
 
     a {
@@ -58,368 +57,338 @@
       text-decoration: none;
     }
 
+    img {
+      display: block;
+      width: 100%;
+    }
+
     button {
-      font: inherit;
+      font-family: inherit;
     }
 
-    ::selection {
-      background: #b88932;
-      color: #ffffff;
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+      z-index: 1000;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 4vw;
+
+      background: rgba(9,9,9,.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.08);
     }
 
-    /* =========================================================
-       VARIABLES
-    ========================================================= */
-
-    :root {
-      --black: #0a0a09;
-      --black-soft: #11110f;
-      --cream: #f2eee5;
-      --cream-dark: #e8e1d5;
-      --white: #f8f6f1;
-      --muted: #aaa69f;
-      --gold: #b88932;
-      --gold-light: #d2aa61;
-      --line-dark: rgba(255,255,255,.14);
-      --line-light: rgba(10,10,9,.16);
-
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-
-      --container: 1380px;
-      --pad: clamp(24px, 5vw, 72px);
+    .logo {
+      font-family: var(--serif);
+      font-size: 32px;
+      letter-spacing: -2px;
     }
 
-    /* =========================================================
-       GLOBAL
-    ========================================================= */
+    .nav-links {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
 
-    .container {
-      width: min(var(--container), calc(100% - (var(--pad) * 2)));
-      margin: 0 auto;
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8c5bf;
+      transition: .25s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-links a.active {
+      color: var(--gold-light);
+    }
+
+    .nav-links a.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -12px;
+      width: 100%;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .socials {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+    }
+
+    .socials a {
+      color: #ddd;
+      transition: .2s;
+    }
+
+    .socials a:hover {
+      color: var(--gold-light);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+
+      display: grid;
+      grid-template-columns: 46% 54%;
+      align-items: stretch;
+
+      padding-top: 76px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      padding: 8vw 5vw;
+      background:
+        radial-gradient(circle at 20% 50%, rgba(201,150,62,.07), transparent 35%),
+        var(--black);
     }
 
     .eyebrow {
       color: var(--gold-light);
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .28em;
+      font-weight: 600;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(76px, 9vw, 145px);
+      line-height: .78;
+      font-weight: 500;
+      letter-spacing: -7px;
       text-transform: uppercase;
     }
 
-    .section-title {
-      font-family: var(--serif);
-      font-size: clamp(42px, 5vw, 72px);
-      font-weight: 400;
-      line-height: .98;
+    .hero h1 span {
+      display: block;
     }
 
-    .gold-line {
-      width: 42px;
+    .hero-divider {
+      width: 70px;
       height: 1px;
       background: var(--gold);
-      margin: 26px 0;
+      margin: 34px 0 25px;
     }
 
-    .button {
+    .hero-tagline {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      color: #e6e1d9;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero-tagline span::after {
+      content: "•";
+      color: var(--gold);
+      margin-left: 14px;
+    }
+
+    .hero-tagline span:last-child::after {
+      display: none;
+    }
+
+    .hero-description {
+      max-width: 490px;
+      color: #aaa8a3;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-top: 28px;
+    }
+
+    .btn {
       display: inline-flex;
       align-items: center;
-      gap: 22px;
+      justify-content: center;
+
+      width: fit-content;
+
       border: 1px solid var(--gold);
-      padding: 15px 20px;
-      color: var(--white);
-      text-transform: uppercase;
+      padding: 14px 22px;
+
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .2em;
-      transition: .3s ease;
-    }
-
-    .button span {
-      color: var(--gold-light);
-      font-size: 16px;
-      transition: .3s ease;
-    }
-
-    .button:hover {
-      background: var(--gold);
-      color: #111;
-    }
-
-    .button:hover span {
-      color: #111;
-      transform: translateX(5px);
-    }
-
-    /* =========================================================
-       NAVIGATION
-    ========================================================= */
-
-    .nav {
-      position: absolute;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 22px var(--pad);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1500px;
-      margin: auto;
-    }
-
-    .logo {
-      font-family: var(--serif);
-      font-size: 35px;
-      line-height: 1;
-      letter-spacing: -.08em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(18px, 2.7vw, 46px);
-    }
-
-    .nav-links a {
-      position: relative;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .18em;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.82);
-      padding: 8px 0;
+
       transition: .25s ease;
     }
 
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
+    .btn:hover {
       background: var(--gold);
-      transition: .25s ease;
+      color: #080808;
     }
 
-    .nav-links a:hover {
-      color: white;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .socials {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .socials a {
-      font-size: 11px;
-      font-weight: 700;
-      opacity: .85;
-      transition: .25s ease;
-    }
-
-    .socials a:hover {
-      color: var(--gold-light);
-      opacity: 1;
-    }
-
-    .menu-button {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      cursor: pointer;
-    }
-
-    /* =========================================================
-       HERO
-    ========================================================= */
-
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: #050505;
+    .hero .btn {
+      margin-top: 30px;
     }
 
     .hero-image {
+      position: relative;
+      min-height: 700px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(120deg, #131313, #252525 55%, #0d0d0d);
+    }
+
+    /*
+      CAMBIA ESTA IMAGEN POR TU FOTO REAL.
+      Guarda tu foto como:
+      images/ricardo-hero.jpg
+    */
+
+    .hero-image::before {
+      content: "";
       position: absolute;
       inset: 0;
+
       background:
         linear-gradient(
           90deg,
-          rgba(0,0,0,.98) 0%,
-          rgba(0,0,0,.92) 27%,
-          rgba(0,0,0,.4) 58%,
-          rgba(0,0,0,.18) 100%
+          rgba(9,9,9,.35),
+          transparent 40%
         ),
-        url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=2200&q=90")
-        center 20% / cover no-repeat;
-      filter: saturate(.8);
+        url("images/ricardo-hero.jpg") center / cover no-repeat;
+
+      filter: grayscale(20%);
     }
 
     .hero-image::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(0,0,0,.55),
-        transparent 40%
-      );
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent 55%,
+          rgba(0,0,0,.7)
+        );
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(var(--container), calc(100% - (var(--pad) * 2)));
-      margin: auto;
-      padding-bottom: 82px;
-    }
-
-    .hero-copy {
-      width: min(650px, 55%);
-    }
-
-    .hero-name-small {
-      font-size: 12px;
-      letter-spacing: .55em;
-      font-weight: 600;
-      margin-bottom: 26px;
-      color: #ddd9d0;
-    }
-
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(74px, 9vw, 145px);
-      font-weight: 400;
-      line-height: .79;
-      letter-spacing: -.065em;
-    }
-
-    .hero-title span {
-      display: block;
-    }
-
-    .hero-subtitle {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin-top: 32px;
-      font-size: 11px;
-      letter-spacing: .35em;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-
-    .hero-subtitle b {
-      color: var(--gold-light);
-      font-size: 10px;
-    }
-
-    .hero-description {
-      max-width: 430px;
-      color: #c2beb6;
-      font-size: 14px;
-      line-height: 1.75;
-      margin: 25px 0 28px;
-    }
-
-    .hero-side {
+    .hero-image-label {
       position: absolute;
-      z-index: 2;
-      right: 5%;
-      bottom: 90px;
-      width: 130px;
-      text-align: left;
+      z-index: 3;
+      right: 6%;
+      bottom: 7%;
+
+      font-family: var(--serif);
+      font-size: 75px;
+      color: rgba(255,255,255,.16);
     }
 
-    .hero-side p {
-      color: #ddd8ce;
-      font-size: 9px;
-      font-weight: 700;
-      line-height: 1.8;
-      letter-spacing: .3em;
+    .hero-side-text {
+      position: absolute;
+      z-index: 4;
+      right: 6%;
+      top: 22%;
+
+      width: 130px;
+
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 2;
+      letter-spacing: 3px;
       text-transform: uppercase;
+      color: #ddd;
     }
 
     .hero-arrow {
-      width: 1px;
-      height: 95px;
-      margin: 22px 0 0 14px;
-      background: rgba(255,255,255,.35);
-      position: relative;
-    }
-
-    .hero-arrow::after {
-      content: "↓";
-      position: absolute;
-      bottom: -14px;
-      left: -6px;
+      display: block;
       color: var(--gold-light);
-      font-size: 17px;
+      font-size: 25px;
+      margin-top: 15px;
     }
 
-    /* =========================================================
+    /* =========================
        ABOUT
-    ========================================================= */
+    ========================= */
+
+    .light-section {
+      background: var(--cream);
+      color: #111;
+    }
 
     .about {
-      background: var(--cream);
-      color: #161512;
-      padding: 80px 0;
-    }
-
-    .about-grid {
       display: grid;
-      grid-template-columns: .85fr 1fr .85fr;
-      gap: 55px;
+      grid-template-columns: 35% 35% 30%;
+      min-height: 540px;
+      padding: 80px 5vw;
+      gap: 50px;
       align-items: center;
     }
 
-    .about-copy h2 {
-      font-family: var(--serif);
-      font-size: clamp(42px, 4.2vw, 67px);
-      line-height: .98;
-      font-weight: 400;
-      max-width: 420px;
-    }
-
-    .about-copy p {
-      margin-top: 28px;
-      max-width: 390px;
-      font-size: 13px;
-      line-height: 1.8;
-      color: #555149;
-    }
-
-    .text-link {
-      display: inline-flex;
-      margin-top: 25px;
-      color: #161512;
+    .section-label {
+      color: var(--gold);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: .2em;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      border-bottom: 1px solid #161512;
-      padding-bottom: 5px;
+      margin-bottom: 18px;
+    }
+
+    .about h2 {
+      font-family: var(--serif);
+      font-size: clamp(42px, 4vw, 65px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -2px;
+    }
+
+    .section-line {
+      width: 55px;
+      height: 1px;
+      background: var(--gold);
+      margin: 28px 0;
+    }
+
+    .about p {
+      color: #555;
+      line-height: 1.7;
+      font-size: 14px;
+      max-width: 440px;
     }
 
     .about-photo {
-      height: 430px;
+      height: 420px;
+      background: #222;
       overflow: hidden;
     }
 
@@ -429,1780 +398,1319 @@
       filter: grayscale(100%);
     }
 
-    .about-details {
+    .about-list {
       display: flex;
       flex-direction: column;
-      gap: 27px;
+      gap: 25px;
     }
 
-    .detail {
+    .about-item {
       display: grid;
-      grid-template-columns: 45px 1fr;
-      gap: 13px;
-      align-items: center;
+      grid-template-columns: 38px 1fr;
+      gap: 14px;
+      align-items: start;
     }
 
-    .detail-icon {
+    .about-icon {
       width: 34px;
       height: 34px;
       border: 1px solid var(--gold);
       border-radius: 50%;
-      display: grid;
-      place-items: center;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
       color: var(--gold);
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    .detail strong {
+    .about-item strong {
       display: block;
-      font-size: 11px;
-      margin-bottom: 2px;
+      font-size: 13px;
+      margin-bottom: 4px;
     }
 
-    .detail span {
-      color: #666159;
-      font-size: 10px;
+    .about-item span {
+      color: #666;
+      font-size: 12px;
+      line-height: 1.5;
     }
 
-    /* =========================================================
+    /* =========================
        PROJECTS
-    ========================================================= */
+    ========================= */
 
     .projects {
+      padding: 90px 5vw;
       background: var(--black);
-      padding: 85px 0;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: .8fr 1fr 1fr 1fr;
-      gap: 20px;
-      align-items: stretch;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 18px;
+      margin-top: 45px;
     }
 
-    .projects-intro {
-      padding: 10px 10px 10px 0;
+    .project-intro {
+      padding-right: 30px;
     }
 
-    .projects-intro h2 {
+    .project-intro h2 {
       font-family: var(--serif);
-      font-size: clamp(42px, 4vw, 64px);
-      font-weight: 400;
+      font-size: 52px;
       line-height: 1;
-      max-width: 310px;
-      margin: 17px 0 28px;
+      font-weight: 500;
+    }
+
+    .project-intro p {
+      margin-top: 25px;
+      color: #999;
+      line-height: 1.7;
+      font-size: 13px;
     }
 
     .project-card {
-      min-height: 355px;
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 28px 25px;
+      min-height: 310px;
+
+      border: 1px solid var(--line-dark);
+      padding: 30px;
+
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-      transition: .4s ease;
+
       background:
         radial-gradient(
-          circle at 80% 15%,
-          rgba(184,137,50,.08),
-          transparent 30%
+          circle at 70% 20%,
+          rgba(201,150,62,.08),
+          transparent 35%
         );
+
+      transition: .3s ease;
     }
 
     .project-card:hover {
       border-color: var(--gold);
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
-    .project-card::before {
-      content: "";
-      position: absolute;
-      width: 160px;
-      height: 160px;
-      right: -60px;
-      top: -60px;
-      border: 1px solid rgba(184,137,50,.15);
-      border-radius: 50%;
+    .project-number {
+      font-size: 10px;
+      color: #777;
+      letter-spacing: 2px;
     }
 
-    .project-logo {
+    .project-card h3 {
       font-family: var(--serif);
-      font-size: 29px;
-      letter-spacing: .15em;
-      text-align: center;
-      margin-top: 25px;
-    }
-
-    .project-logo.arkus {
-      font-family: var(--sans);
+      font-size: 35px;
       font-weight: 500;
-      letter-spacing: .25em;
+      letter-spacing: -1px;
     }
 
     .project-category {
-      text-align: center;
       color: var(--gold-light);
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      margin-top: 10px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 6px;
     }
 
-    .project-description {
-      text-align: center;
-      color: #aaa59c;
-      font-size: 11px;
-      line-height: 1.7;
-      max-width: 220px;
-      margin: 28px auto;
+    .project-card p {
+      color: #929292;
+      font-size: 12px;
+      line-height: 1.6;
+      max-width: 300px;
     }
 
     .project-link {
-      text-align: center;
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .2em;
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: #eee;
       text-transform: uppercase;
     }
 
-    .project-link span {
-      color: var(--gold-light);
-      margin-left: 8px;
-      font-size: 14px;
-    }
+    /* =========================
+       INTERESTS
+    ========================= */
 
-    /* =========================================================
-       INSPIRE
-    ========================================================= */
-
-    .inspire {
-      background: var(--cream);
-      color: #161512;
-      padding: 45px 0;
-    }
-
-    .inspire-grid {
+    .interests {
+      padding: 55px 5vw;
       display: grid;
-      grid-template-columns: .65fr 1fr;
-      gap: 45px;
+      grid-template-columns: 25% 75%;
       align-items: center;
     }
 
-    .inspire-title h2 {
+    .interests h2 {
       font-family: var(--serif);
-      font-size: clamp(40px, 4vw, 62px);
-      line-height: 1;
-      font-weight: 400;
+      font-size: 48px;
+      font-weight: 500;
     }
 
-    .inspire-items {
+    .interest-list {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(7, 1fr);
       gap: 0;
     }
 
-    .inspire-item {
-      min-height: 80px;
-      border-left: 1px solid var(--line-light);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
+    .interest {
       text-align: center;
+      padding: 15px;
+      border-left: 1px solid var(--line-light);
     }
 
-    .inspire-icon {
+    .interest-icon {
       font-size: 25px;
       color: var(--gold);
+      margin-bottom: 10px;
     }
 
-    .inspire-item span {
-      font-size: 8px;
-      font-weight: 700;
+    .interest span {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
     }
 
-    /* =========================================================
+    /* =========================
        LATELY
-    ========================================================= */
+    ========================= */
 
     .lately {
       background: var(--black-soft);
-      padding: 75px 0;
+      padding: 90px 5vw;
+    }
+
+    .lately-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 45px;
+    }
+
+    .lately h2 {
+      font-family: var(--serif);
+      font-size: 55px;
+      font-weight: 500;
     }
 
     .lately-grid {
       display: grid;
-      grid-template-columns: .7fr 1.8fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .lately-intro h2 {
-      font-family: var(--serif);
-      font-size: clamp(43px, 4vw, 62px);
-      line-height: 1;
-      font-weight: 400;
-      margin: 16px 0 28px;
-    }
-
-    .lately-cards {
-      display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
+      gap: 14px;
     }
 
     .lately-card {
-      min-height: 250px;
-      border: 1px solid rgba(255,255,255,.12);
-      position: relative;
+      border: 1px solid var(--line-dark);
+      background: #0b0b0b;
       overflow: hidden;
-      background: #111;
     }
 
-    .lately-card img {
-      position: absolute;
-      inset: 0;
+    .lately-image {
+      height: 230px;
+      background: #222;
+    }
+
+    .lately-image img {
+      width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: .48;
-      transition: .4s ease;
     }
 
-    .lately-card:hover img {
-      transform: scale(1.05);
-      opacity: .7;
+    .lately-content {
+      padding: 18px;
     }
 
-    .lately-overlay {
-      position: absolute;
-      inset: 0;
-      padding: 15px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      background: linear-gradient(
-        transparent 25%,
-        rgba(0,0,0,.9) 100%
-      );
-    }
-
-    .lately-overlay strong {
-      font-size: 10px;
+    .lately-content h3 {
+      font-size: 13px;
       line-height: 1.4;
     }
 
-    .lately-overlay span {
+    .lately-content span {
+      display: block;
+      margin-top: 8px;
       color: var(--gold-light);
-      font-size: 8px;
-      margin-top: 6px;
-      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 1px;
     }
 
-    /* =========================================================
+    /* =========================
        FOCUS
-    ========================================================= */
+    ========================= */
 
     .focus {
+      padding: 85px 5vw;
       background: var(--black);
-      padding: 75px 0;
-      border-top: 1px solid rgba(255,255,255,.08);
     }
 
     .focus-grid {
       display: grid;
-      grid-template-columns: .7fr repeat(4, 1fr);
-      gap: 30px;
+      grid-template-columns: 25% 1fr 1fr 1fr 1fr;
+      gap: 35px;
     }
 
-    .focus-intro h2 {
+    .focus h2 {
       font-family: var(--serif);
-      font-size: clamp(42px, 3.8vw, 58px);
+      font-size: 43px;
       line-height: 1;
-      font-weight: 400;
-      margin-top: 16px;
+      font-weight: 500;
     }
 
     .focus-column {
-      border-left: 1px solid rgba(255,255,255,.12);
+      border-left: 1px solid var(--line-dark);
       padding-left: 25px;
     }
 
     .focus-column h3 {
       font-family: var(--serif);
-      font-size: 21px;
-      font-weight: 400;
-      margin-bottom: 18px;
-    }
-
-    .focus-column ul {
-      list-style: none;
+      font-size: 23px;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
 
     .focus-column li {
-      position: relative;
-      padding-left: 18px;
-      color: #a7a29a;
-      font-size: 10px;
-      line-height: 2.2;
+      list-style: none;
+      color: #999;
+      font-size: 11px;
+      margin-bottom: 13px;
     }
 
     .focus-column li::before {
       content: "✓";
-      position: absolute;
-      left: 0;
-      color: var(--gold-light);
+      color: var(--gold);
+      margin-right: 8px;
     }
 
-    /* =========================================================
+    /* =========================
        FUTURE
-    ========================================================= */
+    ========================= */
 
     .future {
       background: var(--cream);
-      color: #161512;
-      padding: 75px 0;
+      color: #111;
+      padding: 90px 5vw;
     }
 
     .future-grid {
       display: grid;
-      grid-template-columns: .7fr 1.8fr;
-      gap: 55px;
-      align-items: center;
+      grid-template-columns: 30% repeat(4, 1fr);
+      gap: 25px;
     }
 
-    .future-title h2 {
+    .future h2 {
       font-family: var(--serif);
-      font-size: clamp(43px, 4vw, 62px);
+      font-size: 52px;
       line-height: 1;
-      font-weight: 400;
-      max-width: 370px;
-    }
-
-    .future-items {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .future-item {
-      border-left: 1px solid var(--line-light);
-      padding: 0 25px;
-      text-align: center;
-    }
-
-    .future-icon {
-      color: var(--gold);
-      font-size: 30px;
-      margin-bottom: 15px;
-    }
-
-    .future-item h3 {
-      font-family: var(--serif);
-      font-size: 18px;
-      margin-bottom: 9px;
       font-weight: 500;
     }
 
-    .future-item p {
-      color: #666159;
-      font-size: 9px;
-      line-height: 1.7;
+    .future-card {
+      text-align: center;
+      padding: 10px 20px;
+      border-left: 1px solid var(--line-light);
     }
 
-    /* =========================================================
+    .future-icon {
+      font-size: 30px;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .future-card h3 {
+      font-family: var(--serif);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .future-card p {
+      font-size: 11px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    /* =========================
        CONTACT
-    ========================================================= */
+    ========================= */
 
     .contact {
+      padding: 80px 5vw 35px;
       background: var(--black-soft);
-      padding: 70px 0 0;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr 1fr 1.2fr;
-      gap: 35px;
-      border-bottom: 1px solid rgba(255,255,255,.12);
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 60px;
     }
 
-    .contact-intro h2 {
+    .contact h2 {
       font-family: var(--serif);
-      font-size: clamp(43px, 4vw, 62px);
+      font-size: 48px;
       line-height: 1;
-      font-weight: 400;
-      max-width: 340px;
-      margin: 15px 0 24px;
+      font-weight: 500;
     }
 
-    .contact-column {
-      border-left: 1px solid rgba(255,255,255,.12);
-      padding: 10px 0 45px 30px;
+    .contact-description {
+      max-width: 380px;
+      color: #999;
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 22px 0;
     }
 
-    .contact-row {
-      display: grid;
-      grid-template-columns: 35px 1fr;
-      gap: 10px;
-      margin-bottom: 25px;
-    }
-
-    .contact-row-icon {
+    .contact-column h3 {
       color: var(--gold-light);
-      font-size: 18px;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
     }
 
-    .contact-row strong {
+    .contact-column a {
       display: block;
-      font-family: var(--serif);
-      font-size: 16px;
-      font-weight: 400;
+      color: #bbb;
+      font-size: 12px;
+      margin-bottom: 15px;
+      transition: .2s;
     }
 
-    .contact-row span {
-      display: block;
-      color: #89857d;
-      font-size: 9px;
-      margin-top: 4px;
+    .contact-column a:hover {
+      color: var(--gold-light);
     }
 
     .contact-photo {
-      min-height: 330px;
+      height: 230px;
       overflow: hidden;
+      background: #222;
     }
 
     .contact-photo img {
       height: 100%;
       object-fit: cover;
-      filter: grayscale(30%);
+      filter: grayscale(40%);
     }
 
-    /* =========================================================
-       FOOTER
-    ========================================================= */
+    footer {
+      border-top: 1px solid var(--line-dark);
+      padding-top: 20px;
 
-    .footer {
-      background: #070706;
-      padding: 20px 0;
-    }
-
-    .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+
+      color: #666;
+      font-size: 10px;
     }
 
-    .footer-logo {
-      font-family: var(--serif);
-      font-size: 24px;
-    }
+    /* =========================
+       MOBILE
+    ========================= */
 
-    .footer p {
-      color: #74716b;
-      font-size: 9px;
-    }
+    @media (max-width: 900px) {
 
-    .footer-location {
-      color: #aaa59d !important;
-    }
-
-    .footer-location span {
-      color: var(--gold);
-    }
-
-    /* =========================================================
-       REVEAL ANIMATION
-    ========================================================= */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition:
-        opacity .8s ease,
-        transform .8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =========================================================
-       RESPONSIVE
-    ========================================================= */
-
-    @media (max-width: 1100px) {
-
-      .nav-links {
-        gap: 18px;
+      nav {
+        height: 65px;
       }
 
-      .socials {
+      .nav-links {
         display: none;
       }
 
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
+      .socials {
+        margin-left: auto;
+        margin-right: 20px;
       }
 
-      .about-details {
-        grid-column: span 2;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        margin-top: 15px;
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        min-height: 600px;
+        padding: 100px 7vw 60px;
+      }
+
+      .hero h1 {
+        font-size: 76px;
+        letter-spacing: -4px;
+      }
+
+      .hero-image {
+        min-height: 520px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+        padding: 70px 7vw;
+      }
+
+      .about-photo {
+        height: 400px;
       }
 
       .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
 
-      .projects-intro {
-        grid-column: span 2;
+      .project-intro {
+        padding-right: 0;
       }
 
-      .inspire-grid,
-      .lately-grid,
+      .interests {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .interest-list {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .lately-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-column {
+        border-left: none;
+        border-top: 1px solid var(--line-dark);
+        padding: 25px 0 0;
+      }
+
+      .future-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .future-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero h1 {
+        font-size: 62px;
+      }
+
+      .hero-tagline {
+        gap: 8px;
+        letter-spacing: 2px;
+      }
+
+      .hero-tagline span::after {
+        margin-left: 8px;
+      }
+
+      .about h2,
+      .lately h2,
+      .future h2 {
+        font-size: 42px;
+      }
+
+      .interest-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lately-grid {
+        grid-template-columns: 1fr;
+      }
+
       .future-grid {
         grid-template-columns: 1fr;
       }
 
-      .inspire-items {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      .lately-cards {
-        grid-template-columns: repeat(5, 1fr);
-      }
-
-      .focus-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .focus-intro {
-        grid-column: span 2;
-        margin-bottom: 20px;
-      }
-
-      .contact-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact-intro {
-        grid-column: span 2;
-      }
-
-      .contact-photo {
-        grid-column: span 2;
-      }
-    }
-
-    @media (max-width: 760px) {
-
-      :root {
-        --pad: 24px;
-      }
-
-      .nav {
-        padding-top: 18px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .hero {
-        min-height: 850px;
-      }
-
-      .hero-image {
-        background:
-          linear-gradient(
-            0deg,
-            rgba(0,0,0,.96) 5%,
-            rgba(0,0,0,.65) 48%,
-            rgba(0,0,0,.25) 100%
-          ),
-          url("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=90")
-          center top / cover no-repeat;
-      }
-
-      .hero-content {
-        padding-bottom: 55px;
-      }
-
-      .hero-copy {
-        width: 100%;
-      }
-
-      .hero-title {
-        font-size: clamp(64px, 19vw, 105px);
-      }
-
-      .hero-subtitle {
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .hero-side {
-        display: none;
-      }
-
-      .about {
-        padding: 60px 0;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        order: 2;
-        height: 350px;
-      }
-
-      .about-copy {
-        order: 1;
-      }
-
-      .about-details {
-        order: 3;
+      .future-grid > div:first-child {
         grid-column: auto;
-        grid-template-columns: 1fr;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .projects-intro {
-        grid-column: auto;
-      }
-
-      .project-card {
-        min-height: 310px;
-      }
-
-      .inspire-items {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .inspire-item {
-        border-bottom: 1px solid var(--line-light);
-      }
-
-      .lately-cards {
-        display: flex;
-        overflow-x: auto;
-        padding-bottom: 10px;
-        scrollbar-width: none;
-      }
-
-      .lately-card {
-        min-width: 190px;
-      }
-
-      .focus-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .focus-intro {
-        grid-column: auto;
-      }
-
-      .future-items {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 0;
-      }
-
-      .future-item:nth-child(3) {
-        border-left: none;
       }
 
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-intro {
-        grid-column: auto;
-      }
-
-      .contact-photo {
-        grid-column: auto;
-      }
-
-      .footer-inner {
+      footer {
         flex-direction: column;
         gap: 10px;
-        text-align: center;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- =======================================================
-       NAVIGATION
-  ======================================================== -->
+  <!-- =========================
+       NAV
+  ========================= -->
 
-  <header class="nav">
-    <div class="nav-inner">
+  <nav>
 
-      <a href="#inicio" class="logo">RB</a>
+    <a href="#inicio" class="logo">RB</a>
 
-      <nav class="nav-links">
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#lately">Lately</a>
-        <a href="#en-que-estoy">En qué estoy</a>
-        <a href="#hacia-donde-voy">Hacia dónde voy</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-
-      <div class="socials">
-        <a href="#" target="_blank">IG</a>
-        <a href="#" target="_blank">in</a>
-        <a href="#" target="_blank">X</a>
-      </div>
-
-      <button class="menu-button" aria-label="Abrir menú">
-        ☰
-      </button>
-
+    <div class="nav-links">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#lately">Lately</a>
+      <a href="#ideas">Ideas</a>
+      <a href="#futuro">Hacia dónde voy</a>
+      <a href="#contacto">Contacto</a>
     </div>
-  </header>
+
+    <div class="socials">
+      <a href="#" aria-label="Instagram">IG</a>
+      <a href="#" aria-label="LinkedIn">IN</a>
+      <a href="#" aria-label="X">X</a>
+    </div>
+
+  </nav>
 
 
-  <!-- =======================================================
+  <!-- =========================
        HERO
-  ======================================================== -->
+  ========================= -->
 
-  <main>
+  <section class="hero" id="inicio">
 
-    <section class="hero" id="inicio">
+    <div class="hero-content">
 
-      <div class="hero-image"></div>
-
-      <div class="hero-content">
-
-        <div class="hero-copy reveal">
-
-          <div class="hero-name-small">
-            R I C A R D O
-          </div>
-
-          <h1 class="hero-title">
-            <span>BARRÓN</span>
-          </h1>
-
-          <div class="hero-subtitle">
-            <span>BUILD</span>
-            <b>•</b>
-            <span>LEARN</span>
-            <b>•</b>
-            <span>CREATE</span>
-            <b>•</b>
-            <span>IMPACT</span>
-          </div>
-
-          <p class="hero-description">
-            Tecnología. Personas. Real Estate. Eventos.
-            Una vida construyendo lo que viene.
-          </p>
-
-          <a href="#sobre-mi" class="button">
-            Sobre mí
-            <span>→</span>
-          </a>
-
-        </div>
-
+      <div class="eyebrow">
+        Ricardo Barrón
       </div>
 
-      <div class="hero-side">
+      <h1>
+        <span>Build.</span>
+        <span>Learn.</span>
+        <span>Create.</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-tagline">
+        <span>Build</span>
+        <span>Learn</span>
+        <span>Create</span>
+        <span>Impact</span>
+      </div>
+
+      <p class="hero-description">
+        Founder, entrepreneur, investor and builder working across
+        technology, fintech, real estate and emerging industries.
+        Building companies from Mexico for the world.
+      </p>
+
+      <a href="#sobre-mi" class="btn">
+        Sobre mí →
+      </a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="hero-side-text">
+        Tecnología.<br>
+        Finanzas.<br>
+        Real Estate.<br>
+        Empresas.<br>
+        Impacto.
+
+        <span class="hero-arrow">↓</span>
+      </div>
+
+      <div class="hero-image-label">
+        RB
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section class="light-section about" id="sobre-mi">
+
+    <div>
+
+      <div class="section-label">
+        Sobre mí
+      </div>
+
+      <h2>
+        Construyendo empresas.
+        Resolviendo problemas.
+        Creando impacto.
+      </h2>
+
+      <div class="section-line"></div>
+
+      <p>
+        Founder, emprendedor y estudiante de Business & Innovation.
+        Trabajo en la intersección de tecnología, finanzas, real estate
+        y nuevas formas de construir negocios.
+      </p>
+
+      <br>
+
+      <a href="#contacto" class="btn">
+        Conoce más →
+      </a>
+
+    </div>
+
+
+    <div class="about-photo">
+      <img
+        src="images/ricardo-working.jpg"
+        alt="Ricardo Barrón trabajando"
+      >
+    </div>
+
+
+    <div class="about-list">
+
+      <div class="about-item">
+        <div class="about-icon">01</div>
+        <div>
+          <strong>Founder</strong>
+          <span>Construcción de empresas y productos.</span>
+        </div>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon">02</div>
+        <div>
+          <strong>Entrepreneur</strong>
+          <span>Convirtiendo problemas reales en oportunidades.</span>
+        </div>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon">03</div>
+        <div>
+          <strong>Real Estate</strong>
+          <span>Apasionado por el sector inmobiliario.</span>
+        </div>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon">04</div>
+        <div>
+          <strong>Technology</strong>
+          <span>AI, automatización y productos digitales.</span>
+        </div>
+      </div>
+
+      <div class="about-item">
+        <div class="about-icon">05</div>
+        <div>
+          <strong>Investor</strong>
+          <span>Buscando oportunidades con potencial de largo plazo.</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PROJECTS
+  ========================= -->
+
+  <section class="projects" id="proyectos">
+
+    <div class="section-label">
+      Proyectos
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-intro">
+
+        <h2>
+          Empresas que estoy construyendo.
+        </h2>
+
+        <div class="section-line"></div>
 
         <p>
-          Mejores<br>
-          ideas.<br>
-          Un México<br>
-          más grande.<br>
-          Juntos.
+          Proyectos enfocados en tecnología, fintech, real estate
+          y nuevas infraestructuras para mercados tradicionales.
         </p>
 
-        <div class="hero-arrow"></div>
+        <br>
+
+        <a href="#" class="btn">
+          Ver todos →
+        </a>
 
       </div>
 
-    </section>
 
+      <article class="project-card">
 
-    <!-- =====================================================
-         SOBRE MI
-    ====================================================== -->
+        <div>
+          <div class="project-number">01 / COMPANY</div>
 
-    <section class="about" id="sobre-mi">
+          <br>
 
-      <div class="container">
+          <h3>ARKUS</h3>
 
-        <div class="about-grid">
-
-          <div class="about-copy reveal">
-
-            <div class="eyebrow">
-              Sobre mí
-            </div>
-
-            <h2>
-              Un chamaco que quiere hacer cosas importantes.
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <p>
-              Estudiante, emprendedor y constructor.
-              Apasionado por resolver problemas reales
-              y crear impacto a través de la tecnología,
-              los negocios y las personas.
-            </p>
-
-            <a href="#contacto" class="text-link">
-              Conoce más →
-            </a>
-
+          <div class="project-category">
+            Fintech · Events
           </div>
-
-
-          <div class="about-photo reveal">
-
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=85"
-              alt="Ricardo trabajando"
-            />
-
-          </div>
-
-
-          <div class="about-details reveal">
-
-            <div class="detail">
-
-              <div class="detail-icon">⌂</div>
-
-              <div>
-                <strong>Estudiante</strong>
-                <span>Universidad de la Libertad · Business & Innovation</span>
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <div class="detail-icon">↗</div>
-
-              <div>
-                <strong>Emprendedor</strong>
-                <span>Founder & Builder</span>
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <div class="detail-icon">⌂</div>
-
-              <div>
-                <strong>Real Estate</strong>
-                <span>Apasionado por el sector inmobiliario</span>
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <div class="detail-icon">✦</div>
-
-              <div>
-                <strong>Aprendiz</strong>
-                <span>Siempre aprendiendo algo nuevo</span>
-              </div>
-
-            </div>
-
-
-            <div class="detail">
-
-              <div class="detail-icon">◎</div>
-
-              <div>
-                <strong>Enfocado en Impacto</strong>
-                <span>Tecnología + Personas + Propósito</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PROYECTOS
-    ====================================================== -->
-
-    <section class="projects" id="proyectos">
-
-      <div class="container">
-
-        <div class="projects-grid">
-
-          <div class="projects-intro reveal">
-
-            <div class="eyebrow">
-              Proyectos
-            </div>
-
-            <h2>
-              Lo que estoy construyendo.
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <a href="#contacto" class="button">
-              Ver todos los proyectos
-              <span>→</span>
-            </a>
-
-          </div>
-
-
-          <!-- ARKUS -->
-
-          <article class="project-card reveal">
-
-            <div>
-
-              <div class="project-logo arkus">
-                ARKUS
-              </div>
-
-              <div class="project-category">
-                Fintech / Eventos
-              </div>
-
-              <p class="project-description">
-                Infraestructura financiera para eventos.
-                Pagos seguros que protegen a todas las partes.
-              </p>
-
-            </div>
-
-            <a href="#" class="project-link">
-              Ver Arkus
-              <span>→</span>
-            </a>
-
-          </article>
-
-
-          <!-- KUBO -->
-
-          <article class="project-card reveal">
-
-            <div>
-
-              <div class="project-logo">
-                KUBO
-              </div>
-
-              <div class="project-category">
-                Real Estate / AI
-              </div>
-
-              <p class="project-description">
-                Sistema operativo autónomo para
-                bienes raíces en Latinoamérica.
-              </p>
-
-            </div>
-
-            <a href="#" class="project-link">
-              Ver Kubo
-              <span>→</span>
-            </a>
-
-          </article>
-
-
-          <!-- FUTUROS -->
-
-          <article class="project-card reveal">
-
-            <div>
-
-              <div class="project-logo">
-                ◌
-              </div>
-
-              <div class="project-category">
-                Próximos proyectos
-              </div>
-
-              <p class="project-description">
-                Ideas en construcción.
-                Lo mejor está por venir.
-              </p>
-
-            </div>
-
-            <a href="#contacto" class="project-link">
-              Explorar
-              <span>→</span>
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         INSPIRE
-    ====================================================== -->
-
-    <section class="inspire">
-
-      <div class="container">
-
-        <div class="inspire-grid">
-
-          <div class="inspire-title">
-
-            <div class="eyebrow">
-              Things that
-            </div>
-
-            <h2>
-              inspire me.
-            </h2>
-
-            <div class="gold-line"></div>
-
-          </div>
-
-
-          <div class="inspire-items">
-
-            <div class="inspire-item">
-              <div class="inspire-icon">⌘</div>
-              <span>Technology</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">◉</div>
-              <span>AI</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">⌂</div>
-              <span>Real Estate</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">↗</div>
-              <span>Finance</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">◇</div>
-              <span>Creative</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">✈</div>
-              <span>Travel</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">○</div>
-              <span>Sports</span>
-            </div>
-
-            <div class="inspire-item">
-              <div class="inspire-icon">▢</div>
-              <span>Learning</span>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         LATELY
-    ====================================================== -->
-
-    <section class="lately" id="lately">
-
-      <div class="container">
-
-        <div class="lately-grid">
-
-          <div class="lately-intro reveal">
-
-            <div class="eyebrow">
-              Lately
-            </div>
-
-            <h2>
-              Momentos<br>
-              que importan.
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <a href="#" class="button">
-              Ver más
-              <span>→</span>
-            </a>
-
-          </div>
-
-
-          <div class="lately-cards">
-
-
-            <article class="lately-card reveal">
-
-              <img
-                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80"
-                alt=""
-              />
-
-              <div class="lately-overlay">
-
-                <strong>
-                  FinTech World Cup
-                  México 2026
-                </strong>
-
-                <span>
-                  Winner
-                </span>
-
-              </div>
-
-            </article>
-
-
-            <article class="lately-card reveal">
-
-              <img
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80"
-                alt=""
-              />
-
-              <div class="lately-overlay">
-
-                <strong>
-                  Open Finance
-                  2050 VC Pitch
-                </strong>
-
-                <span>
-                  Top 10 Finalist
-                </span>
-
-              </div>
-
-            </article>
-
-
-            <article class="lately-card reveal">
-
-              <img
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
-                alt=""
-              />
-
-              <div class="lately-overlay">
-
-                <strong>
-                  Google Cloud
-                  Community Builder
-                </strong>
-
-                <span>
-                  Member
-                </span>
-
-              </div>
-
-            </article>
-
-
-            <article class="lately-card reveal">
-
-              <img
-                src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=800&q=80"
-                alt=""
-              />
-
-              <div class="lately-overlay">
-
-                <strong>
-                  Dubai FinTech
-                  Summit 2026
-                </strong>
-
-                <span>
-                  Representing Mexico
-                </span>
-
-              </div>
-
-            </article>
-
-
-            <article class="lately-card reveal">
-
-              <img
-                src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
-                alt=""
-              />
-
-              <div class="lately-overlay">
-
-                <strong>
-                  Building
-                  connections
-                </strong>
-
-                <span>
-                  That create value
-                </span>
-
-              </div>
-
-            </article>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         EN QUÉ ESTOY
-    ====================================================== -->
-
-    <section class="focus" id="en-que-estoy">
-
-      <div class="container">
-
-        <div class="focus-grid">
-
-          <div class="focus-intro reveal">
-
-            <div class="eyebrow">
-              En qué estoy
-            </div>
-
-            <h2>
-              Lo que estoy enfocado en.
-            </h2>
-
-          </div>
-
-
-          <div class="focus-column reveal">
-
-            <h3>
-              Construyendo
-            </h3>
-
-            <ul>
-              <li>Arkus MVP & growth</li>
-              <li>Real Estate OS</li>
-              <li>Alianzas estratégicas</li>
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column reveal">
-
-            <h3>
-              Aprendiendo
-            </h3>
-
-            <ul>
-              <li>AI & Automatización</li>
-              <li>Fintech & RegTech</li>
-              <li>Producto & Liderazgo</li>
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column reveal">
-
-            <h3>
-              Conectando
-            </h3>
-
-            <ul>
-              <li>Nuevas personas</li>
-              <li>Mentores & Partners</li>
-              <li>Oportunidades reales</li>
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column reveal">
-
-            <h3>
-              Explorando
-            </h3>
-
-            <ul>
-              <li>Nuevos mercados</li>
-              <li>Inversiones</li>
-              <li>Proyectos creativos</li>
-            </ul>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FUTURO
-    ====================================================== -->
-
-    <section class="future" id="hacia-donde-voy">
-
-      <div class="container">
-
-        <div class="future-grid">
-
-          <div class="future-title reveal">
-
-            <div class="eyebrow">
-              Hacia dónde voy
-            </div>
-
-            <h2>
-              El futuro que estoy construyendo.
-            </h2>
-
-            <div class="gold-line"></div>
-
-          </div>
-
-
-          <div class="future-items">
-
-
-            <div class="future-item reveal">
-
-              <div class="future-icon">
-                ◎
-              </div>
-
-              <h3>
-                Internacional
-              </h3>
-
-              <p>
-                Llevar tecnología desde
-                Latinoamérica al mundo.
-              </p>
-
-            </div>
-
-
-            <div class="future-item reveal">
-
-              <div class="future-icon">
-                ⌂
-              </div>
-
-              <h3>
-                Empresas
-              </h3>
-
-              <p>
-                Construir compañías que
-                resuelvan problemas reales.
-              </p>
-
-            </div>
-
-
-            <div class="future-item reveal">
-
-              <div class="future-icon">
-                ↗
-              </div>
-
-              <h3>
-                Inversión
-              </h3>
-
-              <p>
-                Respaldar fundadores e ideas
-                con potencial global.
-              </p>
-
-            </div>
-
-
-            <div class="future-item reveal">
-
-              <div class="future-icon">
-                ☆
-              </div>
-
-              <h3>
-                Impacto
-              </h3>
-
-              <p>
-                Usar la tecnología para generar
-                un impacto positivo.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACTO
-    ====================================================== -->
-
-    <section class="contact" id="contacto">
-
-      <div class="container">
-
-        <div class="contact-grid">
-
-          <div class="contact-intro reveal">
-
-            <div class="eyebrow">
-              Conectemos
-            </div>
-
-            <h2>
-              Construyamos algo increíble.
-            </h2>
-
-            <p style="color:#89857d;font-size:11px;max-width:280px;line-height:1.8;">
-              Siempre abierto a nuevas ideas,
-              colaboraciones y oportunidades.
-            </p>
-
-            <a href="mailto:contacto@ricardobarron.com" class="button" style="margin-top:25px;">
-              Hablemos
-              <span>→</span>
-            </a>
-
-          </div>
-
-
-          <div class="contact-column reveal">
-
-            <div class="contact-row">
-
-              <div class="contact-row-icon">
-                ✉
-              </div>
-
-              <div>
-                <strong>
-                  Work with me
-                </strong>
-
-                <span>
-                  Colaboraciones y proyectos
-                </span>
-              </div>
-
-            </div>
-
-
-            <div class="contact-row">
-
-              <div class="contact-row-icon">
-                ♫
-              </div>
-
-              <div>
-                <strong>
-                  Speaking
-                </strong>
-
-                <span>
-                  Eventos y conferencias
-                </span>
-              </div>
-
-            </div>
-
-
-          </div>
-
-
-          <div class="contact-column reveal">
-
-            <div class="contact-row">
-
-              <div class="contact-row-icon">
-                ◇
-              </div>
-
-              <div>
-                <strong>
-                  Partnerships
-                </strong>
-
-                <span>
-                  Alianzas estratégicas
-                </span>
-              </div>
-
-            </div>
-
-
-            <div class="contact-row">
-
-              <div class="contact-row-icon">
-                ▱
-              </div>
-
-              <div>
-                <strong>
-                  Media
-                </strong>
-
-                <span>
-                  Prensa y entrevistas
-                </span>
-              </div>
-
-            </div>
-
-          </div>
-
-
-          <div class="contact-photo reveal">
-
-            <img
-              src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90"
-              alt="Ricardo Barrón"
-            />
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =======================================================
-       FOOTER
-  ======================================================== -->
-
-  <footer class="footer">
-
-    <div class="container">
-
-      <div class="footer-inner">
-
-        <div class="footer-logo">
-          RB
         </div>
 
         <p>
-          © 2026 Ricardo Barrón. Todos los derechos reservados.
+          Infraestructura financiera para eventos.
+          Diseñando herramientas que protegen y conectan
+          a todas las partes.
         </p>
 
-        <p class="footer-location">
-          CDMX, MEX <span>◆</span>
+        <a href="#" class="project-link">
+          Ver Arkus →
+        </a>
+
+      </article>
+
+
+      <article class="project-card">
+
+        <div>
+          <div class="project-number">02 / COMPANY</div>
+
+          <br>
+
+          <h3>KUBO</h3>
+
+          <div class="project-category">
+            Real Estate · AI
+          </div>
+        </div>
+
+        <p>
+          Sistema operativo autónomo para bienes raíces
+          en Latinoamérica.
+        </p>
+
+        <a href="#" class="project-link">
+          Ver Kubo →
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INTERESTS
+  ========================= -->
+
+  <section class="light-section interests">
+
+    <div>
+      <div class="section-label">
+        Things that
+      </div>
+
+      <h2>
+        inspire me.
+      </h2>
+    </div>
+
+    <div class="interest-list">
+
+      <div class="interest">
+        <div class="interest-icon">⌘</div>
+        <span>Technology</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">◈</div>
+        <span>AI</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">⌂</div>
+        <span>Real Estate</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">↗</div>
+        <span>Finance</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">✦</div>
+        <span>Creative</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">✈</div>
+        <span>Travel</span>
+      </div>
+
+      <div class="interest">
+        <div class="interest-icon">◎</div>
+        <span>Learning</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LATELY
+  ========================= -->
+
+  <section class="lately" id="lately">
+
+    <div class="lately-header">
+
+      <div>
+        <div class="section-label">
+          Lately
+        </div>
+
+        <h2>
+          Momentos que importan.
+        </h2>
+      </div>
+
+      <a href="#" class="btn">
+        Ver más →
+      </a>
+
+    </div>
+
+
+    <div class="lately-grid">
+
+      <article class="lately-card">
+
+        <div class="lately-image">
+          <img
+            src="images/fintech-world-cup.jpg"
+            alt="Fintech World Cup"
+          >
+        </div>
+
+        <div class="lately-content">
+          <h3>Fintech World Cup Mexico 2026</h3>
+          <span>Winner</span>
+        </div>
+
+      </article>
+
+
+      <article class="lately-card">
+
+        <div class="lately-image">
+          <img
+            src="images/open-finance.jpg"
+            alt="Open Finance 2050"
+          >
+        </div>
+
+        <div class="lately-content">
+          <h3>Open Finance 2050 VC Pitch</h3>
+          <span>Top 10 Finalist</span>
+        </div>
+
+      </article>
+
+
+      <article class="lately-card">
+
+        <div class="lately-image">
+          <img
+            src="images/google-cloud.jpg"
+            alt="Google Cloud"
+          >
+        </div>
+
+        <div class="lately-content">
+          <h3>Google Cloud Community</h3>
+          <span>Member</span>
+        </div>
+
+      </article>
+
+
+      <article class="lately-card">
+
+        <div class="lately-image">
+          <img
+            src="images/dubai.jpg"
+            alt="Dubai FinTech Summit"
+          >
+        </div>
+
+        <div class="lately-content">
+          <h3>Dubai FinTech Summit</h3>
+          <span>Representing Mexico</span>
+        </div>
+
+      </article>
+
+
+      <article class="lately-card">
+
+        <div class="lately-image">
+          <img
+            src="images/networking.jpg"
+            alt="Networking"
+          >
+        </div>
+
+        <div class="lately-content">
+          <h3>Building connections</h3>
+          <span>Every day</span>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOCUS
+  ========================= -->
+
+  <section class="focus" id="ideas">
+
+    <div class="focus-grid">
+
+      <div>
+
+        <div class="section-label">
+          En qué estoy
+        </div>
+
+        <h2>
+          Enfocado en lo que viene.
+        </h2>
+
+      </div>
+
+
+      <div class="focus-column">
+
+        <h3>Construyendo</h3>
+
+        <ul>
+          <li>Arkus MVP & growth</li>
+          <li>Real Estate OS</li>
+          <li>Alianzas estratégicas</li>
+        </ul>
+
+      </div>
+
+
+      <div class="focus-column">
+
+        <h3>Aprendiendo</h3>
+
+        <ul>
+          <li>AI & Automation</li>
+          <li>Fintech & RegTech</li>
+          <li>Producto & liderazgo</li>
+        </ul>
+
+      </div>
+
+
+      <div class="focus-column">
+
+        <h3>Conectando</h3>
+
+        <ul>
+          <li>Nuevas personas</li>
+          <li>Mentores & partners</li>
+          <li>Oportunidades reales</li>
+        </ul>
+
+      </div>
+
+
+      <div class="focus-column">
+
+        <h3>Explorando</h3>
+
+        <ul>
+          <li>Nuevos mercados</li>
+          <li>Inversiones</li>
+          <li>Proyectos creativos</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FUTURE
+  ========================= -->
+
+  <section class="future" id="futuro">
+
+    <div class="future-grid">
+
+      <div>
+
+        <div class="section-label">
+          Hacia dónde voy
+        </div>
+
+        <h2>
+          El futuro que estoy construyendo.
+        </h2>
+
+      </div>
+
+
+      <div class="future-card">
+
+        <div class="future-icon">◎</div>
+
+        <h3>Internacional</h3>
+
+        <p>
+          Llevar tecnología desde Latinoamérica al mundo.
+        </p>
+
+      </div>
+
+
+      <div class="future-card">
+
+        <div class="future-icon">⌂</div>
+
+        <h3>Empresas</h3>
+
+        <p>
+          Construir compañías que resuelvan problemas reales.
+        </p>
+
+      </div>
+
+
+      <div class="future-card">
+
+        <div class="future-icon">↗</div>
+
+        <h3>Inversión</h3>
+
+        <p>
+          Respaldar fundadores e ideas con potencial global.
+        </p>
+
+      </div>
+
+
+      <div class="future-card">
+
+        <div class="future-icon">☆</div>
+
+        <h3>Impacto</h3>
+
+        <p>
+          Utilizar tecnología para generar resultados positivos.
         </p>
 
       </div>
 
     </div>
 
-  </footer>
+  </section>
 
 
-  <!-- =======================================================
-       JAVASCRIPT
-  ======================================================== -->
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section class="contact" id="contacto">
+
+    <div class="contact-grid">
+
+      <div>
+
+        <div class="section-label">
+          Conectemos
+        </div>
+
+        <h2>
+          Construyamos algo increíble.
+        </h2>
+
+        <p class="contact-description">
+          Siempre abierto a nuevas ideas, colaboraciones,
+          proyectos y conversaciones que puedan convertirse
+          en algo más.
+        </p>
+
+        <a href="mailto:hello@ricardobarron.com" class="btn">
+          Hablemos →
+        </a>
+
+      </div>
+
+
+      <div class="contact-column">
+
+        <h3>Trabajemos</h3>
+
+        <a href="mailto:hello@ricardobarron.com">
+          Work with me
+        </a>
+
+        <a href="#">
+          Speaking
+        </a>
+
+        <a href="#">
+          Partnerships
+        </a>
+
+        <a href="#">
+          Media
+        </a>
+
+      </div>
+
+
+      <div class="contact-column">
+
+        <h3>Sígueme</h3>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          LinkedIn
+        </a>
+
+        <a href="#">
+          X / Twitter
+        </a>
+
+      </div>
+
+
+      <div class="contact-photo">
+
+        <img
+          src="images/ricardo-contact.jpg"
+          alt="Ricardo Barrón"
+        >
+
+      </div>
+
+    </div>
+
+
+    <footer>
+
+      <div>
+        RB
+      </div>
+
+      <div>
+        © 2026 Ricardo Barrón. Todos los derechos reservados.
+      </div>
+
+      <div>
+        CDMX, MÉXICO · ◆
+      </div>
+
+    </footer>
+
+  </section>
+
 
   <script>
 
-    /* -------------------------------------------------------
-       SCROLL REVEAL
-    ------------------------------------------------------- */
+    /* Active navigation */
 
-    const revealElements =
-      document.querySelectorAll(".reveal");
+    const sections = document.querySelectorAll("section[id]");
+    const links = document.querySelectorAll(".nav-links a");
 
-    const observer =
-      new IntersectionObserver(
-        (entries) => {
+    window.addEventListener("scroll", () => {
 
-          entries.forEach((entry) => {
+      let current = "";
 
-            if (entry.isIntersecting) {
+      sections.forEach(section => {
 
-              entry.target.classList.add("visible");
+        const sectionTop = section.offsetTop - 150;
 
-              observer.unobserve(entry.target);
-
-            }
-
-          });
-
-        },
-        {
-          threshold: 0.12
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
         }
-      );
 
+      });
 
-    revealElements.forEach((element) => {
-      observer.observe(element);
-    });
+      links.forEach(link => {
 
+        link.classList.remove("active");
 
-    /* -------------------------------------------------------
-       MOBILE MENU
-    ------------------------------------------------------- */
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
 
-    const menuButton =
-      document.querySelector(".menu-button");
-
-    const navLinks =
-      document.querySelector(".nav-links");
-
-
-    menuButton.addEventListener("click", () => {
-
-      const isOpen =
-        navLinks.style.display === "flex";
-
-      if (isOpen) {
-
-        navLinks.style.display = "";
-
-      } else {
-
-        navLinks.style.display = "flex";
-
-        navLinks.style.position = "absolute";
-        navLinks.style.top = "70px";
-        navLinks.style.left = "24px";
-        navLinks.style.right = "24px";
-        navLinks.style.flexDirection = "column";
-        navLinks.style.alignItems = "flex-start";
-        navLinks.style.background = "rgba(10,10,9,.97)";
-        navLinks.style.padding = "25px";
-        navLinks.style.border = "1px solid rgba(255,255,255,.12)";
-        navLinks.style.gap = "20px";
-
-      }
+      });
 
     });
 
 
-    /* -------------------------------------------------------
-       CLOSE MOBILE MENU WHEN CLICKING LINK
-    ------------------------------------------------------- */
+    /* Smooth reveal */
 
-    document
-      .querySelectorAll(".nav-links a")
-      .forEach((link) => {
+    const observer = new IntersectionObserver(
+      entries => {
 
-        link.addEventListener("click", () => {
+        entries.forEach(entry => {
 
-          if (window.innerWidth <= 760) {
-            navLinks.style.display = "";
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
           }
 
         });
 
-      });
-
-
-    /* -------------------------------------------------------
-       SIMPLE PARALLAX HERO
-    ------------------------------------------------------- */
-
-    const heroImage =
-      document.querySelector(".hero-image");
-
-
-    window.addEventListener("scroll", () => {
-
-      if (window.innerWidth > 760) {
-
-        const scroll =
-          window.scrollY;
-
-        if (scroll < window.innerHeight) {
-
-          heroImage.style.transform =
-            `translateY(${scroll * 0.12}px)`;
-
-        }
-
+      },
+      {
+        threshold: .08
       }
+    );
 
-    });
+
+    document
+      .querySelectorAll(
+        ".project-card, .lately-card, .future-card, .focus-column"
+      )
+      .forEach(element => {
+
+        element.style.opacity = "0";
+        element.style.transform = "translateY(25px)";
+        element.style.transition = "opacity .7s ease, transform .7s ease";
+
+        observer.observe(element);
+
+      });
 
   </script>
 
