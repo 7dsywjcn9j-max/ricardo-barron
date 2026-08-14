@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Ricardo Barrón. Founder, entrepreneur, investor and builder. Tecnología, fintech, real estate y nuevas industrias."
+    content="Ricardo Barrón. Founder, entrepreneur, investor and builder working across technology, fintech, real estate and emerging industries."
   >
 
   <meta name="theme-color" content="#0b0b0a">
@@ -27,13 +27,17 @@
       --black: #0b0b0a;
       --black-soft: #121210;
       --cream: #f1ede4;
-      --cream-dark: #e7e0d4;
       --white: #f7f4ed;
+
       --gold: #b88a3b;
       --gold-light: #d0aa68;
+
       --text-dark: #151412;
       --muted: #9b9891;
       --muted-dark: #66635d;
+
+      --line-dark: rgba(255,255,255,.12);
+      --line-light: rgba(0,0,0,.13);
 
       --serif: "Playfair Display", Georgia, serif;
       --sans: "DM Sans", Arial, sans-serif;
@@ -68,13 +72,13 @@
     }
 
     img {
-      width: 100%;
       display: block;
+      width: 100%;
     }
 
     ::selection {
       background: var(--gold);
-      color: #fff;
+      color: white;
     }
 
     .container {
@@ -82,19 +86,20 @@
       margin: 0 auto;
     }
 
-    /* =========================================
+    /* =====================================================
        LOADER
-    ========================================= */
+    ===================================================== */
 
     .loader {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: var(--black);
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      background: var(--black);
 
       transition:
         opacity .8s ease,
@@ -108,14 +113,14 @@
 
     .loader-name {
       font-family: var(--serif);
-      font-size: clamp(40px, 7vw, 90px);
-      letter-spacing: -.04em;
+      font-size: clamp(45px, 7vw, 90px);
+      letter-spacing: -.06em;
       overflow: hidden;
     }
 
     .loader-name span {
       display: inline-block;
-      animation: loaderText 1.1s ease forwards;
+      animation: loaderText 1s ease forwards;
     }
 
     @keyframes loaderText {
@@ -128,25 +133,27 @@
       }
     }
 
-    /* =========================================
-       NAV
-    ========================================= */
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
 
     .nav {
       position: fixed;
       top: 0;
       left: 0;
+
       width: 100%;
       height: 76px;
+
       z-index: 1000;
 
       display: flex;
       align-items: center;
 
-      background: rgba(11,11,10,.78);
-      backdrop-filter: blur(16px);
+      background: rgba(11,11,10,.72);
+      backdrop-filter: blur(18px);
 
-      border-bottom: 1px solid rgba(255,255,255,.07);
+      border-bottom: 1px solid rgba(255,255,255,.06);
 
       transition: .35s ease;
     }
@@ -173,20 +180,20 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 30px;
     }
 
     .nav-links a {
       position: relative;
+
+      color: #c7c3bb;
 
       font-size: 9px;
       font-weight: 600;
       letter-spacing: .2em;
       text-transform: uppercase;
 
-      color: #c6c2ba;
-
-      transition: color .25s ease;
+      transition: .25s ease;
     }
 
     .nav-links a:hover,
@@ -199,7 +206,7 @@
 
       position: absolute;
       left: 0;
-      bottom: -9px;
+      bottom: -10px;
 
       width: 100%;
       height: 1px;
@@ -213,9 +220,10 @@
     }
 
     .socials a {
+      color: #aaa69e;
       font-size: 10px;
       font-weight: 600;
-      color: #aaa7a0;
+
       transition: .25s ease;
     }
 
@@ -223,12 +231,13 @@
       color: var(--gold-light);
     }
 
-    /* =========================================
+    /* =====================================================
        HERO
-    ========================================= */
+    ===================================================== */
 
     .hero {
       position: relative;
+
       min-height: 100vh;
 
       display: grid;
@@ -236,14 +245,10 @@
 
       padding-top: 76px;
 
-      background: var(--black);
       overflow: hidden;
     }
 
     .hero-content {
-      position: relative;
-      z-index: 3;
-
       display: flex;
       align-items: center;
 
@@ -251,11 +256,12 @@
     }
 
     .hero-inner {
-      max-width: 640px;
+      max-width: 650px;
     }
 
     .eyebrow {
       color: var(--gold-light);
+
       font-size: 10px;
       font-weight: 700;
       letter-spacing: .32em;
@@ -266,10 +272,10 @@
       margin-top: 24px;
 
       font-family: var(--serif);
-      font-size: clamp(72px, 9vw, 145px);
+      font-size: clamp(78px, 9vw, 150px);
       font-weight: 400;
       line-height: .78;
-      letter-spacing: -.065em;
+      letter-spacing: -.07em;
     }
 
     .hero h1 span {
@@ -280,18 +286,19 @@
       width: 65px;
       height: 1px;
 
-      margin: 36px 0 25px;
+      margin: 38px 0 25px;
 
       background: var(--gold);
     }
 
     .hero-role {
+      color: #ddd9d1;
+
       font-size: 10px;
       font-weight: 700;
       letter-spacing: .22em;
+      line-height: 2;
       text-transform: uppercase;
-
-      color: #ddd9d1;
     }
 
     .hero-role span {
@@ -305,8 +312,9 @@
       margin-top: 27px;
 
       color: #a7a49d;
+
       font-size: 14px;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
     .hero-button {
@@ -320,6 +328,8 @@
 
       border: 1px solid var(--gold);
 
+      color: var(--white);
+
       font-size: 9px;
       font-weight: 700;
       letter-spacing: .2em;
@@ -330,28 +340,53 @@
 
     .hero-button span {
       color: var(--gold-light);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .hero-button:hover {
       background: var(--gold);
-      color: #0a0a09;
+      color: var(--black);
     }
 
     .hero-image {
       position: relative;
+
       min-height: calc(100vh - 76px);
+
+      overflow: hidden;
 
       background:
         linear-gradient(
           90deg,
-          rgba(11,11,10,.45),
-          transparent 35%
+          rgba(11,11,10,.5),
+          transparent 40%
+        ),
+        #20201d;
+
+      /*
+        FOTO PENDIENTE
+
+        Cuando subamos la foto:
+        images/ricardo-hero.jpg
+
+        simplemente se activará.
+      */
+    }
+
+    .hero-image::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(11,11,10,.35),
+          transparent 40%
         ),
         url("images/ricardo-hero.jpg")
         center / cover no-repeat;
-
-      overflow: hidden;
     }
 
     .hero-image::after {
@@ -364,7 +399,7 @@
         linear-gradient(
           to bottom,
           transparent 50%,
-          rgba(0,0,0,.55)
+          rgba(0,0,0,.6)
         );
     }
 
@@ -376,16 +411,16 @@
       bottom: 7%;
 
       font-family: var(--serif);
-      font-size: 100px;
+      font-size: 105px;
 
       color: rgba(255,255,255,.12);
     }
 
     .hero-side {
       position: absolute;
-      z-index: 5;
+      z-index: 3;
 
-      right: 4%;
+      right: 5%;
       bottom: 11%;
 
       width: 130px;
@@ -406,40 +441,42 @@
       font-size: 22px;
     }
 
-    /* =========================================
-       SECTION BASE
-    ========================================= */
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
 
     .section {
-      padding: 100px 0;
+      padding: 120px 0;
     }
 
     .section-header {
-      margin-bottom: 60px;
+      margin-bottom: 65px;
     }
 
     .section-title {
-      margin-top: 16px;
+      max-width: 1050px;
+
+      margin-top: 18px;
 
       font-family: var(--serif);
-      font-size: clamp(45px, 5vw, 75px);
+      font-size: clamp(58px, 6.5vw, 94px);
       font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.035em;
+      line-height: .95;
+      letter-spacing: -.045em;
     }
 
     .gold-line {
-      width: 48px;
+      width: 52px;
       height: 1px;
 
-      margin-top: 25px;
+      margin-top: 28px;
 
       background: var(--gold);
     }
 
-    /* =========================================
-       ABOUT
-    ========================================= */
+    /* =====================================================
+       SOBRE MÍ
+    ===================================================== */
 
     .about {
       background: var(--cream);
@@ -449,6 +486,7 @@
     .about-grid {
       display: grid;
       grid-template-columns: .9fr 1fr .8fr;
+
       gap: 65px;
 
       align-items: center;
@@ -456,25 +494,29 @@
 
     .about-title {
       font-family: var(--serif);
-      font-size: clamp(43px, 4vw, 64px);
+      font-size: clamp(50px, 5vw, 75px);
       font-weight: 400;
-      line-height: 1;
-      letter-spacing: -.035em;
+      line-height: .98;
+      letter-spacing: -.045em;
     }
 
     .about-description {
-      margin-top: 27px;
+      max-width: 440px;
 
-      max-width: 430px;
+      margin-top: 28px;
 
       color: #5c5953;
+
       font-size: 14px;
       line-height: 1.85;
     }
 
     .about-image {
       height: 470px;
+
       overflow: hidden;
+
+      background: #222;
     }
 
     .about-image img {
@@ -486,7 +528,7 @@
     .about-points {
       display: flex;
       flex-direction: column;
-      gap: 27px;
+      gap: 28px;
     }
 
     .about-point {
@@ -516,52 +558,52 @@
       display: block;
 
       font-family: var(--serif);
-      font-size: 18px;
+      font-size: 19px;
       font-weight: 500;
     }
 
     .about-point span {
       display: block;
 
-      margin-top: 3px;
+      margin-top: 4px;
 
       color: #68645d;
+
       font-size: 10px;
       line-height: 1.6;
     }
 
-    /* =========================================
-       TRAJECTORY
-    ========================================= */
+    /* =====================================================
+       TRAYECTORIA
+    ===================================================== */
 
     .trajectory {
       background: var(--black-soft);
     }
 
     .trajectory-intro {
-      max-width: 700px;
-
-      color: #a6a29b;
-      font-size: 14px;
-      line-height: 1.8;
+      max-width: 720px;
 
       margin-top: -25px;
-      margin-bottom: 60px;
+      margin-bottom: 65px;
+
+      color: #a6a29b;
+
+      font-size: 14px;
+      line-height: 1.85;
     }
 
     .timeline {
-      position: relative;
-
       border-top: 1px solid var(--line-dark);
     }
 
     .timeline-item {
       display: grid;
-      grid-template-columns: 130px 1fr 250px;
+      grid-template-columns: 130px 1fr 270px;
 
       gap: 35px;
 
-      padding: 38px 0;
+      padding: 40px 0;
 
       border-bottom: 1px solid var(--line-dark);
 
@@ -583,34 +625,35 @@
 
     .timeline-title {
       font-family: var(--serif);
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 400;
     }
 
     .timeline-description {
       color: #85827c;
+
       font-size: 11px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    /* =========================================
-       PROJECTS
-    ========================================= */
+    /* =====================================================
+       PROYECTOS
+    ===================================================== */
 
     .projects {
       background: var(--black);
     }
 
     .projects-intro {
-      max-width: 620px;
+      max-width: 650px;
+
+      margin-top: -25px;
+      margin-bottom: 60px;
 
       color: #9b9891;
 
       font-size: 14px;
-      line-height: 1.8;
-
-      margin-top: -25px;
-      margin-bottom: 55px;
+      line-height: 1.85;
     }
 
     .projects-list {
@@ -619,15 +662,15 @@
 
     .project {
       display: grid;
-      grid-template-columns: 80px 1fr 1fr 100px;
+      grid-template-columns: 80px 1fr 1fr 60px;
 
       gap: 35px;
 
-      padding: 38px 0;
+      align-items: center;
+
+      padding: 42px 0;
 
       border-bottom: 1px solid var(--line-dark);
-
-      align-items: center;
 
       transition: .35s ease;
     }
@@ -648,28 +691,29 @@
 
     .project-name {
       font-family: var(--serif);
-      font-size: clamp(35px, 4vw, 60px);
+      font-size: clamp(45px, 5vw, 72px);
       font-weight: 400;
+      letter-spacing: -.04em;
     }
 
     .project-category {
+      margin-bottom: 9px;
+
       color: var(--gold-light);
 
       font-size: 9px;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
-
-      margin-bottom: 8px;
     }
 
     .project-description {
+      max-width: 430px;
+
       color: #8f8c85;
 
       font-size: 12px;
-      line-height: 1.7;
-
-      max-width: 420px;
+      line-height: 1.75;
     }
 
     .project-arrow {
@@ -689,13 +733,13 @@
 
     .project:hover .project-arrow {
       background: var(--gold);
-      color: var(--black);
       border-color: var(--gold);
+      color: var(--black);
     }
 
-    /* =========================================
-       INSPIRE
-    ========================================= */
+    /* =====================================================
+       INSPIRACIÓN
+    ===================================================== */
 
     .inspire {
       background: var(--cream);
@@ -705,56 +749,86 @@
     .inspire-layout {
       display: grid;
       grid-template-columns: .7fr 1.3fr;
+
       gap: 80px;
 
       align-items: center;
     }
 
     .inspire-description {
+      max-width: 430px;
+
+      margin-top: 30px;
+
       color: #64605a;
 
       font-size: 13px;
-      line-height: 1.8;
-
-      max-width: 400px;
+      line-height: 1.85;
     }
 
     .inspire-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+
+      border-top: 1px solid var(--line-light);
+      border-left: 1px solid var(--line-light);
     }
 
     .inspire-card {
-      min-height: 150px;
+      min-height: 190px;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      padding: 30px;
 
-      border-left: 1px solid var(--line-light);
+      border-right: 1px solid var(--line-light);
+      border-bottom: 1px solid var(--line-light);
 
-      text-align: center;
+      transition: .3s ease;
+    }
+
+    .inspire-card:hover {
+      background: rgba(184,138,59,.06);
     }
 
     .inspire-icon {
-      margin-bottom: 15px;
+      width: 42px;
+      height: 42px;
+
+      margin-bottom: 22px;
 
       color: var(--gold);
-
-      font-size: 27px;
     }
 
-    .inspire-card span {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+    .inspire-icon svg {
+      width: 100%;
+      height: 100%;
+
+      stroke: currentColor;
+      stroke-width: 1.4;
+
+      fill: none;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
-    /* =========================================
+    .inspire-card h3 {
+      font-family: var(--serif);
+      font-size: 22px;
+      font-weight: 500;
+    }
+
+    .inspire-card p {
+      margin-top: 8px;
+
+      color: #68645d;
+
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    /* =====================================================
        LATELY
-    ========================================= */
+    ===================================================== */
 
     .lately {
       background: var(--black-soft);
@@ -763,6 +837,7 @@
     .lately-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
+
       gap: 13px;
     }
 
@@ -783,6 +858,18 @@
 
     .lately-image {
       height: 260px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #181816,
+          #292923
+        );
+
       overflow: hidden;
     }
 
@@ -795,6 +882,13 @@
 
     .lately-card:hover img {
       transform: scale(1.05);
+    }
+
+    .lately-placeholder {
+      color: #55534e;
+
+      font-family: var(--serif);
+      font-size: 35px;
     }
 
     .lately-info {
@@ -819,57 +913,9 @@
       text-transform: uppercase;
     }
 
-    /* =========================================
-       FOCUS
-    ========================================= */
-
-    .focus {
-      background: var(--black);
-    }
-
-    .focus-grid {
-      display: grid;
-      grid-template-columns: .7fr repeat(4, 1fr);
-
-      gap: 30px;
-    }
-
-    .focus-column {
-      border-left: 1px solid var(--line-dark);
-
-      padding-left: 25px;
-    }
-
-    .focus-column h3 {
-      font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 400;
-
-      margin-bottom: 20px;
-    }
-
-    .focus-column ul {
-      list-style: none;
-    }
-
-    .focus-column li {
-      color: #96928b;
-
-      font-size: 10px;
-      line-height: 2.2;
-    }
-
-    .focus-column li::before {
-      content: "✓";
-
-      color: var(--gold);
-
-      margin-right: 8px;
-    }
-
-    /* =========================================
-       FUTURE
-    ========================================= */
+    /* =====================================================
+       VISIÓN
+    ===================================================== */
 
     .future {
       background: var(--cream);
@@ -882,39 +928,53 @@
     }
 
     .future-card {
-      border-left: 1px solid var(--line-light);
-
       padding: 15px 25px;
+
+      border-left: 1px solid var(--line-light);
 
       text-align: center;
     }
 
     .future-icon {
+      width: 42px;
+      height: 42px;
+
+      margin: 0 auto 20px;
+
       color: var(--gold);
+    }
 
-      font-size: 30px;
+    .future-icon svg {
+      width: 100%;
+      height: 100%;
 
-      margin-bottom: 17px;
+      stroke: currentColor;
+      stroke-width: 1.4;
+
+      fill: none;
+
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .future-card h3 {
       font-family: var(--serif);
-      font-size: 19px;
+      font-size: 21px;
       font-weight: 500;
-
-      margin-bottom: 9px;
     }
 
     .future-card p {
+      margin-top: 10px;
+
       color: #68645d;
 
       font-size: 10px;
       line-height: 1.7;
     }
 
-    /* =========================================
-       CONTACT
-    ========================================= */
+    /* =====================================================
+       CONTACTO
+    ===================================================== */
 
     .contact {
       background: var(--black-soft);
@@ -925,23 +985,20 @@
       grid-template-columns: 1.3fr .7fr .7fr 1fr;
 
       gap: 35px;
-
-      align-items: stretch;
     }
 
     .contact-title {
+      max-width: 500px;
+
       font-family: var(--serif);
-
-      font-size: clamp(45px, 5vw, 70px);
-
+      font-size: clamp(55px, 6vw, 85px);
       font-weight: 400;
       line-height: .95;
-
-      max-width: 450px;
+      letter-spacing: -.045em;
     }
 
     .contact-description {
-      max-width: 380px;
+      max-width: 400px;
 
       margin: 25px 0;
 
@@ -952,30 +1009,30 @@
     }
 
     .contact-column {
-      border-left: 1px solid var(--line-dark);
-
       padding-left: 25px;
+
+      border-left: 1px solid var(--line-dark);
     }
 
     .contact-column h3 {
+      margin-bottom: 25px;
+
       color: var(--gold-light);
 
       font-size: 9px;
       font-weight: 700;
       letter-spacing: .2em;
       text-transform: uppercase;
-
-      margin-bottom: 25px;
     }
 
     .contact-column a {
       display: block;
 
+      margin-bottom: 15px;
+
       color: #aaa69f;
 
       font-size: 11px;
-
-      margin-bottom: 15px;
 
       transition: .25s ease;
     }
@@ -988,6 +1045,8 @@
       height: 300px;
 
       overflow: hidden;
+
+      background: #222;
     }
 
     .contact-photo img {
@@ -995,17 +1054,12 @@
       object-fit: cover;
     }
 
-    /* =========================================
-       FOOTER
-    ========================================= */
-
     footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
 
       margin-top: 80px;
-
       padding-top: 20px;
 
       border-top: 1px solid var(--line-dark);
@@ -1017,20 +1071,20 @@
     }
 
     .footer-logo {
-      font-family: var(--serif);
       color: #ddd9d1;
+
+      font-family: var(--serif);
       font-size: 25px;
     }
 
-    /* =========================================
+    /* =====================================================
        SCROLL REVEAL
-    ========================================= */
+    ===================================================== */
 
     .reveal {
       opacity: 0;
 
-      transform:
-        translateY(45px);
+      transform: translateY(50px);
 
       transition:
         opacity .9s cubic-bezier(.22,1,.36,1),
@@ -1045,7 +1099,7 @@
     .reveal-left {
       opacity: 0;
 
-      transform: translateX(-45px);
+      transform: translateX(-50px);
 
       transition:
         opacity .9s cubic-bezier(.22,1,.36,1),
@@ -1060,7 +1114,7 @@
     .stagger > * {
       opacity: 0;
 
-      transform: translateY(35px);
+      transform: translateY(40px);
 
       transition:
         opacity .8s cubic-bezier(.22,1,.36,1),
@@ -1096,14 +1150,14 @@
       transform: translateY(0);
     }
 
-    /* =========================================
+    /* =====================================================
        RESPONSIVE
-    ========================================= */
+    ===================================================== */
 
     @media (max-width: 1100px) {
 
       .nav-links {
-        gap: 18px;
+        gap: 17px;
       }
 
       .socials {
@@ -1127,14 +1181,6 @@
 
       .timeline-description {
         grid-column: 2;
-      }
-
-      .focus-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .focus-grid > div:first-child {
-        grid-column: 1 / -1;
       }
 
       .future-grid {
@@ -1171,16 +1217,12 @@
 
       .hero {
         grid-template-columns: 1fr;
-
         padding-top: 65px;
       }
 
       .hero-content {
         min-height: 650px;
-
-        padding:
-          80px 30px
-          60px;
+        padding: 80px 30px 60px;
       }
 
       .hero-image {
@@ -1191,13 +1233,16 @@
         display: none;
       }
 
+      .section {
+        padding: 90px 0;
+      }
+
       .about-grid {
         grid-template-columns: 1fr;
       }
 
       .about-points {
         grid-column: auto;
-
         display: flex;
       }
 
@@ -1206,7 +1251,8 @@
       }
 
       .project {
-        grid-template-columns: 55px 1fr 50px;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 15px;
       }
 
       .project-description {
@@ -1220,28 +1266,25 @@
 
       .inspire-layout {
         grid-template-columns: 1fr;
-        gap: 45px;
-      }
-
-      .inspire-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .inspire-card:nth-child(3),
-      .inspire-card:nth-child(4) {
-        border-top: 1px solid var(--line-light);
+        gap: 50px;
       }
 
       .lately-grid {
         display: flex;
-
         overflow-x: auto;
-
         padding-bottom: 15px;
       }
 
       .lately-card {
-        min-width: 220px;
+        min-width: 230px;
+      }
+
+      .future-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .future-grid > div:first-child {
+        grid-column: 1 / -1;
       }
 
       .contact-grid {
@@ -1254,8 +1297,8 @@
 
       footer {
         flex-direction: column;
-        gap: 12px;
         align-items: flex-start;
+        gap: 12px;
       }
     }
 
@@ -1265,8 +1308,8 @@
         font-size: 68px;
       }
 
-      .hero-role {
-        line-height: 2;
+      .section-title {
+        font-size: 50px;
       }
 
       .timeline-item {
@@ -1278,21 +1321,8 @@
         grid-column: auto;
       }
 
-      .project {
-        grid-template-columns: 45px 1fr 40px;
-        gap: 15px;
-      }
-
-      .project-name {
-        font-size: 39px;
-      }
-
-      .focus-grid {
+      .inspire-grid {
         grid-template-columns: 1fr;
-      }
-
-      .focus-grid > div:first-child {
-        grid-column: auto;
       }
 
       .future-grid {
@@ -1302,28 +1332,35 @@
       .future-grid > div:first-child {
         grid-column: auto;
       }
+
+      .project-name {
+        font-size: 42px;
+      }
     }
 
   </style>
 </head>
 
+
 <body class="loading">
 
 
-  <!-- =========================================
+  <!-- =====================================================
        LOADER
-  ========================================= -->
+  ===================================================== -->
 
   <div class="loader" id="loader">
+
     <div class="loader-name">
       <span>RB</span>
     </div>
+
   </div>
 
 
-  <!-- =========================================
-       NAVIGATION
-  ========================================= -->
+  <!-- =====================================================
+       NAV
+  ===================================================== -->
 
   <header class="nav" id="nav">
 
@@ -1351,16 +1388,16 @@
           Proyectos
         </a>
 
+        <a href="#inspiracion">
+          Inspiración
+        </a>
+
         <a href="#lately">
           Lately
         </a>
 
-        <a href="#ideas">
-          Ideas
-        </a>
-
-        <a href="#futuro">
-          Hacia dónde voy
+        <a href="#vision">
+          Visión
         </a>
 
         <a href="#contacto">
@@ -1371,16 +1408,20 @@
 
       <div class="socials">
 
-        <a href="#" target="_blank">
+        <a
+          href="https://www.instagram.com/r_barron.avi/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           IG
         </a>
 
-        <a href="#" target="_blank">
+        <a
+          href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           IN
-        </a>
-
-        <a href="#" target="_blank">
-          X
         </a>
 
       </div>
@@ -1393,9 +1434,9 @@
   <main>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          HERO
-    ========================================= -->
+    ===================================================== -->
 
     <section class="hero" id="inicio">
 
@@ -1408,8 +1449,10 @@
           </div>
 
           <h1 class="reveal">
+
             <span>Ricardo</span>
             <span>Barrón</span>
+
           </h1>
 
           <div class="hero-rule reveal"></div>
@@ -1417,17 +1460,11 @@
           <div class="hero-role reveal">
 
             Founder
-
             <span>·</span>
-
             Entrepreneur
-
             <span>·</span>
-
             Investor
-
             <span>·</span>
-
             Builder
 
           </div>
@@ -1444,9 +1481,11 @@
             href="#sobre-mi"
             class="hero-button reveal"
           >
+
             Conoce mi historia
 
             <span>→</span>
+
           </a>
 
         </div>
@@ -1479,9 +1518,9 @@
     </section>
 
 
-    <!-- =========================================
-         SOBRE MI
-    ========================================= -->
+    <!-- =====================================================
+         SOBRE MÍ
+    ===================================================== -->
 
     <section
       class="section about"
@@ -1491,6 +1530,7 @@
       <div class="container">
 
         <div class="about-grid">
+
 
           <div class="reveal-left">
 
@@ -1510,9 +1550,9 @@
 
             <p class="about-description">
 
-              Soy founder, emprendedor e inversionista en formación.
-              Mi trabajo se encuentra en la intersección de tecnología,
-              finanzas, real estate y nuevas formas de construir negocios.
+              Founder, emprendedor e inversionista en formación.
+              Trabajo en la intersección de tecnología, finanzas,
+              real estate y nuevas formas de construir negocios.
 
             </p>
 
@@ -1530,6 +1570,7 @@
 
 
           <div class="about-points stagger">
+
 
             <div class="about-point">
 
@@ -1635,6 +1676,7 @@
 
             </div>
 
+
           </div>
 
         </div>
@@ -1644,9 +1686,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          TRAYECTORIA
-    ========================================= -->
+    ===================================================== -->
 
     <section
       class="section trajectory"
@@ -1654,6 +1696,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-header reveal">
 
@@ -1672,9 +1715,9 @@
 
         <p class="trajectory-intro reveal">
 
-          Una trayectoria todavía en construcción, pero ya marcada
-          por tecnología, emprendimiento, real estate, fintech y
-          experiencias que han ampliado mi visión sobre lo que se puede construir.
+          Una trayectoria todavía en construcción, marcada por
+          tecnología, emprendimiento, real estate, fintech y experiencias
+          que han ampliado mi visión sobre lo que se puede construir.
 
         </p>
 
@@ -1693,8 +1736,11 @@
             </div>
 
             <div class="timeline-description">
-              Ganador de la etapa clasificatoria de México con ARKUS.
-              Próximo paso: representar a México en Dubai.
+
+              Ganador de la etapa clasificatoria de México
+              con ARKUS. Próximo paso: representar a México
+              en Dubai.
+
             </div>
 
           </div>
@@ -1711,8 +1757,10 @@
             </div>
 
             <div class="timeline-description">
-              Finalista del VC Pitch con ARKUS,
+
+              Participación en el VC Pitch con ARKUS
               dentro del ecosistema de Open Finance.
+
             </div>
 
           </div>
@@ -1729,8 +1777,10 @@
             </div>
 
             <div class="timeline-description">
+
               Participación dentro de la comunidad
-              de builders y tecnología de Google Cloud.
+              de tecnología y builders de Google Cloud.
+
             </div>
 
           </div>
@@ -1747,8 +1797,10 @@
             </div>
 
             <div class="timeline-description">
+
               Formación en Business & Innovation mientras
               desarrollo proyectos y empresas reales.
+
             </div>
 
           </div>
@@ -1761,9 +1813,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          PROYECTOS
-    ========================================= -->
+    ===================================================== -->
 
     <section
       class="section projects"
@@ -1771,6 +1823,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-header reveal">
 
@@ -1789,16 +1842,15 @@
 
         <p class="projects-intro reveal">
 
-          Proyectos enfocados en tecnología, fintech, real estate
-          y nuevas infraestructuras para industrias tradicionales.
+          Proyectos enfocados en tecnología, fintech,
+          real estate y nuevas infraestructuras para
+          industrias tradicionales.
 
         </p>
 
 
         <div class="projects-list stagger">
 
-
-          <!-- ARKUS -->
 
           <a
             href="#"
@@ -1809,12 +1861,8 @@
               01
             </div>
 
-            <div>
-
-              <div class="project-name">
-                ARKUS
-              </div>
-
+            <div class="project-name">
+              ARKUS
             </div>
 
             <div>
@@ -1839,8 +1887,6 @@
           </a>
 
 
-          <!-- KUBO -->
-
           <a
             href="#"
             class="project"
@@ -1850,12 +1896,8 @@
               02
             </div>
 
-            <div>
-
-              <div class="project-name">
-                KUBO
-              </div>
-
+            <div class="project-name">
+              KUBO
             </div>
 
             <div>
@@ -1866,8 +1908,8 @@
 
               <div class="project-description">
 
-                Sistema operativo autónomo para
-                bienes raíces en Latinoamérica.
+                Sistema operativo autónomo para bienes
+                raíces en Latinoamérica.
 
               </div>
 
@@ -1880,20 +1922,14 @@
           </a>
 
 
-          <!-- NEXT -->
-
           <div class="project">
 
             <div class="project-number">
               03
             </div>
 
-            <div>
-
-              <div class="project-name">
-                NEXT
-              </div>
-
+            <div class="project-name">
+              NEXT
             </div>
 
             <div>
@@ -1925,18 +1961,20 @@
     </section>
 
 
-    <!-- =========================================
-         INSPIRATION
-    ========================================= -->
+    <!-- =====================================================
+         INSPIRACIÓN
+    ===================================================== -->
 
     <section
       class="section inspire"
-      id="ideas"
+      id="inspiracion"
     >
 
       <div class="container">
 
+
         <div class="inspire-layout">
+
 
           <div class="reveal-left">
 
@@ -1945,9 +1983,11 @@
             </div>
 
             <h2 class="section-title">
+
               Ideas que cambian
               la forma de ver
               el mundo.
+
             </h2>
 
             <div class="gold-line"></div>
@@ -1965,108 +2005,276 @@
 
           <div class="inspire-grid stagger">
 
-            <div class="inspire-card">
+
+            <!-- TECHNOLOGY -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ⌘
+
+                <svg viewBox="0 0 48 48">
+
+                  <rect
+                    x="9"
+                    y="9"
+                    width="30"
+                    height="30"
+                    rx="4"
+                  />
+
+                  <path d="M17 2v7" />
+                  <path d="M24 2v7" />
+                  <path d="M31 2v7" />
+
+                  <path d="M17 39v7" />
+                  <path d="M24 39v7" />
+                  <path d="M31 39v7" />
+
+                  <path d="M2 17h7" />
+                  <path d="M2 24h7" />
+                  <path d="M2 31h7" />
+
+                  <path d="M39 17h7" />
+                  <path d="M39 24h7" />
+                  <path d="M39 31h7" />
+
+                </svg>
+
               </div>
 
-              <span>
-                Technology
-              </span>
+              <h3>
+                Tecnología
+              </h3>
 
-            </div>
+              <p>
+                Herramientas que transforman la manera
+                en que vivimos y trabajamos.
+              </p>
+
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- AI -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ◈
+
+                <svg viewBox="0 0 48 48">
+
+                  <circle cx="24" cy="24" r="16" />
+
+                  <path d="M17 24h14" />
+                  <path d="M24 17v14" />
+
+                  <circle cx="24" cy="24" r="4" />
+
+                  <path d="M24 4v4" />
+                  <path d="M24 40v4" />
+                  <path d="M4 24h4" />
+                  <path d="M40 24h4" />
+
+                </svg>
+
               </div>
 
-              <span>
-                AI
-              </span>
+              <h3>
+                Inteligencia artificial
+              </h3>
 
-            </div>
+              <p>
+                Nuevas formas de ampliar lo que
+                una persona puede hacer.
+              </p>
+
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- REAL ESTATE -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ⌂
+
+                <svg viewBox="0 0 48 48">
+
+                  <path d="M8 44V20L24 7l16 13v24" />
+
+                  <path d="M16 44V27h16v17" />
+
+                  <path d="M20 31h8" />
+                  <path d="M20 36h8" />
+
+                </svg>
+
               </div>
 
-              <span>
+              <h3>
                 Real Estate
-              </span>
+              </h3>
 
-            </div>
+              <p>
+                Un sector tradicional con muchísimo
+                espacio para reinventarse.
+              </p>
 
-
-            <div class="inspire-card">
-
-              <div class="inspire-icon">
-                ↗
-              </div>
-
-              <span>
-                Finance
-              </span>
-
-            </div>
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- FINANCE -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ✦
+
+                <svg viewBox="0 0 48 48">
+
+                  <path d="M7 39h34" />
+
+                  <path d="M10 34V24" />
+                  <path d="M19 34V18" />
+                  <path d="M28 34V22" />
+                  <path d="M37 34V10" />
+
+                  <path d="M8 16l10-7 9 5 12-9" />
+
+                </svg>
+
               </div>
 
-              <span>
-                Creative
-              </span>
+              <h3>
+                Finanzas
+              </h3>
 
-            </div>
+              <p>
+                Capital, infraestructura y nuevas
+                formas de mover valor.
+              </p>
+
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- PEOPLE -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ✈
+
+                <svg viewBox="0 0 48 48">
+
+                  <circle cx="24" cy="15" r="7" />
+                  <circle cx="10" cy="21" r="5" />
+                  <circle cx="38" cy="21" r="5" />
+
+                  <path d="M12 43c1-8 6-13 12-13s11 5 12 13" />
+                  <path d="M2 40c1-6 4-9 8-9" />
+                  <path d="M46 40c-1-6-4-9-8-9" />
+
+                </svg>
+
               </div>
 
-              <span>
-                Travel
-              </span>
+              <h3>
+                Personas
+              </h3>
 
-            </div>
+              <p>
+                Fundadores, líderes y personas que
+                construyen desde cero.
+              </p>
+
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- TRAVEL -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ◎
+
+                <svg viewBox="0 0 48 48">
+
+                  <path d="M5 34l38-20" />
+
+                  <path d="M17 28l-5-14 3-2 9 10" />
+
+                  <path d="M28 22l11 2 1 3-14 2" />
+
+                  <path d="M21 26l-6 12" />
+
+                </svg>
+
               </div>
 
-              <span>
-                Learning
-              </span>
+              <h3>
+                Viajar
+              </h3>
 
-            </div>
+              <p>
+                Nuevos lugares, culturas y perspectivas
+                que cambian la manera de pensar.
+              </p>
+
+            </article>
 
 
-            <div class="inspire-card">
+            <!-- LEARNING -->
+
+            <article class="inspire-card">
 
               <div class="inspire-icon">
-                ◇
+
+                <svg viewBox="0 0 48 48">
+
+                  <path d="M6 10h12c4 0 6 2 6 6v25c0-5-3-7-7-7H6z" />
+
+                  <path d="M42 10H30c-4 0-6 2-6 6v25c0-5 3-7 7-7h11z" />
+
+                  <path d="M24 16v25" />
+
+                </svg>
+
               </div>
 
-              <span>
-                People
-              </span>
+              <h3>
+                Aprender
+              </h3>
 
-            </div>
+              <p>
+                La curiosidad de entender algo
+                nuevo constantemente.
+              </p>
+
+            </article>
+
+
+            <!-- CREATIVITY -->
+
+            <article class="inspire-card">
+
+              <div class="inspire-icon">
+
+                <svg viewBox="0 0 48 48">
+
+                  <path d="M24 5l3.5 11.5L39 20l-11.5 3.5L24 35l-3.5-11.5L9 20l11.5-3.5z" />
+
+                  <path d="M39 32l1.5 5L45 38.5l-4.5 1.5L39 45l-1.5-5-4.5-1.5 4.5-1.5z" />
+
+                </svg>
+
+              </div>
+
+              <h3>
+                Creatividad
+              </h3>
+
+              <p>
+                Ideas que conectan conceptos distintos
+                y generan nuevas posibilidades.
+              </p>
+
+            </article>
+
 
           </div>
 
@@ -2077,9 +2285,9 @@
     </section>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          LATELY
-    ========================================= -->
+    ===================================================== -->
 
     <section
       class="section lately"
@@ -2087,6 +2295,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-header reveal">
 
@@ -2115,6 +2324,10 @@
                 alt="Fintech World Cup México"
               >
 
+              <div class="lately-placeholder">
+                FWC
+              </div>
+
             </div>
 
             <div class="lately-info">
@@ -2140,6 +2353,10 @@
                 src="images/open-finance.jpg"
                 alt="Open Finance 2050"
               >
+
+              <div class="lately-placeholder">
+                OF
+              </div>
 
             </div>
 
@@ -2167,6 +2384,10 @@
                 alt="Google Cloud"
               >
 
+              <div class="lately-placeholder">
+                GC
+              </div>
+
             </div>
 
             <div class="lately-info">
@@ -2193,6 +2414,10 @@
                 alt="Dubai FinTech Summit"
               >
 
+              <div class="lately-placeholder">
+                DXB
+              </div>
+
             </div>
 
             <div class="lately-info">
@@ -2202,7 +2427,7 @@
               </h3>
 
               <span>
-                Representing Mexico
+                Representando a México
               </span>
 
             </div>
@@ -2218,6 +2443,10 @@
                 src="images/networking.jpg"
                 alt="Networking"
               >
+
+              <div class="lately-placeholder">
+                RB
+              </div>
 
             </div>
 
@@ -2243,152 +2472,17 @@
     </section>
 
 
-    <!-- =========================================
-         FOCUS
-    ========================================= -->
-
-    <section
-      class="section focus"
-      id="en-que-estoy"
-    >
-
-      <div class="container">
-
-        <div class="section-header reveal">
-
-          <div class="eyebrow">
-            En qué estoy
-          </div>
-
-          <h2 class="section-title">
-            Enfocado en lo que viene.
-          </h2>
-
-          <div class="gold-line"></div>
-
-        </div>
-
-
-        <div class="focus-grid stagger">
-
-
-          <div class="focus-column">
-
-            <h3>
-              Construyendo
-            </h3>
-
-            <ul>
-
-              <li>
-                Arkus MVP & growth
-              </li>
-
-              <li>
-                Real Estate OS
-              </li>
-
-              <li>
-                Alianzas estratégicas
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column">
-
-            <h3>
-              Aprendiendo
-            </h3>
-
-            <ul>
-
-              <li>
-                AI & Automation
-              </li>
-
-              <li>
-                Fintech & RegTech
-              </li>
-
-              <li>
-                Producto & liderazgo
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column">
-
-            <h3>
-              Conectando
-            </h3>
-
-            <ul>
-
-              <li>
-                Nuevas personas
-              </li>
-
-              <li>
-                Mentores & partners
-              </li>
-
-              <li>
-                Oportunidades reales
-              </li>
-
-            </ul>
-
-          </div>
-
-
-          <div class="focus-column">
-
-            <h3>
-              Explorando
-            </h3>
-
-            <ul>
-
-              <li>
-                Nuevos mercados
-              </li>
-
-              <li>
-                Inversiones
-              </li>
-
-              <li>
-                Proyectos creativos
-              </li>
-
-            </ul>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================================
-         FUTURE
-    ========================================= -->
+    <!-- =====================================================
+         VISIÓN
+    ===================================================== -->
 
     <section
       class="section future"
-      id="futuro"
+      id="vision"
     >
 
       <div class="container">
+
 
         <div class="future-grid">
 
@@ -2408,10 +2502,22 @@
           </div>
 
 
+          <!-- INTERNATIONAL -->
+
           <div class="future-card reveal">
 
             <div class="future-icon">
-              ◎
+
+              <svg viewBox="0 0 48 48">
+
+                <circle cx="24" cy="24" r="18" />
+
+                <path d="M6 24h36" />
+                <path d="M24 6c5 5 7 11 7 18s-2 13-7 18" />
+                <path d="M24 6c-5 5-7 11-7 18s2 13 7 18" />
+
+              </svg>
+
             </div>
 
             <h3>
@@ -2419,16 +2525,31 @@
             </h3>
 
             <p>
-              Llevar tecnología desde Latinoamérica al mundo.
+              Llevar tecnología desde Latinoamérica
+              al mundo.
             </p>
 
           </div>
 
 
+          <!-- COMPANIES -->
+
           <div class="future-card reveal">
 
             <div class="future-icon">
-              ⌂
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M8 44V18l16-10 16 10v26" />
+
+                <path d="M17 44V29h14v15" />
+
+                <path d="M14 22h3" />
+                <path d="M24 22h3" />
+                <path d="M33 22h3" />
+
+              </svg>
+
             </div>
 
             <h3>
@@ -2436,16 +2557,28 @@
             </h3>
 
             <p>
-              Construir compañías que resuelvan problemas reales.
+              Construir compañías que resuelvan
+              problemas reales.
             </p>
 
           </div>
 
 
+          <!-- INVESTMENT -->
+
           <div class="future-card reveal">
 
             <div class="future-icon">
-              ↗
+
+              <svg viewBox="0 0 48 48">
+
+                <circle cx="24" cy="24" r="18" />
+
+                <path d="M24 13v22" />
+                <path d="M18 18c1-3 4-5 7-5 5 0 8 3 8 6 0 8-17 3-17 11 0 3 3 5 8 5 4 0 7-2 8-5" />
+
+              </svg>
+
             </div>
 
             <h3>
@@ -2453,16 +2586,27 @@
             </h3>
 
             <p>
-              Respaldar fundadores e ideas con potencial global.
+              Respaldar fundadores e ideas con
+              potencial global.
             </p>
 
           </div>
 
 
+          <!-- IMPACT -->
+
           <div class="future-card reveal">
 
             <div class="future-icon">
-              ☆
+
+              <svg viewBox="0 0 48 48">
+
+                <path d="M24 43S8 34 8 20C8 12 14 7 20 7c4 0 7 2 9 6 2-4 5-6 9-6 6 0 10 5 10 13 0 14-16 23-16 23z" />
+
+                <path d="M18 25l4 4 9-10" />
+
+              </svg>
+
             </div>
 
             <h3>
@@ -2470,7 +2614,8 @@
             </h3>
 
             <p>
-              Tecnología que genere resultados reales.
+              Tecnología que genere resultados
+              reales.
             </p>
 
           </div>
@@ -2483,9 +2628,9 @@
     </section>
 
 
-    <!-- =========================================
-         CONTACT
-    ========================================= -->
+    <!-- =====================================================
+         CONTACTO
+    ===================================================== -->
 
     <section
       class="section contact"
@@ -2493,6 +2638,7 @@
     >
 
       <div class="container">
+
 
         <div class="contact-grid">
 
@@ -2516,16 +2662,20 @@
             </p>
 
             <a
-              href="mailto:hello@ricardobarron.com"
+              href="mailto:ricardo@arkusevent.com?subject=Contacto%20-%20Ricardo%20Barrón"
               class="hero-button"
             >
+
               Contactar
 
               <span>→</span>
+
             </a>
 
           </div>
 
+
+          <!-- WORK -->
 
           <div class="contact-column reveal">
 
@@ -2533,24 +2683,34 @@
               Trabajemos
             </h3>
 
-            <a href="#">
+            <a
+              href="mailto:ricardo@arkusevent.com?subject=Work%20with%20Ricardo"
+            >
               Work with me
             </a>
 
-            <a href="#">
+            <a
+              href="mailto:ricardo@arkusevent.com?subject=Speaking%20-%20Ricardo%20Barrón"
+            >
               Speaking
             </a>
 
-            <a href="#">
+            <a
+              href="mailto:ricardo@arkusevent.com?subject=Partnership%20-%20Ricardo%20Barrón"
+            >
               Partnerships
             </a>
 
-            <a href="#">
+            <a
+              href="mailto:ricardo@arkusevent.com?subject=Media%20-%20Ricardo%20Barrón"
+            >
               Media
             </a>
 
           </div>
 
+
+          <!-- SOCIAL -->
 
           <div class="contact-column reveal">
 
@@ -2558,20 +2718,42 @@
               Social
             </h3>
 
-            <a href="#">
+            <a
+              href="https://www.instagram.com/r_barron.avi/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Instagram
             </a>
 
-            <a href="#">
+            <!-- TIKTOK PENDIENTE -->
+
+            <a
+              href="#"
+              onclick="return false;"
+              title="TikTok próximamente"
+            >
+              TikTok
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               LinkedIn
             </a>
 
-            <a href="#">
-              X / Twitter
+            <a
+              href="mailto:ricardo@arkusevent.com"
+            >
+              Email
             </a>
 
           </div>
 
+
+          <!-- PHOTO -->
 
           <div class="contact-photo reveal">
 
@@ -2610,15 +2792,15 @@
   </main>
 
 
-  <!-- =========================================
+  <!-- =====================================================
        JAVASCRIPT
-  ========================================= -->
+  ===================================================== -->
 
   <script>
 
-    /* =========================================
+    /* -----------------------------------------
        LOADER
-    ========================================= */
+    ----------------------------------------- */
 
     window.addEventListener("load", () => {
 
@@ -2630,14 +2812,14 @@
 
         document.body.classList.remove("loading");
 
-      }, 900);
+      }, 850);
 
     });
 
 
-    /* =========================================
+    /* -----------------------------------------
        SCROLL REVEAL
-    ========================================= */
+    ----------------------------------------- */
 
     const revealElements =
       document.querySelectorAll(
@@ -2647,7 +2829,7 @@
 
     const revealObserver =
       new IntersectionObserver(
-        (entries) => {
+        entries => {
 
           entries.forEach(entry => {
 
@@ -2666,7 +2848,7 @@
         },
         {
           threshold: .12,
-          rootMargin: "0px 0px -50px 0px"
+          rootMargin: "0px 0px -45px 0px"
         }
       );
 
@@ -2678,9 +2860,9 @@
     });
 
 
-    /* =========================================
+    /* -----------------------------------------
        NAV BACKGROUND
-    ========================================= */
+    ----------------------------------------- */
 
     const nav =
       document.getElementById("nav");
@@ -2701,9 +2883,9 @@
     });
 
 
-    /* =========================================
+    /* -----------------------------------------
        ACTIVE NAVIGATION
-    ========================================= */
+    ----------------------------------------- */
 
     const sections =
       document.querySelectorAll("section[id]");
@@ -2744,7 +2926,7 @@
 
         },
         {
-          threshold: .35
+          threshold: .3
         }
       );
 
@@ -2755,29 +2937,6 @@
 
     });
 
-
-    /* =========================================
-       IMAGE FALLBACK
-    ========================================= */
-
-    document
-      .querySelectorAll("img")
-      .forEach(img => {
-
-        img.addEventListener("error", () => {
-
-          img.style.display = "none";
-
-          if (img.parentElement) {
-
-            img.parentElement.style.background =
-              "linear-gradient(135deg,#1a1a18,#30302b)";
-
-          }
-
-        });
-
-      });
 
   </script>
 
