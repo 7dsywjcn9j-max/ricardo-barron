@@ -2882,6 +2882,67 @@
     });
 
 
+    /* -----------------------------------------
+       MAILTO FALLBACK (Gmail web)
+       Si no hay cliente de correo configurado,
+       redirige a una ventana de Gmail lista
+       para redactar el mensaje.
+    ----------------------------------------- */
+
+    function gmailComposeUrl(mailtoHref) {
+
+      const [address, query] = mailtoHref
+        .replace("mailto:", "")
+        .split("?");
+
+      const params = new URLSearchParams(query || "");
+
+      const gmailParams = new URLSearchParams({
+        view: "cm",
+        fs: "1",
+        to: address,
+        su: params.get("subject") || ""
+      });
+
+      return `https://mail.google.com/mail/?${gmailParams.toString()}`;
+
+    }
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        const fallbackUrl = gmailComposeUrl(link.getAttribute("href"));
+        const fallbackTab = window.open("", "_blank");
+
+        let handled = false;
+
+        const onBlur = () => {
+          handled = true;
+          if (fallbackTab) fallbackTab.close();
+        };
+
+        window.addEventListener("blur", onBlur, { once: true });
+
+        setTimeout(() => {
+
+          window.removeEventListener("blur", onBlur);
+
+          if (!fallbackTab) return;
+
+          if (handled) {
+            if (!fallbackTab.closed) fallbackTab.close();
+          } else {
+            fallbackTab.location = fallbackUrl;
+          }
+
+        }, 700);
+
+      });
+
+    });
+
+
   </script>
 
 </body>
