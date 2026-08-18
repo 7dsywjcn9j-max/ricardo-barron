@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricardo Barrón | Entrepreneur & Investor</title>
+  <meta name="description" content="Ricardo Barrón. Emprendedor, inversionista y estudiante enfocado en tecnología, fintech, real estate e innovación.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #080808;
+      --dark: #101010;
+      --white: #f7f7f5;
+      --gray: #a4a4a4;
+      --line: rgba(255,255,255,.12);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: "Inter", sans-serif;
+      line-height: 1.5;
+    }
+
+    img { display: block; width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 24px 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,.9), rgba(8,8,8,0));
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+      letter-spacing: -1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      color: #d4d4d4;
+    }
+
+    .nav-links a { transition: .25s ease; }
+    .nav-links a:hover { color: white; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(58px, 8vw, 105px);
+      line-height: .92;
+      letter-spacing: -5px;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 560px;
+      margin-top: 35px;
+      font-size: 18px;
+      color: #bdbdbd;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      margin-top: 35px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 14px 22px;
+      border: 1px solid rgba(255,255,255,.3);
+      font-size: 13px;
+      transition: .25s ease;
+    }
+
+    .button.primary {
+      background: white;
+      color: black;
+      border-color: white;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: .85;
+    }
+
+    .hero-photo { position: relative; }
+
+    .hero-photo img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center;
+      filter: grayscale(12%);
+    }
+
+    .photo-label {
+      position: absolute;
+      bottom: 18px;
+      left: 18px;
+      background: rgba(0,0,0,.7);
+      padding: 9px 13px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 130px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      margin-bottom: 70px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      color: var(--gray);
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5vw, 70px);
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: -3px;
+    }
+
+    .about-text {
+      max-width: 720px;
+      color: #bdbdbd;
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .areas {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .area {
+      min-height: 190px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .area-number {
+      font-size: 11px;
+      color: var(--gray);
+    }
+
+    .area h3 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .feature img {
+      height: 620px;
+      object-fit: cover;
+    }
+
+    .feature-content {
+      background: #111;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .feature-content span {
+      color: var(--gray);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .feature-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 48px;
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .feature-content p {
+      color: #aaa;
+      line-height: 1.7;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      background: #111;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.035); }
+
+    .gallery-item:nth-child(1) { grid-column: span 7; height: 550px; }
+    .gallery-item:nth-child(2) { grid-column: span 5; height: 550px; }
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) { grid-column: span 4; height: 430px; }
+    .gallery-item:nth-child(6),
+    .gallery-item:nth-child(7) { grid-column: span 6; height: 500px; }
+
+    .achievement {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .achievement-image img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .achievement-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .achievement-row {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      padding: 25px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .achievement-year {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    .achievement-row h3 {
+      font-size: 18px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .achievement-row p {
+      color: #999;
+      font-size: 14px;
+    }
+
+    .social {
+      text-align: center;
+      padding-bottom: 160px;
+    }
+
+    .social h2 {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 45px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      border-bottom: 1px solid white;
+      padding-bottom: 5px;
+      font-size: 14px;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: #777;
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @media (max-width: 850px) {
+      .container { width: min(100% - 30px, 650px); }
+      .nav-links { display: none; }
+
+      .hero { padding-top: 130px; }
+
+      .hero-grid,
+      .feature,
+      .achievement,
+      .section-header { grid-template-columns: 1fr; }
+
+      .hero-grid { gap: 50px; }
+      h1 { letter-spacing: -3px; }
+
+      .section-header { gap: 25px; }
+
+      .areas { grid-template-columns: 1fr 1fr; }
+
+      .feature img { height: 500px; }
+      .feature-content { padding: 40px 30px; }
+
+      .gallery { grid-template-columns: 1fr 1fr; }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 1;
+        height: 300px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        height: 450px;
+      }
+
+      .achievement { gap: 50px; }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .areas { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+
+      .gallery-item:nth-child(n),
+      .gallery-item:first-child {
+        grid-column: span 1;
+      }
+
+      h1 { font-size: 58px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">RB</a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div>
+          <div class="eyebrow">Entrepreneur · Investor · Student</div>
+
+          <h1>
+            Ricardo<br>
+            Barrón.
+          </h1>
+
+          <p class="hero-description">
+            Construyo proyectos en la intersección entre tecnología,
+            negocios y nuevas formas de hacer las cosas.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#work" class="button primary">Ver proyectos</a>
+            <a href="#contact" class="button">Contacto</a>
+          </div>
+        </div>
+
+        <div class="hero-photo">
+          <img src="assets/01-hero.jpg" alt="Ricardo Barrón">
+          <div class="photo-label">Mexico City · 2026</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">01 / ABOUT</div>
+
+          <div>
+            <h2>
+              Construir antes<br>
+              que hablar.
+            </h2>
+
+            <p class="about-text" style="margin-top:35px;">
+              Soy estudiante, emprendedor e inversionista en formación.
+              Mi interés está en construir compañías, productos y sistemas
+              que puedan resolver problemas reales a escala.
+            </p>
+          </div>
+        </div>
+
+        <div class="areas">
+
+          <div class="area">
+            <span class="area-number">01</span>
+            <h3>Entrepreneurship</h3>
+          </div>
+
+          <div class="area">
+            <span class="area-number">02</span>
+            <h3>Technology</h3>
+          </div>
+
+          <div class="area">
+            <span class="area-number">03</span>
+            <h3>Fintech</h3>
+          </div>
+
+          <div class="area">
+            <span class="area-number">04</span>
+            <h3>Real Estate</h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">02 / WORK</div>
+
+          <div>
+            <h2>
+              Proyectos<br>
+              que importan.
+            </h2>
+          </div>
+        </div>
+
+        <div class="feature">
+
+          <img
+            src="assets/03-fintech-world-cup.jpg"
+            alt="Fintech World Cup"
+          >
+
+          <div class="feature-content">
+            <span>Founder · Fintech</span>
+            <h3>Arkus</h3>
+
+            <p>
+              Infraestructura financiera para la industria de eventos,
+              enfocada en proteger pagos y coordinar la relación entre
+              clientes y proveedores.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="recognition">
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">03 / RECOGNITION</div>
+
+          <div>
+            <h2>
+              Moments<br>
+              that matter.
+            </h2>
+          </div>
+        </div>
+
+        <div class="achievement">
+
+          <div class="achievement-image">
+            <img src="assets/12-award.jpg" alt="Reconocimiento">
+          </div>
+
+          <div class="achievement-list">
+
+            <div class="achievement-row">
+              <div class="achievement-year">2026</div>
+              <div>
+                <h3>Fintech World Cup Mexico</h3>
+                <p>Winner · Mexico 2026</p>
+              </div>
+            </div>
+
+            <div class="achievement-row">
+              <div class="achievement-year">2026</div>
+              <div>
+                <h3>Google Gemini</h3>
+                <p>Estudiante Embajador</p>
+              </div>
+            </div>
+
+            <div class="achievement-row">
+              <div class="achievement-year">2026</div>
+              <div>
+                <h3>Open Finance</h3>
+                <p>Startup & innovation ecosystem</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <div class="section-header">
+          <div class="section-number">04 / LIFE</div>
+
+          <div>
+            <h2>
+              Beyond<br>
+              the pitch.
+            </h2>
+          </div>
+        </div>
+
+        <div class="gallery">
+
+          <div class="gallery-item">
+            <img src="assets/13-portrait.jpg" alt="Ricardo Barrón">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/02-networking.jpg" alt="Networking">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/06-mirror.jpg" alt="Ricardo">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/07-friends.jpg" alt="Friends">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/08-fintech.jpg" alt="Fintech event">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/09-proptech.jpg" alt="PropTech event">
+          </div>
+
+          <div class="gallery-item">
+            <img src="assets/15-proptech-group.jpg" alt="PropTech community">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="social">
+      <div class="container">
+
+        <div class="section-number">05 / CONTACT</div>
+
+        <h2 style="margin-top:25px;">
+          Let's build<br>
+          something meaningful.
+        </h2>
+
+        <div class="social-links">
+
+          <a
+            class="social-link"
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            class="social-link"
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+
+          <a
+            class="social-link"
+            href="mailto:hello@ricardobarron.com"
+          >
+            Email
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 Ricardo Barrón</span>
+      <span>Mexico City · Mexico</span>
+    </div>
+  </footer>
+
+</body>
+</html>
