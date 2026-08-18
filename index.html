@@ -1326,6 +1326,35 @@
       }
     }
 
+    .mail-toast {
+      position: fixed;
+      z-index: 999;
+
+      left: 50%;
+      bottom: 32px;
+
+      padding: 14px 22px;
+
+      background: var(--black);
+      border: 1px solid var(--gold);
+
+      color: var(--white);
+
+      font-size: 13px;
+      letter-spacing: .02em;
+
+      opacity: 0;
+      transform: translate(-50%, 12px);
+      pointer-events: none;
+
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .mail-toast.visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
   </style>
 </head>
 
@@ -2878,6 +2907,38 @@
     sections.forEach(section => {
 
       sectionObserver.observe(section);
+
+    });
+
+
+    /* -----------------------------------------
+       MAILTO FALLBACK (copiar correo)
+    ----------------------------------------- */
+
+    const mailToast = document.createElement("div");
+    mailToast.className = "mail-toast";
+    mailToast.textContent = "Correo copiado: ricardo@arkusevent.com";
+    document.body.appendChild(mailToast);
+
+    let mailToastTimer;
+
+    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navigator.clipboard
+          .writeText("ricardo@arkusevent.com")
+          .catch(() => {});
+
+        mailToast.classList.add("visible");
+
+        clearTimeout(mailToastTimer);
+
+        mailToastTimer = setTimeout(() => {
+          mailToast.classList.remove("visible");
+        }, 2600);
+
+      });
 
     });
 
