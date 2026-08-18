@@ -2919,14 +2919,20 @@
 
         const onBlur = () => {
           handled = true;
-          if (fallbackTab) fallbackTab.close();
         };
 
-        window.addEventListener("blur", onBlur, { once: true });
+        /* Esperamos un momento antes de escuchar "blur": abrir
+           esta misma pestaña ya le quita el foco a la página,
+           y no queremos confundir eso con que se haya abierto
+           una app de correo externa. */
+        const armTimer = setTimeout(() => {
+          window.addEventListener("blur", onBlur, { once: true });
+        }, 150);
 
         setTimeout(() => {
 
           window.removeEventListener("blur", onBlur);
+          clearTimeout(armTimer);
 
           if (!fallbackTab) return;
 
