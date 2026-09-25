@@ -13,6 +13,20 @@
 
   <meta name="theme-color" content="#0b0b0a">
 
+  <link rel="canonical" href="https://ricardo-barron.vercel.app/">
+
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_32.png">
+  <link rel="apple-touch-icon" href="assets/icons/favicon_180.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ricardo-barron.vercel.app/">
+  <meta property="og:title" content="Ricardo Barrón | Founder · Entrepreneur · Investor">
+  <meta property="og:description" content="Construyendo empresas desde México para el mundo. Tecnología, fintech, real estate y nuevas industrias.">
+  <meta property="og:image" content="https://ricardo-barron.vercel.app/assets/01_foto.jpeg">
+  <meta property="og:locale" content="es_MX">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -20,6 +34,11 @@
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
+
+  <script>
+    /* Activa animaciones solo si hay JavaScript; sin JS todo se ve de inmediato */
+    document.documentElement.classList.add("js");
+  </script>
 
   <style>
 
@@ -62,7 +81,7 @@
       overflow-x: hidden;
     }
 
-    body.loading {
+    .js body.loading {
       overflow: hidden;
     }
 
@@ -74,6 +93,44 @@
     img {
       display: block;
       width: 100%;
+      height: auto;
+    }
+
+    /* <picture> solo aporta el formato WebP; no debe alterar el layout */
+    picture {
+      display: contents;
+    }
+
+    /* Salto directo al contenido (teclado / lectores de pantalla) */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      z-index: 10000;
+
+      padding: 12px 18px;
+
+      background: var(--gold);
+      color: var(--black);
+
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* Foco visible para quien navega con teclado */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    /* Que la barra fija no tape el inicio de cada sección */
+    section[id] {
+      scroll-margin-top: 76px;
     }
 
     ::selection {
@@ -155,7 +212,12 @@
 
       border-bottom: 1px solid rgba(255,255,255,.06);
 
-      transition: .35s ease;
+      transition:
+        color .35s ease,
+        background-color .35s ease,
+        border-color .35s ease,
+        padding .35s ease,
+        transform .35s ease;
     }
 
     .nav.scrolled {
@@ -188,12 +250,17 @@
 
       color: #c7c3bb;
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: .2em;
       text-transform: uppercase;
 
-      transition: .25s ease;
+      transition:
+        color .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        padding .25s ease,
+        transform .25s ease;
     }
 
     .nav-links a:hover,
@@ -221,10 +288,15 @@
 
     .socials a {
       color: #aaa69e;
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
 
-      transition: .25s ease;
+      transition:
+        color .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        padding .25s ease,
+        transform .25s ease;
     }
 
     .socials a:hover {
@@ -262,7 +334,7 @@
     .eyebrow {
       color: var(--gold-light);
 
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: .32em;
       text-transform: uppercase;
@@ -294,7 +366,7 @@
     .hero-role {
       color: #ddd9d1;
 
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: .22em;
       line-height: 2;
@@ -330,12 +402,17 @@
 
       color: var(--white);
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .2em;
       text-transform: uppercase;
 
-      transition: .3s ease;
+      transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        padding .3s ease,
+        transform .3s ease;
     }
 
     .hero-button span {
@@ -371,6 +448,19 @@
           transparent 40%
         ),
         url("assets/13_foto.jpeg")
+        center / cover no-repeat;
+
+      /* Navegadores modernos: versión WebP, mucho más ligera */
+      background:
+        linear-gradient(
+          90deg,
+          rgba(11,11,10,.35),
+          transparent 40%
+        ),
+        image-set(
+          url("assets/13_foto.webp") type("image/webp"),
+          url("assets/13_foto.jpeg") type("image/jpeg")
+        )
         center / cover no-repeat;
     }
 
@@ -412,7 +502,7 @@
 
       color: #d6d1c8;
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 600;
       line-height: 1.9;
       letter-spacing: .25em;
@@ -536,7 +626,7 @@
 
       color: var(--gold);
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
     }
 
@@ -555,7 +645,7 @@
 
       color: #68645d;
 
-      font-size: 10px;
+      font-size: 12px;
       line-height: 1.6;
     }
 
@@ -593,18 +683,23 @@
 
       border-bottom: 1px solid var(--line-dark);
 
-      transition: .35s ease;
+      transition:
+        color .35s ease,
+        background-color .35s ease,
+        border-color .35s ease,
+        padding .35s ease,
+        transform .35s ease;
     }
 
     .timeline-item:hover {
-      padding-left: 15px;
+      transform: translateX(15px);
       border-color: var(--gold);
     }
 
     .timeline-year {
       color: var(--gold-light);
 
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: .2em;
     }
@@ -658,7 +753,12 @@
 
       border-bottom: 1px solid var(--line-dark);
 
-      transition: .35s ease;
+      transition:
+        color .35s ease,
+        background-color .35s ease,
+        border-color .35s ease,
+        padding .35s ease,
+        transform .35s ease;
     }
 
     .project:hover {
@@ -671,7 +771,7 @@
     .project-number {
       color: #68655f;
 
-      font-size: 10px;
+      font-size: 12px;
       letter-spacing: .15em;
     }
 
@@ -687,7 +787,7 @@
 
       color: var(--gold-light);
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .18em;
       text-transform: uppercase;
@@ -714,7 +814,12 @@
 
       color: var(--gold-light);
 
-      transition: .3s ease;
+      transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        padding .3s ease,
+        transform .3s ease;
     }
 
     .project:hover .project-arrow {
@@ -768,7 +873,12 @@
       border-right: 1px solid var(--line-light);
       border-bottom: 1px solid var(--line-light);
 
-      transition: .3s ease;
+      transition:
+        color .3s ease,
+        background-color .3s ease,
+        border-color .3s ease,
+        padding .3s ease,
+        transform .3s ease;
     }
 
     .inspire-card:hover {
@@ -808,7 +918,7 @@
 
       color: #68645d;
 
-      font-size: 10px;
+      font-size: 12px;
       line-height: 1.7;
     }
 
@@ -834,7 +944,12 @@
 
       background: #0d0d0c;
 
-      transition: .4s ease;
+      transition:
+        color .4s ease,
+        background-color .4s ease,
+        border-color .4s ease,
+        padding .4s ease,
+        transform .4s ease;
     }
 
     .lately-card:hover {
@@ -894,7 +1009,7 @@
 
       color: var(--gold-light);
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .12em;
       text-transform: uppercase;
@@ -955,7 +1070,7 @@
 
       color: #68645d;
 
-      font-size: 10px;
+      font-size: 12px;
       line-height: 1.7;
     }
 
@@ -1006,7 +1121,7 @@
 
       color: var(--gold-light);
 
-      font-size: 9px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: .2em;
       text-transform: uppercase;
@@ -1021,7 +1136,12 @@
 
       font-size: 11px;
 
-      transition: .25s ease;
+      transition:
+        color .25s ease,
+        background-color .25s ease,
+        border-color .25s ease,
+        padding .25s ease,
+        transform .25s ease;
     }
 
     .contact-column a:hover {
@@ -1054,7 +1174,7 @@
 
       color: #68655f;
 
-      font-size: 9px;
+      font-size: 11px;
       letter-spacing: .08em;
     }
 
@@ -1069,7 +1189,7 @@
        SCROLL REVEAL
     ===================================================== */
 
-    .reveal {
+    .js .reveal {
       opacity: 0;
 
       transform: translateY(50px);
@@ -1079,12 +1199,12 @@
         transform .9s cubic-bezier(.22,1,.36,1);
     }
 
-    .reveal.visible {
+    .js .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .reveal-left {
+    .js .reveal-left {
       opacity: 0;
 
       transform: translateX(-50px);
@@ -1094,12 +1214,12 @@
         transform .9s cubic-bezier(.22,1,.36,1);
     }
 
-    .reveal-left.visible {
+    .js .reveal-left.visible {
       opacity: 1;
       transform: translateX(0);
     }
 
-    .stagger > * {
+    .js .stagger > * {
       opacity: 0;
 
       transform: translateY(40px);
@@ -1133,9 +1253,119 @@
       transition-delay: .40s;
     }
 
-    .stagger.visible > * {
+    .js .stagger.visible > * {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* =====================================================
+       SIN JAVASCRIPT: SIN PANTALLA DE CARGA
+    ===================================================== */
+
+    html:not(.js) .loader {
+      display: none;
+    }
+
+    /* =====================================================
+       MENÚ MÓVIL
+    ===================================================== */
+
+    .menu-toggle {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      align-items: center;
+      justify-content: center;
+
+      background: none;
+      border: 1px solid var(--line-dark);
+
+      color: var(--white);
+      cursor: pointer;
+
+      touch-action: manipulation;
+    }
+
+    .menu-toggle span,
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      display: block;
+
+      width: 18px;
+      height: 1px;
+
+      background: currentColor;
+
+      transition: transform .25s ease;
+    }
+
+    .menu-toggle span {
+      position: relative;
+    }
+
+    .menu-toggle span::before,
+    .menu-toggle span::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    .menu-toggle span::before {
+      transform: translateY(-6px);
+    }
+
+    .menu-toggle span::after {
+      transform: translateY(6px);
+    }
+
+    .menu-toggle[aria-expanded="true"] span {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] span::before {
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span::after {
+      transform: rotate(-45deg);
+    }
+
+    /* =====================================================
+       MOVIMIENTO REDUCIDO
+    ===================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        transition-delay: 0s !important;
+      }
+
+      .loader {
+        display: none;
+      }
+
+      .js .reveal,
+      .js .reveal-left,
+      .js .stagger > * {
+        opacity: 1;
+        transform: none;
+      }
+
+      .lately-card:hover,
+      .lately-card:hover img,
+      .timeline-item:hover {
+        transform: none;
+      }
     }
 
     /* =====================================================
@@ -1199,7 +1429,43 @@
         height: 65px;
       }
 
+      .menu-toggle {
+        display: inline-flex;
+      }
+
       .nav-links {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        right: 0;
+
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        padding: 10px 20px 25px;
+
+        background: var(--black);
+        border-bottom: 1px solid var(--line-dark);
+
+        overscroll-behavior: contain;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 16px 0;
+
+        font-size: 13px;
+
+        border-bottom: 1px solid var(--line-dark);
+      }
+
+      .nav-links a.active::after {
         display: none;
       }
 
@@ -1243,7 +1509,8 @@
         gap: 15px;
       }
 
-      .project-description {
+      /* Categoría + descripción: bajo el nombre, no en la columna del número */
+      .project > div:nth-child(3) {
         grid-column: 2;
       }
 
@@ -1332,6 +1599,8 @@
 
 <body class="loading">
 
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
 
   <!-- =====================================================
        LOADER
@@ -1358,7 +1627,17 @@
         RB
       </a>
 
-      <nav class="nav-links">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="menu"
+      >
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="menu" aria-label="Principal">
 
         <a href="#inicio" class="active">
           Inicio
@@ -1400,6 +1679,7 @@
           href="https://www.instagram.com/r_barron.avi/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="Instagram"
         >
           IG
         </a>
@@ -1408,6 +1688,7 @@
           href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/"
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="LinkedIn"
         >
           IN
         </a>
@@ -1419,7 +1700,7 @@
   </header>
 
 
-  <main>
+  <main id="contenido">
 
 
     <!-- =====================================================
@@ -1448,11 +1729,11 @@
           <div class="hero-role reveal">
 
             Founder
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             Entrepreneur
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             Investor
-            <span>·</span>
+            <span aria-hidden="true">·</span>
             Builder
 
           </div>
@@ -1472,7 +1753,7 @@
 
             Conoce mi historia
 
-            <span>→</span>
+            <span aria-hidden="true">→</span>
 
           </a>
 
@@ -1495,7 +1776,7 @@
           Empresas.<br>
           Impacto.
 
-          <div class="hero-side-arrow">
+          <div class="hero-side-arrow" aria-hidden="true">
             ↓
           </div>
 
@@ -1549,10 +1830,17 @@
 
           <div class="about-image reveal">
 
-            <img
-              src="assets/01_foto.jpeg"
-              alt="Ricardo Barrón en biblioteca"
-            >
+            <picture>
+              <source srcset="assets/01_foto.webp" type="image/webp">
+              <img
+                src="assets/01_foto.jpeg"
+                alt="Retrato de Ricardo Barrón"
+                width="977"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
 
           </div>
 
@@ -1870,7 +2158,7 @@
 
             </div>
 
-            <div class="project-arrow">
+            <div class="project-arrow" aria-hidden="true">
               ↗
             </div>
 
@@ -1907,7 +2195,7 @@
 
             </div>
 
-            <div class="project-arrow">
+            <div class="project-arrow" aria-hidden="true">
               ↗
             </div>
 
@@ -1939,7 +2227,7 @@
 
             </div>
 
-            <div class="project-arrow">
+            <div class="project-arrow" aria-hidden="true">
               +
             </div>
 
@@ -2297,10 +2585,17 @@
 
             <div class="lately-image">
 
-              <img
-                src="assets/03_foto.jpeg"
-                alt="Fintech World Cup México 2026"
-              >
+              <picture>
+                <source srcset="assets/03_foto.webp" type="image/webp">
+                <img
+                  src="assets/03_foto.jpeg"
+                  alt="Fintech World Cup México 2026"
+                  width="1152"
+                  height="2048"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
 
             </div>
 
@@ -2325,10 +2620,17 @@
 
             <div class="lately-image">
 
-              <img
-                src="assets/05_foto.jpeg"
-                alt="Open Finance 2050"
-              >
+              <picture>
+                <source srcset="assets/05_foto.webp" type="image/webp">
+                <img
+                  src="assets/05_foto.jpeg"
+                  alt="Open Finance 2050"
+                  width="2048"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
 
             </div>
 
@@ -2353,10 +2655,17 @@
 
             <div class="lately-image">
 
-              <img
-                src="assets/04_foto.png"
-                alt="Google Student Ambassador"
-              >
+              <picture>
+                <source srcset="assets/04_foto.webp" type="image/webp">
+                <img
+                  src="assets/04_foto.png"
+                  alt="Google Student Ambassador"
+                  width="1080"
+                  height="1350"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
 
             </div>
 
@@ -2381,10 +2690,17 @@
 
             <div class="lately-image">
 
-              <img
-                src="assets/15_foto.jpeg"
-                alt="PropTech LATAM Summit"
-              >
+              <picture>
+                <source srcset="assets/15_foto.webp" type="image/webp">
+                <img
+                  src="assets/15_foto.jpeg"
+                  alt="PropTech LATAM Summit"
+                  width="2048"
+                  height="1536"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
 
             </div>
 
@@ -2409,10 +2725,17 @@
 
             <div class="lately-image">
 
-              <img
-                src="assets/02_foto.jpg"
-                alt="Networking en PropTech"
-              >
+              <picture>
+                <source srcset="assets/02_foto.webp" type="image/webp">
+                <img
+                  src="assets/02_foto.jpg"
+                  alt="Networking en PropTech"
+                  width="2048"
+                  height="1365"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </picture>
 
             </div>
 
@@ -2626,7 +2949,7 @@
 
               Contactar
 
-              <span>→</span>
+              <span aria-hidden="true">→</span>
 
             </a>
 
@@ -2701,10 +3024,17 @@
 
           <div class="contact-photo reveal">
 
-            <img
-              src="assets/01_foto.jpeg"
-              alt="Ricardo Barrón"
-            >
+            <picture>
+              <source srcset="assets/01_foto.webp" type="image/webp">
+              <img
+                src="assets/01_foto.jpeg"
+                alt="Ricardo Barrón"
+                width="977"
+                height="1280"
+                loading="lazy"
+                decoding="async"
+              >
+            </picture>
 
           </div>
 
@@ -2746,18 +3076,60 @@
        LOADER
     ----------------------------------------- */
 
-    window.addEventListener("load", () => {
+    /* Se quita en cuanto el HTML está listo (sin esperar
+       a todas las fotos) y con una pausa corta. */
+    function hideLoader() {
+      document
+        .getElementById("loader")
+        .classList.add("hidden");
 
-      setTimeout(() => {
+      document.body.classList.remove("loading");
+    }
 
-        document
-          .getElementById("loader")
-          .classList.add("hidden");
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
-        document.body.classList.remove("loading");
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(hideLoader, reduceMotion ? 0 : 300);
+      });
+    } else {
+      setTimeout(hideLoader, reduceMotion ? 0 : 300);
+    }
 
-      }, 850);
+    /* -----------------------------------------
+       MENÚ MÓVIL
+    ----------------------------------------- */
 
+    const menuToggle =
+      document.querySelector(".menu-toggle");
+
+    const menu =
+      document.getElementById("menu");
+
+    function setMenu(open) {
+      menu.classList.toggle("open", open);
+      menuToggle.setAttribute("aria-expanded", String(open));
+      menuToggle.setAttribute(
+        "aria-label",
+        open ? "Cerrar menú" : "Abrir menú"
+      );
+    }
+
+    menuToggle.addEventListener("click", () => {
+      setMenu(!menu.classList.contains("open"));
+    });
+
+    menu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => setMenu(false));
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && menu.classList.contains("open")) {
+        setMenu(false);
+        menuToggle.focus();
+      }
     });
 
 
@@ -2913,7 +3285,6 @@
       link.addEventListener("click", () => {
 
         const fallbackUrl = gmailComposeUrl(link.getAttribute("href"));
-        const fallbackTab = window.open("", "_blank");
 
         let handled = false;
 
@@ -2921,25 +3292,18 @@
           handled = true;
         };
 
-        /* Esperamos un momento antes de escuchar "blur": abrir
-           esta misma pestaña ya le quita el foco a la página,
-           y no queremos confundir eso con que se haya abierto
-           una app de correo externa. */
-        const armTimer = setTimeout(() => {
-          window.addEventListener("blur", onBlur, { once: true });
-        }, 150);
+        /* Si el navegador abre una app de correo, la página
+           pierde el foco: así sabemos que no hace falta Gmail. */
+        window.addEventListener("blur", onBlur, { once: true });
 
         setTimeout(() => {
 
           window.removeEventListener("blur", onBlur);
-          clearTimeout(armTimer);
 
-          if (!fallbackTab) return;
-
-          if (handled) {
-            if (!fallbackTab.closed) fallbackTab.close();
-          } else {
-            fallbackTab.location = fallbackUrl;
+          /* Si se abrió una app de correo, la página perdió el
+             foco y no hacemos nada. Si no, abrimos Gmail web. */
+          if (!handled) {
+            window.open(fallbackUrl, "_blank", "noopener");
           }
 
         }, 700);
