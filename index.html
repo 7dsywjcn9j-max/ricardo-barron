@@ -13,17 +13,17 @@
 
   <meta name="theme-color" content="#0b0b0a">
 
-  <link rel="canonical" href="https://ricardo-barron.vercel.app/">
+  <link rel="canonical" href="https://www.ricardobarron.com/">
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_32.png">
   <link rel="apple-touch-icon" href="assets/icons/favicon_180.png">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ricardo-barron.vercel.app/">
+  <meta property="og:url" content="https://www.ricardobarron.com/">
   <meta property="og:title" content="Ricardo Barrón | Founder · Entrepreneur · Investor">
   <meta property="og:description" content="Construyendo empresas desde México para el mundo. Tecnología, fintech, real estate y nuevas industrias.">
-  <meta property="og:image" content="https://ricardo-barron.vercel.app/assets/01_foto.jpeg">
+  <meta property="og:image" content="https://www.ricardobarron.com/assets/01_foto.jpeg">
   <meta property="og:locale" content="es_MX">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -1259,6 +1259,99 @@
     }
 
     /* =====================================================
+       PAUSA EDITORIAL
+    ===================================================== */
+
+    .pause {
+      padding: 170px 0;
+
+      background: var(--cream);
+      color: var(--text-dark);
+
+      text-align: center;
+    }
+
+    .pause-quote {
+      max-width: 900px;
+      margin: 0 auto;
+
+      font-family: var(--serif);
+      font-size: clamp(38px, 4.6vw, 68px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -.035em;
+      text-wrap: balance;
+    }
+
+    .pause .gold-line {
+      margin: 48px auto 0;
+    }
+
+    /* =====================================================
+       NOW
+    ===================================================== */
+
+    .now {
+      background: var(--black);
+    }
+
+    .now-updated {
+      margin-top: 22px;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+    .now-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .now-item {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 40px;
+
+      padding: 34px 0;
+
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .now-item strong {
+      color: var(--gold-light);
+
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .now-item p {
+      max-width: 640px;
+
+      color: #cfcbc3;
+
+      font-family: var(--serif);
+      font-size: clamp(22px, 2vw, 28px);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 800px) {
+      .pause {
+        padding: 110px 0;
+      }
+
+      .now-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    /* =====================================================
        SIN JAVASCRIPT: SIN PANTALLA DE CARGA
     ===================================================== */
 
@@ -1663,6 +1756,10 @@
           Lately
         </a>
 
+        <a href="#now">
+          Now
+        </a>
+
         <a href="#vision">
           Visión
         </a>
@@ -1781,6 +1878,25 @@
           </div>
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PAUSA EDITORIAL
+    ===================================================== -->
+
+    <section class="pause" aria-label="Pausa editorial">
+
+      <div class="container">
+
+        <p class="pause-quote reveal">
+          Construir empresas y convertir ideas en cosas reales.
+        </p>
+
+        <div class="gold-line reveal"></div>
 
       </div>
 
@@ -2755,6 +2871,57 @@
 
 
         </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NOW
+    ===================================================== -->
+
+    <section
+      class="section now"
+      id="now"
+    >
+
+      <div class="container">
+
+        <div class="section-header reveal">
+
+          <div class="eyebrow">
+            Now
+          </div>
+
+          <h2 class="section-title">
+            En qué estoy ahora.
+          </h2>
+
+          <p class="now-updated">
+            Actualizado: septiembre 2026
+          </p>
+
+        </div>
+
+        <ul class="now-list stagger">
+
+          <li class="now-item">
+            <strong>ARKUS</strong>
+            <p>Tras ganar la etapa clasificatoria de la Fintech World Cup, próximo paso: representar a México en Dubái.</p>
+          </li>
+
+          <li class="now-item">
+            <strong>KUBO</strong>
+            <p>Construyendo el sistema operativo autónomo para bienes raíces en Latinoamérica.</p>
+          </li>
+
+          <li class="now-item">
+            <strong>Aprendiendo</strong>
+            <p>Business &amp; Innovation en la Universidad de la Libertad, mientras construyo empresas reales.</p>
+          </li>
+
+        </ul>
 
       </div>
 
