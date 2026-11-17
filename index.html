@@ -1,3470 +1,426 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ricardo Barrón | Founder · Entrepreneur · Investor</title>
-
-  <meta
-    name="description"
-    content="Ricardo Barrón. Founder, entrepreneur, investor and builder working across technology, fintech, real estate and emerging industries."
-  >
-
-  <meta name="theme-color" content="#0b0b0a">
-
-  <link rel="canonical" href="https://www.ricardobarron.com/">
-
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon_32.png">
-  <link rel="apple-touch-icon" href="assets/icons/favicon_180.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.ricardobarron.com/">
-  <meta property="og:title" content="Ricardo Barrón | Founder · Entrepreneur · Investor">
-  <meta property="og:description" content="Construyendo empresas desde México para el mundo. Tecnología, fintech, real estate y nuevas industrias.">
-  <meta property="og:image" content="https://www.ricardobarron.com/assets/01_foto.jpeg">
-  <meta property="og:locale" content="es_MX">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
-    rel="stylesheet"
-  >
-
-  <script>
-    /* Activa animaciones solo si hay JavaScript; sin JS todo se ve de inmediato */
-    document.documentElement.classList.add("js");
-  </script>
-
-  <style>
-
-    :root {
-      --black: #0b0b0a;
-      --black-soft: #121210;
-      --cream: #f1ede4;
-      --white: #f7f4ed;
-
-      --gold: #b88a3b;
-      --gold-light: #d0aa68;
-
-      --text-dark: #151412;
-      --muted: #9b9891;
-      --muted-dark: #66635d;
-
-      --line-dark: rgba(255,255,255,.12);
-      --line-light: rgba(0,0,0,.13);
-
-      --serif: "Playfair Display", Georgia, serif;
-      --sans: "DM Sans", Arial, sans-serif;
-
-      --container: 1380px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--black);
-      color: var(--white);
-      font-family: var(--sans);
-      overflow-x: hidden;
-    }
-
-    .js body.loading {
-      overflow: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* <picture> solo aporta el formato WebP; no debe alterar el layout */
-    picture {
-      display: contents;
-    }
-
-    /* Salto directo al contenido (teclado / lectores de pantalla) */
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 16px;
-      z-index: 10000;
-
-      padding: 12px 18px;
-
-      background: var(--gold);
-      color: var(--black);
-
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .skip-link:focus {
-      top: 16px;
-    }
-
-    /* Foco visible para quien navega con teclado */
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--gold-light);
-      outline-offset: 4px;
-    }
-
-    /* Que la barra fija no tape el inicio de cada sección */
-    section[id] {
-      scroll-margin-top: 76px;
-    }
-
-    ::selection {
-      background: var(--gold);
-      color: white;
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 100px));
-      margin: 0 auto;
-    }
-
-    /* =====================================================
-       LOADER
-    ===================================================== */
-
-    .loader {
-      position: fixed;
-      inset: 0;
-      z-index: 9999;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: var(--black);
-
-      transition:
-        opacity .8s ease,
-        visibility .8s ease;
-    }
-
-    .loader.hidden {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .loader-name {
-      font-family: var(--serif);
-      font-size: clamp(45px, 7vw, 90px);
-      letter-spacing: -.06em;
-      overflow: hidden;
-    }
-
-    .loader-name span {
-      display: inline-block;
-      animation: loaderText 1s ease forwards;
-    }
-
-    @keyframes loaderText {
-      from {
-        transform: translateY(100%);
-      }
-
-      to {
-        transform: translateY(0);
-      }
-    }
-
-    /* =====================================================
-       NAVIGATION
-    ===================================================== */
-
-    .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 76px;
-
-      z-index: 1000;
-
-      display: flex;
-      align-items: center;
-
-      background: rgba(11,11,10,.72);
-      backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid rgba(255,255,255,.06);
-
-      transition:
-        color .35s ease,
-        background-color .35s ease,
-        border-color .35s ease,
-        padding .35s ease,
-        transform .35s ease;
-    }
-
-    .nav.scrolled {
-      background: rgba(11,11,10,.96);
-    }
-
-    .nav-inner {
-      width: min(1500px, calc(100% - 70px));
-      margin: auto;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      font-family: var(--serif);
-      font-size: 32px;
-      letter-spacing: -.08em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .nav-links a {
-      position: relative;
-
-      color: #c7c3bb;
-
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-
-      transition:
-        color .25s ease,
-        background-color .25s ease,
-        border-color .25s ease,
-        padding .25s ease,
-        transform .25s ease;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--gold-light);
-    }
-
-    .nav-links a.active::after {
-      content: "";
-
-      position: absolute;
-      left: 0;
-      bottom: -10px;
-
-      width: 100%;
-      height: 1px;
-
-      background: var(--gold);
-    }
-
-    .socials {
-      display: flex;
-      gap: 16px;
-    }
-
-    .socials a {
-      color: #aaa69e;
-      font-size: 12px;
-      font-weight: 600;
-
-      transition:
-        color .25s ease,
-        background-color .25s ease,
-        border-color .25s ease,
-        padding .25s ease,
-        transform .25s ease;
-    }
-
-    .socials a:hover {
-      color: var(--gold-light);
-    }
-
-    /* =====================================================
-       HERO
-    ===================================================== */
-
-    .hero {
-      position: relative;
-
-      min-height: 100vh;
-
-      display: grid;
-      grid-template-columns: 47% 53%;
-
-      padding-top: 76px;
-
-      overflow: hidden;
-    }
-
-    .hero-content {
-      display: flex;
-      align-items: center;
-
-      padding: 80px 7vw;
-    }
-
-    .hero-inner {
-      max-width: 650px;
-    }
-
-    .eyebrow {
-      color: var(--gold-light);
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-    }
-
-    .hero h1 {
-      margin-top: 24px;
-
-      font-family: var(--serif);
-      font-size: clamp(78px, 9vw, 150px);
-      font-weight: 400;
-      line-height: .78;
-      letter-spacing: -.07em;
-    }
-
-    .hero h1 span {
-      display: block;
-    }
-
-    .hero-rule {
-      width: 65px;
-      height: 1px;
-
-      margin: 38px 0 25px;
-
-      background: var(--gold);
-    }
-
-    .hero-role {
-      color: #ddd9d1;
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .22em;
-      line-height: 2;
-      text-transform: uppercase;
-    }
-
-    .hero-role span {
-      color: var(--gold-light);
-      margin: 0 7px;
-    }
-
-    .hero-description {
-      max-width: 500px;
-
-      margin-top: 27px;
-
-      color: #a7a49d;
-
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .hero-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 25px;
-
-      margin-top: 30px;
-
-      padding: 14px 19px;
-
-      border: 1px solid var(--gold);
-
-      color: var(--white);
-
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-
-      transition:
-        color .3s ease,
-        background-color .3s ease,
-        border-color .3s ease,
-        padding .3s ease,
-        transform .3s ease;
-    }
-
-    .hero-button span {
-      color: var(--gold-light);
-      font-size: 16px;
-    }
-
-    .hero-button:hover {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    .hero-image {
-      position: relative;
-
-      min-height: calc(100vh - 76px);
-
-      overflow: hidden;
-
-      background: #20201d;
-    }
-
-    .hero-image::before {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(11,11,10,.35),
-          transparent 40%
-        ),
-        url("assets/13_foto.jpeg")
-        center / cover no-repeat;
-
-      /* Navegadores modernos: versión WebP, mucho más ligera */
-      background:
-        linear-gradient(
-          90deg,
-          rgba(11,11,10,.35),
-          transparent 40%
-        ),
-        image-set(
-          url("assets/13_foto.webp") type("image/webp"),
-          url("assets/13_foto.jpeg") type("image/jpeg")
-        )
-        center / cover no-repeat;
-    }
-
-    .hero-image::after {
-      content: "";
-
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to bottom,
-          transparent 50%,
-          rgba(0,0,0,.6)
-        );
-    }
-
-    .hero-image-label {
-      position: absolute;
-      z-index: 2;
-
-      right: 6%;
-      bottom: 7%;
-
-      font-family: var(--serif);
-      font-size: 105px;
-
-      color: rgba(255,255,255,.12);
-    }
-
-    .hero-side {
-      position: absolute;
-      z-index: 3;
-
-      right: 5%;
-      bottom: 11%;
-
-      width: 130px;
-
-      color: #d6d1c8;
-
-      font-size: 11px;
-      font-weight: 600;
-      line-height: 1.9;
-      letter-spacing: .25em;
-      text-transform: uppercase;
-    }
-
-    .hero-side-arrow {
-      margin-top: 15px;
-
-      color: var(--gold-light);
-      font-size: 22px;
-    }
-
-    /* =====================================================
-       GENERAL SECTIONS
-    ===================================================== */
-
-    .section {
-      padding: 120px 0;
-    }
-
-    .section-header {
-      margin-bottom: 65px;
-    }
-
-    .section-title {
-      max-width: 1050px;
-
-      margin-top: 18px;
-
-      font-family: var(--serif);
-      font-size: clamp(58px, 6.5vw, 94px);
-      font-weight: 400;
-      line-height: .95;
-      letter-spacing: -.045em;
-    }
-
-    .gold-line {
-      width: 52px;
-      height: 1px;
-
-      margin-top: 28px;
-
-      background: var(--gold);
-    }
-
-    /* =====================================================
-       SOBRE MÍ
-    ===================================================== */
-
-    .about {
-      background: var(--cream);
-      color: var(--text-dark);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .9fr 1fr .8fr;
-
-      gap: 65px;
-
-      align-items: center;
-    }
-
-    .about-title {
-      font-family: var(--serif);
-      font-size: clamp(50px, 5vw, 75px);
-      font-weight: 400;
-      line-height: .98;
-      letter-spacing: -.045em;
-    }
-
-    .about-description {
-      max-width: 440px;
-
-      margin-top: 28px;
-
-      color: #5c5953;
-
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .about-image {
-      height: 470px;
-
-      overflow: hidden;
-
-      background: #222;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(100%);
-    }
-
-    .about-points {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .about-point {
-      display: grid;
-      grid-template-columns: 38px 1fr;
-      gap: 14px;
-    }
-
-    .point-number {
-      width: 32px;
-      height: 32px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-
-      color: var(--gold);
-
-      font-size: 11px;
-      font-weight: 700;
-    }
-
-    .about-point strong {
-      display: block;
-
-      font-family: var(--serif);
-      font-size: 19px;
-      font-weight: 500;
-    }
-
-    .about-point span {
-      display: block;
-
-      margin-top: 4px;
-
-      color: #68645d;
-
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    /* =====================================================
-       TRAYECTORIA
-    ===================================================== */
-
-    .trajectory {
-      background: var(--black-soft);
-    }
-
-    .trajectory-intro {
-      max-width: 720px;
-
-      margin-top: -25px;
-      margin-bottom: 65px;
-
-      color: #a6a29b;
-
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .timeline {
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 130px 1fr 270px;
-
-      gap: 35px;
-
-      padding: 40px 0;
-
-      border-bottom: 1px solid var(--line-dark);
-
-      transition:
-        color .35s ease,
-        background-color .35s ease,
-        border-color .35s ease,
-        padding .35s ease,
-        transform .35s ease;
-    }
-
-    .timeline-item:hover {
-      transform: translateX(15px);
-      border-color: var(--gold);
-    }
-
-    .timeline-year {
-      color: var(--gold-light);
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .2em;
-    }
-
-    .timeline-title {
-      font-family: var(--serif);
-      font-size: 32px;
-      font-weight: 400;
-    }
-
-    .timeline-description {
-      color: #85827c;
-
-      font-size: 11px;
-      line-height: 1.75;
-    }
-
-    /* =====================================================
-       PROYECTOS
-    ===================================================== */
-
-    .projects {
-      background: var(--black);
-    }
-
-    .projects-intro {
-      max-width: 650px;
-
-      margin-top: -25px;
-      margin-bottom: 60px;
-
-      color: #9b9891;
-
-      font-size: 14px;
-      line-height: 1.85;
-    }
-
-    .projects-list {
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .project {
-      display: grid;
-      grid-template-columns: 80px 1fr 1fr 60px;
-
-      gap: 35px;
-
-      align-items: center;
-
-      padding: 42px 0;
-
-      border-bottom: 1px solid var(--line-dark);
-
-      transition:
-        color .35s ease,
-        background-color .35s ease,
-        border-color .35s ease,
-        padding .35s ease,
-        transform .35s ease;
-    }
-
-    .project:hover {
-      padding-left: 15px;
-      padding-right: 15px;
-
-      border-color: var(--gold);
-    }
-
-    .project-number {
-      color: #68655f;
-
-      font-size: 12px;
-      letter-spacing: .15em;
-    }
-
-    .project-name {
-      font-family: var(--serif);
-      font-size: clamp(45px, 5vw, 72px);
-      font-weight: 400;
-      letter-spacing: -.04em;
-    }
-
-    .project-category {
-      margin-bottom: 9px;
-
-      color: var(--gold-light);
-
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .project-description {
-      max-width: 430px;
-
-      color: #8f8c85;
-
-      font-size: 12px;
-      line-height: 1.75;
-    }
-
-    .project-arrow {
-      width: 45px;
-      height: 45px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 1px solid #4d4a44;
-
-      color: var(--gold-light);
-
-      transition:
-        color .3s ease,
-        background-color .3s ease,
-        border-color .3s ease,
-        padding .3s ease,
-        transform .3s ease;
-    }
-
-    .project:hover .project-arrow {
-      background: var(--gold);
-      border-color: var(--gold);
-      color: var(--black);
-    }
-
-    /* =====================================================
-       INSPIRACIÓN
-    ===================================================== */
-
-    .inspire {
-      background: var(--cream);
-      color: var(--text-dark);
-    }
-
-    .inspire-layout {
-      display: grid;
-      grid-template-columns: .7fr 1.3fr;
-
-      gap: 80px;
-
-      align-items: center;
-    }
-
-    .inspire-description {
-      max-width: 430px;
-
-      margin-top: 30px;
-
-      color: #64605a;
-
-      font-size: 13px;
-      line-height: 1.85;
-    }
-
-    .inspire-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-
-      border-top: 1px solid var(--line-light);
-      border-left: 1px solid var(--line-light);
-    }
-
-    .inspire-card {
-      min-height: 190px;
-
-      padding: 30px;
-
-      border-right: 1px solid var(--line-light);
-      border-bottom: 1px solid var(--line-light);
-
-      transition:
-        color .3s ease,
-        background-color .3s ease,
-        border-color .3s ease,
-        padding .3s ease,
-        transform .3s ease;
-    }
-
-    .inspire-card:hover {
-      background: rgba(184,138,59,.06);
-    }
-
-    .inspire-icon {
-      width: 42px;
-      height: 42px;
-
-      margin-bottom: 22px;
-
-      color: var(--gold);
-    }
-
-    .inspire-icon svg {
-      width: 100%;
-      height: 100%;
-
-      stroke: currentColor;
-      stroke-width: 1.4;
-
-      fill: none;
-
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .inspire-card h3 {
-      font-family: var(--serif);
-      font-size: 22px;
-      font-weight: 500;
-    }
-
-    .inspire-card p {
-      margin-top: 8px;
-
-      color: #68645d;
-
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    /* =====================================================
-       LATELY
-    ===================================================== */
-
-    .lately {
-      background: var(--black-soft);
-    }
-
-    .lately-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-
-      gap: 13px;
-    }
-
-    .lately-card {
-      overflow: hidden;
-
-      border: 1px solid var(--line-dark);
-
-      background: #0d0d0c;
-
-      transition:
-        color .4s ease,
-        background-color .4s ease,
-        border-color .4s ease,
-        padding .4s ease,
-        transform .4s ease;
-    }
-
-    .lately-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-7px);
-    }
-
-    .lately-image {
-      height: 260px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #181816,
-          #292923
-        );
-
-      overflow: hidden;
-    }
-
-    .lately-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-      transition: transform .6s ease;
-    }
-
-    .lately-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .lately-placeholder {
-      color: #55534e;
-
-      font-family: var(--serif);
-      font-size: 35px;
-    }
-
-    .lately-info {
-      padding: 18px;
-    }
-
-    .lately-info h3 {
-      font-size: 12px;
-      line-height: 1.45;
-    }
-
-    .lately-info span {
-      display: block;
-
-      margin-top: 8px;
-
-      color: var(--gold-light);
-
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    /* =====================================================
-       VISIÓN
-    ===================================================== */
-
-    .future {
-      background: var(--cream);
-      color: var(--text-dark);
-    }
-
-    .future-grid {
-      display: grid;
-      grid-template-columns: .7fr repeat(4, 1fr);
-    }
-
-    .future-card {
-      padding: 15px 25px;
-
-      border-left: 1px solid var(--line-light);
-
-      text-align: center;
-    }
-
-    .future-icon {
-      width: 42px;
-      height: 42px;
-
-      margin: 0 auto 20px;
-
-      color: var(--gold);
-    }
-
-    .future-icon svg {
-      width: 100%;
-      height: 100%;
-
-      stroke: currentColor;
-      stroke-width: 1.4;
-
-      fill: none;
-
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    .future-card h3 {
-      font-family: var(--serif);
-      font-size: 21px;
-      font-weight: 500;
-    }
-
-    .future-card p {
-      margin-top: 10px;
-
-      color: #68645d;
-
-      font-size: 12px;
-      line-height: 1.7;
-    }
-
-    /* =====================================================
-       CONTACTO
-    ===================================================== */
-
-    .contact {
-      background: var(--black-soft);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr .7fr 1fr;
-
-      gap: 35px;
-    }
-
-    .contact-title {
-      max-width: 500px;
-
-      font-family: var(--serif);
-      font-size: clamp(55px, 6vw, 85px);
-      font-weight: 400;
-      line-height: .95;
-      letter-spacing: -.045em;
-    }
-
-    .contact-description {
-      max-width: 400px;
-
-      margin: 25px 0;
-
-      color: #929089;
-
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .contact-column {
-      padding-left: 25px;
-
-      border-left: 1px solid var(--line-dark);
-    }
-
-    .contact-column h3 {
-      margin-bottom: 25px;
-
-      color: var(--gold-light);
-
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .contact-column a {
-      display: block;
-
-      margin-bottom: 15px;
-
-      color: #aaa69f;
-
-      font-size: 11px;
-
-      transition:
-        color .25s ease,
-        background-color .25s ease,
-        border-color .25s ease,
-        padding .25s ease,
-        transform .25s ease;
-    }
-
-    .contact-column a:hover {
-      color: var(--gold-light);
-    }
-
-    .contact-photo {
-      height: 300px;
-
-      overflow: hidden;
-
-      background: #222;
-    }
-
-    .contact-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      margin-top: 80px;
-      padding-top: 20px;
-
-      border-top: 1px solid var(--line-dark);
-
-      color: #68655f;
-
-      font-size: 11px;
-      letter-spacing: .08em;
-    }
-
-    .footer-logo {
-      color: #ddd9d1;
-
-      font-family: var(--serif);
-      font-size: 25px;
-    }
-
-    /* =====================================================
-       SCROLL REVEAL
-    ===================================================== */
-
-    .js .reveal {
-      opacity: 0;
-
-      transform: translateY(50px);
-
-      transition:
-        opacity .9s cubic-bezier(.22,1,.36,1),
-        transform .9s cubic-bezier(.22,1,.36,1);
-    }
-
-    .js .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .js .reveal-left {
-      opacity: 0;
-
-      transform: translateX(-50px);
-
-      transition:
-        opacity .9s cubic-bezier(.22,1,.36,1),
-        transform .9s cubic-bezier(.22,1,.36,1);
-    }
-
-    .js .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .js .stagger > * {
-      opacity: 0;
-
-      transform: translateY(40px);
-
-      transition:
-        opacity .8s cubic-bezier(.22,1,.36,1),
-        transform .8s cubic-bezier(.22,1,.36,1);
-    }
-
-    .stagger.visible > *:nth-child(1) {
-      transition-delay: .05s;
-    }
-
-    .stagger.visible > *:nth-child(2) {
-      transition-delay: .12s;
-    }
-
-    .stagger.visible > *:nth-child(3) {
-      transition-delay: .19s;
-    }
-
-    .stagger.visible > *:nth-child(4) {
-      transition-delay: .26s;
-    }
-
-    .stagger.visible > *:nth-child(5) {
-      transition-delay: .33s;
-    }
-
-    .stagger.visible > *:nth-child(6) {
-      transition-delay: .40s;
-    }
-
-    .js .stagger.visible > * {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* =====================================================
-       PAUSA EDITORIAL
-    ===================================================== */
-
-    .pause {
-      padding: 170px 0;
-
-      background: var(--cream);
-      color: var(--text-dark);
-
-      text-align: center;
-    }
-
-    .pause-quote {
-      max-width: 900px;
-      margin: 0 auto;
-
-      font-family: var(--serif);
-      font-size: clamp(38px, 4.6vw, 68px);
-      font-weight: 400;
-      line-height: 1.08;
-      letter-spacing: -.035em;
-      text-wrap: balance;
-    }
-
-    .pause .gold-line {
-      margin: 48px auto 0;
-    }
-
-    /* =====================================================
-       NOW
-    ===================================================== */
-
-    .now {
-      background: var(--black);
-    }
-
-    .now-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      border-top: 1px solid var(--line-dark);
-    }
-
-    .now-item {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 40px;
-
-      padding: 34px 0;
-
-      border-bottom: 1px solid var(--line-dark);
-    }
-
-    .now-item strong {
-      color: var(--gold-light);
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-    }
-
-    .now-item p {
-      max-width: 640px;
-
-      color: #cfcbc3;
-
-      font-family: var(--serif);
-      font-size: clamp(22px, 2vw, 28px);
-      line-height: 1.35;
-    }
-
-    @media (max-width: 800px) {
-      .pause {
-        padding: 110px 0;
-      }
-
-      .now-item {
-        grid-template-columns: 1fr;
-        gap: 12px;
-      }
-    }
-
-    /* =====================================================
-       SIN JAVASCRIPT: SIN PANTALLA DE CARGA
-    ===================================================== */
-
-    html:not(.js) .loader {
-      display: none;
-    }
-
-    /* =====================================================
-       MENÚ MÓVIL
-    ===================================================== */
-
-    .menu-toggle {
-      display: none;
-
-      width: 44px;
-      height: 44px;
-
-      align-items: center;
-      justify-content: center;
-
-      background: none;
-      border: 1px solid var(--line-dark);
-
-      color: var(--white);
-      cursor: pointer;
-
-      touch-action: manipulation;
-    }
-
-    .menu-toggle span,
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      display: block;
-
-      width: 18px;
-      height: 1px;
-
-      background: currentColor;
-
-      transition: transform .25s ease;
-    }
-
-    .menu-toggle span {
-      position: relative;
-    }
-
-    .menu-toggle span::before,
-    .menu-toggle span::after {
-      content: "";
-      position: absolute;
-      left: 0;
-    }
-
-    .menu-toggle span::before {
-      transform: translateY(-6px);
-    }
-
-    .menu-toggle span::after {
-      transform: translateY(6px);
-    }
-
-    .menu-toggle[aria-expanded="true"] span {
-      background: transparent;
-    }
-
-    .menu-toggle[aria-expanded="true"] span::before {
-      transform: rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] span::after {
-      transform: rotate(-45deg);
-    }
-
-    /* =====================================================
-       MOVIMIENTO REDUCIDO
-    ===================================================== */
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-        transition-delay: 0s !important;
-      }
-
-      .loader {
-        display: none;
-      }
-
-      .js .reveal,
-      .js .reveal-left,
-      .js .stagger > * {
-        opacity: 1;
-        transform: none;
-      }
-
-      .lately-card:hover,
-      .lately-card:hover img,
-      .timeline-item:hover {
-        transform: none;
-      }
-    }
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
-
-    @media (max-width: 1100px) {
-
-      .nav-links {
-        gap: 17px;
-      }
-
-      .socials {
-        display: none;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .about-points {
-        grid-column: 1 / -1;
-
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .timeline-item {
-        grid-template-columns: 100px 1fr;
-      }
-
-      .timeline-description {
-        grid-column: 2;
-      }
-
-      .future-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px 0;
-      }
-
-      .future-grid > div:first-child {
-        grid-column: 1 / -1;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .contact-photo {
-        grid-column: 1 / -1;
-      }
-    }
-
-    @media (max-width: 800px) {
-
-      .container {
-        width: calc(100% - 40px);
-      }
-
-      .nav {
-        height: 65px;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-      }
-
-      .nav-links {
-        position: fixed;
-        top: 65px;
-        left: 0;
-        right: 0;
-
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-
-        padding: 10px 20px 25px;
-
-        background: var(--black);
-        border-bottom: 1px solid var(--line-dark);
-
-        overscroll-behavior: contain;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .nav-links a {
-        width: 100%;
-        padding: 16px 0;
-
-        font-size: 13px;
-
-        border-bottom: 1px solid var(--line-dark);
-      }
-
-      .nav-links a.active::after {
-        display: none;
-      }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding-top: 65px;
-      }
-
-      .hero-content {
-        min-height: 650px;
-        padding: 80px 30px 60px;
-      }
-
-      .hero-image {
-        min-height: 550px;
-      }
-
-      .hero-side {
-        display: none;
-      }
-
-      .section {
-        padding: 90px 0;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-points {
-        grid-column: auto;
-        display: flex;
-      }
-
-      .about-image {
-        height: 400px;
-      }
-
-      .project {
-        grid-template-columns: 50px 1fr 50px;
-        gap: 15px;
-      }
-
-      /* Categoría + descripción: bajo el nombre, no en la columna del número */
-      .project > div:nth-child(3) {
-        grid-column: 2;
-      }
-
-      .project-arrow {
-        grid-column: 3;
-        grid-row: 1 / span 2;
-      }
-
-      .inspire-layout {
-        grid-template-columns: 1fr;
-        gap: 50px;
-      }
-
-      .lately-grid {
-        display: flex;
-        overflow-x: auto;
-        padding-bottom: 15px;
-      }
-
-      .lately-card {
-        min-width: 230px;
-      }
-
-      .future-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .future-grid > div:first-child {
-        grid-column: 1 / -1;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-photo {
-        grid-column: auto;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .hero h1 {
-        font-size: 68px;
-      }
-
-      .section-title {
-        font-size: 50px;
-      }
-
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .timeline-description {
-        grid-column: auto;
-      }
-
-      .inspire-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .future-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .future-grid > div:first-child {
-        grid-column: auto;
-      }
-
-      .project-name {
-        font-size: 42px;
-      }
-    }
-
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ricardo Barrón | Founder de ARKUS</title>
+<meta name="description" content="Ricardo Barrón: founder de ARKUS (Agentic Financial Infrastructure) y co-founder de NUMI AI. Infraestructura financiera e inteligencia artificial para que los negocios confíen, vendan y crezcan.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="canonical" href="https://www.ricardobarron.com/">
+<link rel="icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/assets/icons/favicon_180.png">
+<meta property="og:title" content="Ricardo Barrón | Founder de ARKUS">
+<meta property="og:description" content="Infraestructura financiera e inteligencia artificial para que los negocios confíen, vendan y crezcan.">
+<meta property="og:image" content="https://www.ricardobarron.com/assets/01_foto.jpeg">
+<meta property="og:url" content="https://www.ricardobarron.com/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0A0A0A; --ivory:#EEE4D0; --gold:#C9A24A;
+  --ivory-2:rgba(238,228,208,.66); --ivory-line:rgba(238,228,208,.14);
+  --ink-2:rgba(10,10,10,.66); --ink-line:rgba(10,10,10,.14);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --wrap:1200px; --pad:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--ivory);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--pad)}
+html[lang="es"] .en,html[lang="en"] .es{display:none!important}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--black);padding:8px 14px;z-index:100}
+.skip:focus{left:8px}
+h1,h2,h3.serif{font-family:var(--serif);font-weight:600;letter-spacing:-.01em}
+
+/* nav */
+.top{position:sticky;top:0;z-index:50;background:rgba(10,10,10,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--ivory-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+.top .logo img{height:26px;width:auto}
+.top nav{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:500}
+.top nav a{text-decoration:none;color:var(--ivory-2)}
+.top nav a:hover{color:var(--ivory)}
+.lang{font:inherit;font-size:13px;font-weight:600;cursor:pointer;background:none;color:var(--ivory);border:1px solid var(--ivory-line);border-radius:999px;padding:6px 12px}
+.lang:hover{border-color:var(--gold)}
+.top .talk{color:var(--black)!important;background:var(--gold);padding:9px 16px;border-radius:999px;font-weight:600}
+.top .talk:hover{background:var(--ivory)}
+@media (max-width:820px){.top nav .nl{display:none}.top nav{gap:12px}}
+
+/* hero */
+.hero{position:relative;min-height:min(calc(100svh - 68px),860px);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);overflow:hidden}
+.hero-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(48px,8vw,96px) clamp(24px,4vw,56px) clamp(48px,8vw,96px) max(var(--pad),calc((100vw - var(--wrap))/2 + var(--pad)));position:relative;z-index:2}
+.hero .who{font-size:15px;font-weight:600;color:var(--gold)}
+.hero h1{margin-top:20px;font-size:clamp(38px,4.5vw,64px);line-height:1.06;max-width:17ch}
+.hero .sub{margin-top:26px;font-size:clamp(17px,1.5vw,19px);color:var(--ivory-2);max-width:31em}
+.hero .sub strong{color:var(--ivory);font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:15px;padding:14px 24px;border-radius:999px;border:1px solid transparent;transition:background .2s,color .2s,border-color .2s}
+.btn.gold{background:var(--gold);color:var(--black)}
+.btn.gold:hover{background:var(--ivory)}
+.btn.line{border-color:var(--ivory-line);color:var(--ivory)}
+.btn.line:hover{border-color:var(--ivory)}
+.routes{list-style:none;margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ivory-line);max-width:640px}
+.routes a{display:block;text-decoration:none;padding:18px 16px 4px 0}
+.routes li+li a{padding-left:16px;border-left:1px solid var(--ivory-line)}
+.routes b{display:block;font-family:var(--serif);font-weight:600;font-size:22px;color:var(--gold)}
+.routes a>span{display:block;font-size:15px;font-weight:600;margin-top:4px}
+.routes small{display:block;font-size:13px;color:var(--ivory-2)}
+.routes a:hover b{color:var(--ivory)}
+@media (max-width:520px){.routes{grid-template-columns:1fr}.routes li+li a{padding-left:0;border-left:0;border-top:1px solid var(--ivory-line)}.routes a{padding:14px 0}}
+.hero-photo{position:relative}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--black) 0%,rgba(10,10,10,.6) 18%,rgba(10,10,10,0) 50%),linear-gradient(0deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 30%)}
+@media (prefers-reduced-motion:no-preference){
+  .hero-photo img{animation:reveal 1.4s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes reveal{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+}
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:0}
+  .hero-photo{order:-1;height:72vw;max-height:480px}.hero-photo img{object-position:50% 12%}
+  .hero-photo::after{background:linear-gradient(0deg,var(--black) 0%,rgba(10,10,10,0) 55%)}
+  .hero-text{padding:8px var(--pad) 56px}
+}
+
+/* proof strip */
+.proof{border-top:1px solid var(--ivory-line);border-bottom:1px solid var(--ivory-line)}
+.proof ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr)}
+.proof li{padding:26px 28px 26px 0}
+.proof li+li{padding-left:28px;border-left:1px solid var(--ivory-line)}
+.proof b{display:block;font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.2}
+.proof span{display:block;font-size:14px;color:var(--ivory-2);margin-top:6px}
+@media (max-width:760px){.proof ul{grid-template-columns:1fr}.proof li+li{padding-left:0;border-left:0;border-top:1px solid var(--ivory-line)}}
+
+section.block{padding:clamp(80px,11vw,140px) 0}
+.h2{font-size:clamp(36px,4.6vw,60px);line-height:1.08}
+.bridge{margin-top:18px;font-size:18px;max-width:32em}
+
+/* about (ivory) */
+.about{background:var(--ivory);color:var(--black)}
+.about-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(40px,7vw,110px);align-items:center}
+.about figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.about figcaption{margin-top:12px;font-size:13px;color:var(--ink-2)}
+.about .text p{font-size:clamp(17px,1.4vw,19px);line-height:1.75;max-width:33em;margin-top:1.1em}
+.about .text p:first-of-type{margin-top:28px}
+.about .firma{margin-top:36px;height:44px;width:auto}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}.about figure{max-width:380px}}
+
+/* ventures */
+.ventures .head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.ventures .head .bridge{color:var(--ivory-2);margin-top:0;max-width:26em}
+.arkus{margin-top:clamp(48px,6vw,72px);border:1px solid var(--ivory-line);border-radius:6px;padding:clamp(28px,4vw,56px)}
+.arkus-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.v-name{font-family:var(--serif);font-weight:700;font-size:clamp(52px,7vw,92px);line-height:.95;letter-spacing:-.015em}
+.v-line{margin-top:14px;font-size:17px;font-weight:600}
+.v-tag{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold)}
+.v-desc{font-size:17px;line-height:1.7;color:var(--ivory-2)}
+.v-desc strong{color:var(--ivory);font-weight:600}
+.flow{list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(6,1fr);margin-top:clamp(36px,5vw,56px);position:relative}
+.flow::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--ivory-line)}
+.flow li{counter-increment:s;position:relative;padding-top:30px;padding-right:12px;font-size:14px;line-height:1.4;font-weight:600}
+.flow li::before{content:"";position:absolute;top:2px;left:0;width:11px;height:11px;border-radius:50%;background:var(--black);border:2px solid var(--gold)}
+.flow li:last-child::before{background:var(--gold)}
+.flow li small{display:block;font-weight:400;color:var(--ivory-2);font-size:13px;margin-top:4px}
+@media (max-width:900px){.flow{grid-template-columns:repeat(3,1fr);row-gap:24px}.flow::before{display:none}}
+@media (max-width:520px){.flow{grid-template-columns:1fr 1fr}}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:clamp(36px,5vw,52px);padding-top:28px;border-top:1px solid var(--ivory-line)}
+.facts dt{font-size:13px;color:var(--gold);font-weight:600}
+.facts dd{margin-top:6px;font-size:16px;line-height:1.5}
+.milestone{margin-top:28px;font-size:15px;color:var(--ivory-2)}
+.milestone b{color:var(--ivory);font-weight:600}
+.arkus .btn{margin-top:28px}
+.v-link{display:inline-block;margin-top:22px;font-weight:600;font-size:15px;color:var(--gold);text-underline-offset:5px}
+@media (max-width:860px){.arkus-top{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}
+.card{border:1px solid var(--ivory-line);border-radius:6px;padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column}
+.card .v-name{font-size:clamp(40px,4.6vw,58px)}
+.card .v-desc{margin-top:22px;margin-bottom:28px}
+.card .facts{grid-template-columns:1fr;gap:16px;margin-top:28px;padding-top:22px}
+.card .btn{align-self:flex-start;margin-top:28px}
+.card .cta{margin-top:0}.card .cta .btn{margin-top:28px}
+.card .push{margin-top:auto}
+@media (max-width:860px){.pair{grid-template-columns:1fr}}
+
+/* milestones */
+.ms{border-top:1px solid var(--ivory-line)}
+.ms-feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:center;margin-top:clamp(44px,6vw,72px)}
+.ms-feature img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 35%;border-radius:2px}
+.when{font-size:13px;font-weight:600;color:var(--gold)}
+.ms-feature h3{font-family:var(--serif);font-weight:600;font-size:clamp(30px,3.4vw,44px);line-height:1.1;margin-top:12px}
+.ms-feature p{margin-top:16px;font-size:18px;color:var(--ivory-2);max-width:30em}
+.ms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:clamp(56px,7vw,88px)}
+.ms-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;margin-bottom:18px}
+.ms-grid h3{font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.2;margin-top:6px}
+.ms-grid p{font-size:15px;color:var(--ivory-2);margin-top:8px}
+.ms-cta{margin-top:56px;font-family:var(--serif);font-size:clamp(20px,2vw,26px)}
+.ms-cta a{color:var(--gold);text-underline-offset:6px;font-family:var(--sans);font-size:16px;font-weight:600;margin-left:10px;white-space:nowrap}
+.edu{margin-top:32px;padding-top:22px;border-top:1px solid var(--ivory-line);font-size:15px;color:var(--ivory-2)}
+.edu b{color:var(--ivory);font-weight:600}
+@media (max-width:860px){.ms-feature{grid-template-columns:1fr}.ms-feature img{max-width:420px}.ms-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.ms-grid{grid-template-columns:1fr}}
+
+/* contact (ivory) */
+.contact{background:var(--ivory);color:var(--black)}
+.contact .h2{max-width:16ch}
+.contact .bridge{color:var(--ink-2)}
+.ways{list-style:none;margin-top:clamp(40px,5vw,64px);border-top:1px solid var(--ink-line)}
+.ways a{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr) auto;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--ink-line);text-decoration:none}
+.ways h3{font-family:var(--serif);font-weight:600;font-size:clamp(22px,2.4vw,30px);line-height:1.2}
+.ways p{font-size:16px;color:var(--ink-2)}
+.ways .go{font-size:14px;font-weight:600;border:1px solid var(--black);border-radius:999px;padding:10px 18px;white-space:nowrap}
+.ways a:hover .go{background:var(--black);color:var(--ivory)}
+@media (max-width:760px){.ways a{grid-template-columns:1fr;gap:8px}.ways .go{justify-self:start;margin-top:8px}}
+.direct{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.direct dt{font-size:13px;font-weight:600;color:var(--ink-2)}
+.direct dd{margin-top:6px;font-size:16px;line-height:1.7}
+.direct a{text-decoration:none;border-bottom:1px solid var(--ink-line)}
+.direct a:hover{border-color:var(--black)}
+.direct a.ig{display:inline-block;margin-top:4px;border:1px solid var(--black);border-radius:999px;padding:10px 18px;font-weight:600;font-size:14px}
+.direct a.ig:hover{background:var(--black);color:var(--ivory)}
+@media (max-width:760px){.direct{grid-template-columns:1fr}}
+
+footer{padding:32px 0;font-size:13px;color:var(--ivory-2)}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer img{height:22px;width:auto}
+</style>
 </head>
+<body>
+<a class="skip" href="#contenido"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 
-
-<body class="loading">
-
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
-
-
-  <!-- =====================================================
-       LOADER
-  ===================================================== -->
-
-  <div class="loader" id="loader">
-
-    <div class="loader-name">
-      <span>RB</span>
-    </div>
-
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio"><img src="assets/brand/rb-dorado.png" alt="RB, Ricardo Barrón" width="160" height="84"></a>
+    <nav aria-label="Principal">
+      <a class="nl" href="#quien-soy"><span class="es">Quién soy</span><span class="en">About</span></a>
+      <a class="nl" href="#proyectos"><span class="es">Proyectos</span><span class="en">Ventures</span></a>
+      <a class="nl" href="#logros"><span class="es">Logros</span><span class="en">Milestones</span></a>
+      <button class="lang" type="button" id="langBtn">EN</button>
+      <a class="talk" href="#contacto"><span class="es">Hablemos</span><span class="en">Let's talk</span></a>
+    </nav>
   </div>
+</header>
 
+<main id="contenido">
 
-  <!-- =====================================================
-       NAV
-  ===================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero-text">
+    <p class="who"><span class="es">Ricardo Barrón, founder y builder</span><span class="en">Ricardo Barrón, founder and builder</span></p>
+    <h1><span class="es">Construyo tecnología para que los negocios confíen, vendan y crezcan.</span><span class="en">I build technology that helps businesses trust, sell and grow.</span></h1>
+    <p class="sub es">Founder de <strong>ARKUS</strong>, co-founder de <strong>NUMI AI</strong> y partner de <strong>Eaisylabs</strong>. Empecé en la Ciudad de México y hoy construyo para mercados de todo el mundo.</p>
+    <p class="sub en">Founder of <strong>ARKUS</strong>, co-founder of <strong>NUMI AI</strong> and partner at <strong>Eaisylabs</strong>. I started in Mexico City and today I build for markets around the world.</p>
+    <ul class="routes">
+      <li><a href="#arkus"><b><span class="es">Confiar</span><span class="en">Trust</span></b><span>ARKUS</span><small class="es">Infraestructura financiera</small><small class="en">Financial infrastructure</small></a></li>
+      <li><a href="#numi"><b><span class="es">Vender</span><span class="en">Sell</span></b><span>NUMI AI</span><small class="es">IA para bienes raíces</small><small class="en">AI for real estate</small></a></li>
+      <li><a href="#ia"><b><span class="es">Crecer</span><span class="en">Grow</span></b><span>Eaisylabs</span><small class="es">IA para empresas</small><small class="en">AI for business</small></a></li>
+    </ul>
+  </div>
+  <div class="hero-photo"><img src="assets/brand/hero.webp" alt="Ricardo Barrón" width="868" height="1489" fetchpriority="high"></div>
+</section>
 
-  <header class="nav" id="nav">
+<div class="proof">
+  <div class="wrap">
+    <ul>
+      <li><b>Fintech World Cup</b><span class="es">Ganadores de la etapa México 2026 con ARKUS</span><span class="en">Mexico stage winners 2026 with ARKUS</span></li>
+      <li><b>Open Finance 2050</b><span class="es">Finalistas del VC Pitch con ARKUS</span><span class="en">VC Pitch finalists with ARKUS</span></li>
+      <li><b>PropTech LATAM Summit</b><span class="es">NUMI AI, entre los ganadores</span><span class="en">NUMI AI among the winners</span></li>
+    </ul>
+  </div>
+</div>
 
-    <div class="nav-inner">
-
-      <a href="#inicio" class="logo">
-        RB
-      </a>
-
-      <button
-        class="menu-toggle"
-        type="button"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-        aria-controls="menu"
-      >
-        <span></span>
-      </button>
-
-      <nav class="nav-links" id="menu" aria-label="Principal">
-
-        <a href="#inicio" class="active">
-          Inicio
-        </a>
-
-        <a href="#sobre-mi">
-          Sobre mí
-        </a>
-
-        <a href="#trayectoria">
-          Trayectoria
-        </a>
-
-        <a href="#proyectos">
-          Proyectos
-        </a>
-
-        <a href="#inspiracion">
-          Inspiración
-        </a>
-
-        <a href="#lately">
-          Lately
-        </a>
-
-        <a href="#now">
-          Now
-        </a>
-
-        <a href="#vision">
-          Visión
-        </a>
-
-        <a href="#contacto">
-          Contacto
-        </a>
-
-      </nav>
-
-      <div class="socials">
-
-        <a
-          href="https://www.instagram.com/r_barron.avi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Instagram"
-        >
-          IG
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          IN
-        </a>
-
+<!-- QUIÉN SOY -->
+<section class="block about" id="quien-soy">
+  <div class="wrap about-grid">
+    <figure>
+      <img src="assets/01_foto.webp" alt="Retrato de Ricardo Barrón" width="977" height="1280" loading="lazy">
+    </figure>
+    <div class="text">
+      <h2 class="h2"><span class="es">Quién soy</span><span class="en">About me</span></h2>
+      <div class="es">
+        <p>Soy Ricardo Barrón. Estudio Business &amp; Innovation en la Universidad de la Libertad y construyo empresas que resuelven un problema concreto: la falta de confianza que frena a los negocios de economías emergentes.</p>
+        <p>En 2026 fundé ARKUS. Ganar la etapa México del Fintech World Cup nos trajo a Dubái, y decidimos quedarnos a construir.</p>
+        <p>Desde México cofundé NUMI AI, inteligencia artificial para vender bienes raíces, y ahora la llevamos a nuevos mercados. Además, como partner de Eaisylabs, ayudo a empresas a usar IA de verdad. Sectores distintos, la misma idea: sistemas que hacen el trabajo pesado y generan confianza.</p>
       </div>
+      <div class="en">
+        <p>I'm Ricardo Barrón. I study Business &amp; Innovation at Universidad de la Libertad and I build companies around one concrete problem: the lack of trust that holds back businesses in emerging economies.</p>
+        <p>In 2026 I founded ARKUS. Winning the Mexico stage of the Fintech World Cup brought us to Dubai, and we decided to stay and build.</p>
+        <p>Back in Mexico I co-founded NUMI AI, artificial intelligence to sell real estate, and now we are taking it to new markets. And as a partner at Eaisylabs, I help companies put AI to real work. Different sectors, same idea: systems that do the heavy lifting and build trust.</p>
+      </div>
+      <img class="firma" src="assets/brand/firma-negro.png" alt="Firma de Ricardo Barrón" width="640" height="96" loading="lazy">
+    </div>
+  </div>
+</section>
 
+<!-- PROYECTOS -->
+<section class="block ventures" id="proyectos">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="h2"><span class="es">Empresas y proyectos</span><span class="en">Ventures</span></h2>
+      <p class="bridge es">Tres frentes, una misma idea. ARKUS es el centro; NUMI AI y Eaisylabs llevan esa idea a otros sectores.</p>
+      <p class="bridge en">Three fronts, one idea. ARKUS is the core; NUMI AI and Eaisylabs take that idea to other sectors.</p>
     </div>
 
-  </header>
-
-
-  <main id="contenido">
-
-
-    <!-- =====================================================
-         HERO
-    ===================================================== -->
-
-    <section class="hero" id="inicio">
-
-      <div class="hero-content">
-
-        <div class="hero-inner">
-
-          <div class="eyebrow reveal">
-            Ricardo Barrón
-          </div>
-
-          <h1 class="reveal">
-
-            <span>Ricardo</span>
-            <span>Barrón</span>
-
-          </h1>
-
-          <div class="hero-rule reveal"></div>
-
-          <div class="hero-role reveal">
-
-            Founder
-            <span aria-hidden="true">·</span>
-            Entrepreneur
-            <span aria-hidden="true">·</span>
-            Investor
-            <span aria-hidden="true">·</span>
-            Builder
-
-          </div>
-
-          <p class="hero-description reveal">
-
-            Construyendo empresas desde México para el mundo.
-            Tecnología, fintech, real estate y nuevas industrias
-            en la intersección entre innovación y oportunidades reales.
-
-          </p>
-
-          <a
-            href="#sobre-mi"
-            class="hero-button reveal"
-          >
-
-            Conoce mi historia
-
-            <span aria-hidden="true">→</span>
-
-          </a>
-
+    <article class="arkus" id="arkus">
+      <div class="arkus-top">
+        <div>
+          <h3 class="v-name">ARKUS</h3>
+          <p class="v-line">Agentic Financial Infrastructure</p>
+          <p class="v-tag">Embedding trust in every transaction</p>
         </div>
-
+        <div>
+          <p class="v-desc es"><strong>El motor financiero agéntico</strong> que conecta a las MiPyMEs con los servicios financieros. Se integra por APIs y MCP en bancos, plataformas y empresas. Los marketplaces sectoriales de la holding, empezando por eventos, funcionan sobre ARKUS.</p>
+          <p class="v-desc en"><strong>The agentic financial engine</strong> that connects MSMEs to financial services. It plugs into banks, platforms and companies through APIs and MCP. The holding's sector marketplaces, starting with events, run on ARKUS.</p>
+          <a class="v-link" href="https://arkusevent.com/" target="_blank" rel="noopener"><span class="es">Visitar arkusevent.com</span><span class="en">Visit arkusevent.com</span></a>
+        </div>
       </div>
+      <ol class="flow" aria-label="Cómo funciona ARKUS">
+        <li><span class="es">Verifica</span><span class="en">Verifies</span></li>
+        <li><span class="es">Protege</span><span class="en">Protects</span></li>
+        <li><span class="es">Automatiza</span><span class="en">Automates</span></li>
+        <li><span class="es">Paga</span><span class="en">Pays</span></li>
+        <li><span class="es">Construye crédito</span><span class="en">Builds credit</span></li>
+        <li><span class="es">Financia</span><span class="en">Finances</span></li>
+      </ol>
+      <dl class="facts">
+        <div><dt><span class="es">Para quién</span><span class="en">Who it's for</span></dt><dd><span class="es">MiPyMEs y los bancos, plataformas y empresas que trabajan con ellas</span><span class="en">MSMEs and the banks, platforms and companies that work with them</span></dd></div>
+        <div><dt><span class="es">Mi rol</span><span class="en">My role</span></dt><dd>Founder, Business Design &amp; Innovation</dd></div>
+        <div><dt><span class="es">Etapa</span><span class="en">Stage</span></dt><dd><span class="es">Fundada en 2026</span><span class="en">Founded in 2026</span></dd></div>
+      </dl>
+      <p class="milestone es"><b>Hitos:</b> ganadores de la etapa México del Fintech World Cup 2026 y finalistas del VC Pitch de Open Finance 2050.</p>
+      <p class="milestone en"><b>Milestones:</b> Mexico stage winners of the Fintech World Cup 2026 and finalists at the Open Finance 2050 VC Pitch.</p>
+      <a class="btn line" href="mailto:ricardo@arkusevent.com?subject=ARKUS%3A%20inversi%C3%B3n%20o%20alianza%20%2F%20investment%20or%20partnership"><span class="es">Hablemos de inversión o alianzas</span><span class="en">Talk investment or partnerships</span></a>
+    </article>
 
+    <div class="pair">
+      <article class="card" id="numi">
+        <h3 class="v-name">NUMI AI</h3>
+        <p class="v-line"><span class="es">IA comercial para bienes raíces</span><span class="en">Sales AI for real estate</span></p>
+        <p class="v-tag"><span class="es">Antes KUBO</span><span class="en">Formerly KUBO</span></p>
+        <p class="v-desc es">Automatiza la atención a clientes, la búsqueda y calificación de prospectos, el seguimiento comercial y la coordinación entre agentes. Como un equipo de asistentes comerciales trabajando 24/7.</p>
+        <p class="v-desc en">It automates client service, lead search and qualification, sales follow-up and coordination between agents. Like a team of sales assistants working 24/7.</p>
+        <dl class="facts push">
+          <div><dt><span class="es">Para quién</span><span class="en">Who it's for</span></dt><dd><span class="es">Inmobiliarias, desarrolladores y asesores inmobiliarios que venden a compradores nacionales e internacionales</span><span class="en">Brokerages, developers and real estate agents selling to local and international buyers</span></dd></div>
+          <div><dt><span class="es">Mi rol</span><span class="en">My role</span></dt><dd>Co-founder, Fintech &amp; Business Strategy</dd></div>
+          <div><dt><span class="es">Etapa</span><span class="en">Stage</span></dt><dd><span class="es">En desarrollo y en piloto. Entre los ganadores del PropTech LATAM Summit 2026</span><span class="en">In development and piloting. Among the winners of the PropTech LATAM Summit 2026</span></dd></div>
+        </dl>
+        <a class="btn line" href="mailto:ricardo@arkusevent.com?subject=Quiero%20conocer%20NUMI%20AI%20%2F%20I%27d%20like%20to%20see%20NUMI%20AI"><span class="es">Quiero conocer NUMI</span><span class="en">I'd like to see NUMI</span></a>
+      </article>
 
-      <div class="hero-image">
-
-        <div class="hero-image-label">
-          RB
+      <article class="card" id="ia">
+        <h3 class="v-name">Eaisylabs</h3>
+        <p class="v-line"><span class="es">IA para empresas</span><span class="en">AI for business</span></p>
+        <p class="v-tag"><span class="es">Agentes, automatización, consultoría y estrategia</span><span class="en">Agents, automation, consulting and strategy</span></p>
+        <p class="v-desc es">Laboratorio de inteligencia artificial: Eaisylabs desarrolla la tecnología y yo la llevo a la operación diaria de cada empresa: agentes que atienden y venden, automatizaciones que eliminan trabajo repetitivo y una estrategia para escalar.</p>
+        <p class="v-desc en">An artificial intelligence lab: Eaisylabs builds the technology and I bring it into each company's daily operations: agents that serve and sell, automations that remove repetitive work and a strategy to scale.</p>
+        <dl class="facts push">
+          <div><dt><span class="es">Para quién</span><span class="en">Who it's for</span></dt><dd><span class="es">Empresas de cualquier país que quieren crecer sin crecer su carga operativa</span><span class="en">Companies anywhere that want to grow without growing their workload</span></dd></div>
+          <div><dt><span class="es">Mi rol</span><span class="en">My role</span></dt><dd><span class="es">Partner de Eaisylabs y tu contacto directo</span><span class="en">Partner at Eaisylabs and your direct contact</span></dd></div>
+          <div><dt><span class="es">Etapa</span><span class="en">Stage</span></dt><dd><span class="es">Eaisylabs ya trabaja con empresas en México y otros países, y hoy se expande a Medio Oriente</span><span class="en">Eaisylabs already works with companies in Mexico and other countries and is now expanding into the Middle East</span></dd></div>
+        </dl>
+        <div class="cta">
+          <a class="btn gold" href="mailto:ricardo@arkusevent.com?subject=IA%20para%20mi%20empresa%20%2F%20AI%20for%20my%20business"><span class="es">Cuéntame tu caso</span><span class="en">Tell me your case</span></a>
+          <a class="btn line" href="https://wa.me/525575178424?text=Hola%20Ricardo%2C%20me%20interesa%20IA%20para%20mi%20empresa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <div class="hero-side">
+<!-- LOGROS -->
+<section class="block ms" id="logros">
+  <div class="wrap">
+    <h2 class="h2"><span class="es">Logros y eventos</span><span class="en">Milestones and events</span></h2>
+    <p class="bridge es" style="color:var(--ivory-2)">2026 fue el año de poner el trabajo a prueba frente a jurados, inversionistas y la industria.</p>
+    <p class="bridge en" style="color:var(--ivory-2)">2026 was the year we put the work in front of judges, investors and the industry.</p>
 
-          Tecnología.<br>
-          Finanzas.<br>
-          Real Estate.<br>
-          Empresas.<br>
-          Impacto.
-
-          <div class="hero-side-arrow" aria-hidden="true">
-            ↓
-          </div>
-
-        </div>
-
+    <article class="ms-feature">
+      <img src="assets/03_foto.webp" alt="Ricardo Barrón con reconocimiento del Fintech World Cup México 2026" width="1152" height="2048" loading="lazy">
+      <div>
+        <p class="when">Fintech World Cup, 2026</p>
+        <h3><span class="es">Ganadores de la etapa México con ARKUS</span><span class="en">Mexico stage winners with ARKUS</span></h3>
+        <p class="es">El triunfo que nos llevó a Dubái. Hoy seguimos aquí, construyendo ARKUS y nuevos proyectos.</p>
+        <p class="en">The win that took us to Dubai. We're still here, building ARKUS and new ventures.</p>
       </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PAUSA EDITORIAL
-    ===================================================== -->
-
-    <section class="pause" aria-label="Pausa editorial">
-
-      <div class="container">
-
-        <p class="pause-quote reveal">
-          Construir empresas y convertir ideas en cosas reales.
-        </p>
-
-        <div class="gold-line reveal"></div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         SOBRE MÍ
-    ===================================================== -->
-
-    <section
-      class="section about"
-      id="sobre-mi"
-    >
-
-      <div class="container">
-
-        <div class="about-grid">
-
-
-          <div class="reveal-left">
-
-            <div class="eyebrow">
-              Quién soy
-            </div>
-
-            <h2 class="about-title">
-
-              Construyo empresas.
-              Resuelvo problemas.
-              Pienso a largo plazo.
-
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <p class="about-description">
-
-              Founder, emprendedor e inversionista en formación.
-              Trabajo en la intersección de tecnología, finanzas,
-              real estate y nuevas formas de construir negocios.
-
-            </p>
-
-          </div>
-
-
-          <div class="about-image reveal">
-
-            <picture>
-              <source srcset="assets/01_foto.webp" type="image/webp">
-              <img
-                src="assets/01_foto.jpeg"
-                alt="Retrato de Ricardo Barrón"
-                width="977"
-                height="1280"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-
-          </div>
-
-
-          <div class="about-points stagger">
-
-
-            <div class="about-point">
-
-              <div class="point-number">
-                01
-              </div>
-
-              <div>
-
-                <strong>
-                  Founder
-                </strong>
-
-                <span>
-                  Construcción de empresas y productos.
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="about-point">
-
-              <div class="point-number">
-                02
-              </div>
-
-              <div>
-
-                <strong>
-                  Entrepreneur
-                </strong>
-
-                <span>
-                  Convirtiendo problemas reales en oportunidades.
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="about-point">
-
-              <div class="point-number">
-                03
-              </div>
-
-              <div>
-
-                <strong>
-                  Technology
-                </strong>
-
-                <span>
-                  AI, automatización y productos digitales.
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="about-point">
-
-              <div class="point-number">
-                04
-              </div>
-
-              <div>
-
-                <strong>
-                  Real Estate
-                </strong>
-
-                <span>
-                  Tecnología aplicada al sector inmobiliario.
-                </span>
-
-              </div>
-
-            </div>
-
-
-            <div class="about-point">
-
-              <div class="point-number">
-                05
-              </div>
-
-              <div>
-
-                <strong>
-                  Investor
-                </strong>
-
-                <span>
-                  Explorando oportunidades con potencial de largo plazo.
-                </span>
-
-              </div>
-
-            </div>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         TRAYECTORIA
-    ===================================================== -->
-
-    <section
-      class="section trajectory"
-      id="trayectoria"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <div class="eyebrow">
-            Trayectoria
-          </div>
-
-          <h2 class="section-title">
-            Construyendo mientras aprendo.
-          </h2>
-
-          <div class="gold-line"></div>
-
-        </div>
-
-
-        <p class="trajectory-intro reveal">
-
-          Una trayectoria todavía en construcción, marcada por
-          tecnología, emprendimiento, real estate, fintech y experiencias
-          que han ampliado mi visión sobre lo que se puede construir.
-
-        </p>
-
-
-        <div class="timeline stagger">
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-year">
-              2026
-            </div>
-
-            <div class="timeline-title">
-              Fintech World Cup México
-            </div>
-
-            <div class="timeline-description">
-
-              Ganador de la etapa clasificatoria de México
-              con ARKUS. Próximo paso: representar a México
-              en Dubai.
-
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-year">
-              2026
-            </div>
-
-            <div class="timeline-title">
-              Open Finance 2050
-            </div>
-
-            <div class="timeline-description">
-
-              Participación en el VC Pitch con ARKUS
-              dentro del ecosistema de Open Finance.
-
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-year">
-              2026
-            </div>
-
-            <div class="timeline-title">
-              Google Student Ambassador
-            </div>
-
-            <div class="timeline-description">
-
-              Embajador estudiantil del programa
-              de embajadores de Google Gemini.
-
-            </div>
-
-          </div>
-
-
-          <div class="timeline-item">
-
-            <div class="timeline-year">
-              2026
-            </div>
-
-            <div class="timeline-title">
-              Universidad de la Libertad
-            </div>
-
-            <div class="timeline-description">
-
-              Formación en Business & Innovation mientras
-              desarrollo proyectos y empresas reales.
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         PROYECTOS
-    ===================================================== -->
-
-    <section
-      class="section projects"
-      id="proyectos"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <div class="eyebrow">
-            Proyectos
-          </div>
-
-          <h2 class="section-title">
-            Empresas que estoy construyendo.
-          </h2>
-
-          <div class="gold-line"></div>
-
-        </div>
-
-
-        <p class="projects-intro reveal">
-
-          Proyectos enfocados en tecnología, fintech,
-          real estate y nuevas infraestructuras para
-          industrias tradicionales.
-
-        </p>
-
-
-        <div class="projects-list stagger">
-
-
-          <a
-            href="https://arkusevent.com/"
-            class="project"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <div class="project-number">
-              01
-            </div>
-
-            <div class="project-name">
-              ARKUS
-            </div>
-
-            <div>
-
-              <div class="project-category">
-                Fintech · Events
-              </div>
-
-              <div class="project-description">
-
-                Infraestructura financiera y de confianza
-                para la industria de eventos.
-
-              </div>
-
-            </div>
-
-            <div class="project-arrow" aria-hidden="true">
-              ↗
-            </div>
-
-          </a>
-
-
-          <a
-            href="https://kuboestate.com/"
-            class="project"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-
-            <div class="project-number">
-              02
-            </div>
-
-            <div class="project-name">
-              KUBO
-            </div>
-
-            <div>
-
-              <div class="project-category">
-                Real Estate · AI
-              </div>
-
-              <div class="project-description">
-
-                Sistema operativo autónomo para bienes
-                raíces en Latinoamérica.
-
-              </div>
-
-            </div>
-
-            <div class="project-arrow" aria-hidden="true">
-              ↗
-            </div>
-
-          </a>
-
-
-          <div class="project">
-
-            <div class="project-number">
-              03
-            </div>
-
-            <div class="project-name">
-              NEXT
-            </div>
-
-            <div>
-
-              <div class="project-category">
-                Ventures · Technology
-              </div>
-
-              <div class="project-description">
-
-                Nuevas ideas, productos y compañías
-                actualmente en exploración.
-
-              </div>
-
-            </div>
-
-            <div class="project-arrow" aria-hidden="true">
-              +
-            </div>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         INSPIRACIÓN
-    ===================================================== -->
-
-    <section
-      class="section inspire"
-      id="inspiracion"
-    >
-
-      <div class="container">
-
-
-        <div class="inspire-layout">
-
-
-          <div class="reveal-left">
-
-            <div class="eyebrow">
-              Lo que me inspira
-            </div>
-
-            <h2 class="section-title">
-
-              Ideas que cambian
-              la forma de ver
-              el mundo.
-
-            </h2>
-
-            <div class="gold-line"></div>
-
-            <p class="inspire-description">
-
-              Personas que construyen, tecnología con propósito,
-              mercados que están cambiando y la curiosidad de
-              entender qué viene después.
-
-            </p>
-
-          </div>
-
-
-          <div class="inspire-grid stagger">
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <rect
-                    x="9"
-                    y="9"
-                    width="30"
-                    height="30"
-                    rx="4"
-                  />
-
-                  <path d="M17 2v7" />
-                  <path d="M24 2v7" />
-                  <path d="M31 2v7" />
-
-                  <path d="M17 39v7" />
-                  <path d="M24 39v7" />
-                  <path d="M31 39v7" />
-
-                  <path d="M2 17h7" />
-                  <path d="M2 24h7" />
-                  <path d="M2 31h7" />
-
-                  <path d="M39 17h7" />
-                  <path d="M39 24h7" />
-                  <path d="M39 31h7" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Tecnología
-              </h3>
-
-              <p>
-                Herramientas que transforman la manera
-                en que vivimos y trabajamos.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <circle cx="24" cy="24" r="16" />
-
-                  <path d="M17 24h14" />
-                  <path d="M24 17v14" />
-
-                  <circle cx="24" cy="24" r="4" />
-
-                  <path d="M24 4v4" />
-                  <path d="M24 40v4" />
-                  <path d="M4 24h4" />
-                  <path d="M40 24h4" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Inteligencia artificial
-              </h3>
-
-              <p>
-                Nuevas formas de ampliar lo que
-                una persona puede hacer.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <path d="M8 44V20L24 7l16 13v24" />
-
-                  <path d="M16 44V27h16v17" />
-
-                  <path d="M20 31h8" />
-                  <path d="M20 36h8" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Real Estate
-              </h3>
-
-              <p>
-                Un sector tradicional con muchísimo
-                espacio para reinventarse.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <path d="M7 39h34" />
-
-                  <path d="M10 34V24" />
-                  <path d="M19 34V18" />
-                  <path d="M28 34V22" />
-                  <path d="M37 34V10" />
-
-                  <path d="M8 16l10-7 9 5 12-9" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Finanzas
-              </h3>
-
-              <p>
-                Capital, infraestructura y nuevas
-                formas de mover valor.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <circle cx="24" cy="15" r="7" />
-                  <circle cx="10" cy="21" r="5" />
-                  <circle cx="38" cy="21" r="5" />
-
-                  <path d="M12 43c1-8 6-13 12-13s11 5 12 13" />
-                  <path d="M2 40c1-6 4-9 8-9" />
-                  <path d="M46 40c-1-6-4-9-8-9" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Personas
-              </h3>
-
-              <p>
-                Fundadores, líderes y personas que
-                construyen desde cero.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <path d="M5 34l38-20" />
-
-                  <path d="M17 28l-5-14 3-2 9 10" />
-
-                  <path d="M28 22l11 2 1 3-14 2" />
-
-                  <path d="M21 26l-6 12" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Viajar
-              </h3>
-
-              <p>
-                Nuevos lugares, culturas y perspectivas
-                que cambian la manera de pensar.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <path d="M6 10h12c4 0 6 2 6 6v25c0-5-3-7-7-7H6z" />
-
-                  <path d="M42 10H30c-4 0-6 2-6 6v25c0-5 3-7 7-7h11z" />
-
-                  <path d="M24 16v25" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Aprender
-              </h3>
-
-              <p>
-                La curiosidad de entender algo
-                nuevo constantemente.
-              </p>
-
-            </article>
-
-
-            <article class="inspire-card">
-
-              <div class="inspire-icon">
-
-                <svg viewBox="0 0 48 48">
-
-                  <path d="M24 5l3.5 11.5L39 20l-11.5 3.5L24 35l-3.5-11.5L9 20l11.5-3.5z" />
-
-                  <path d="M39 32l1.5 5L45 38.5l-4.5 1.5L39 45l-1.5-5-4.5-1.5 4.5-1.5z" />
-
-                </svg>
-
-              </div>
-
-              <h3>
-                Creatividad
-              </h3>
-
-              <p>
-                Ideas que conectan conceptos distintos
-                y generan nuevas posibilidades.
-              </p>
-
-            </article>
-
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         LATELY
-    ===================================================== -->
-
-    <section
-      class="section lately"
-      id="lately"
-    >
-
-      <div class="container">
-
-
-        <div class="section-header reveal">
-
-          <div class="eyebrow">
-            Lately
-          </div>
-
-          <h2 class="section-title">
-            Momentos que importan.
-          </h2>
-
-          <div class="gold-line"></div>
-
-        </div>
-
-
-        <div class="lately-grid stagger">
-
-
-          <!-- FINTECH -->
-
-          <article class="lately-card">
-
-            <div class="lately-image">
-
-              <picture>
-                <source srcset="assets/03_foto.webp" type="image/webp">
-                <img
-                  src="assets/03_foto.jpeg"
-                  alt="Fintech World Cup México 2026"
-                  width="1152"
-                  height="2048"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </picture>
-
-            </div>
-
-            <div class="lately-info">
-
-              <h3>
-                Fintech World Cup México 2026
-              </h3>
-
-              <span>
-                Winner
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- OPEN FINANCE -->
-
-          <article class="lately-card">
-
-            <div class="lately-image">
-
-              <picture>
-                <source srcset="assets/05_foto.webp" type="image/webp">
-                <img
-                  src="assets/05_foto.jpeg"
-                  alt="Open Finance 2050"
-                  width="2048"
-                  height="1536"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </picture>
-
-            </div>
-
-            <div class="lately-info">
-
-              <h3>
-                Open Finance 2050 VC Pitch
-              </h3>
-
-              <span>
-                Finalista
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- GOOGLE -->
-
-          <article class="lately-card">
-
-            <div class="lately-image">
-
-              <picture>
-                <source srcset="assets/04_foto.webp" type="image/webp">
-                <img
-                  src="assets/04_foto.png"
-                  alt="Google Student Ambassador"
-                  width="1080"
-                  height="1350"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </picture>
-
-            </div>
-
-            <div class="lately-info">
-
-              <h3>
-                Google Student Ambassador
-              </h3>
-
-              <span>
-                Ambassador
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- PROPTECH -->
-
-          <article class="lately-card">
-
-            <div class="lately-image">
-
-              <picture>
-                <source srcset="assets/15_foto.webp" type="image/webp">
-                <img
-                  src="assets/15_foto.jpeg"
-                  alt="PropTech LATAM Summit"
-                  width="2048"
-                  height="1536"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </picture>
-
-            </div>
-
-            <div class="lately-info">
-
-              <h3>
-                PropTech LATAM Summit
-              </h3>
-
-              <span>
-                PropTech
-              </span>
-
-            </div>
-
-          </article>
-
-
-          <!-- NETWORKING / PROPTECH -->
-
-          <article class="lately-card">
-
-            <div class="lately-image">
-
-              <picture>
-                <source srcset="assets/02_foto.webp" type="image/webp">
-                <img
-                  src="assets/02_foto.jpg"
-                  alt="Networking en PropTech"
-                  width="2048"
-                  height="1365"
-                  loading="lazy"
-                  decoding="async"
-                >
-              </picture>
-
-            </div>
-
-            <div class="lately-info">
-
-              <h3>
-                Building connections
-              </h3>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         NOW
-    ===================================================== -->
-
-    <section
-      class="section now"
-      id="now"
-    >
-
-      <div class="container">
-
-        <div class="section-header reveal">
-
-          <div class="eyebrow">
-            Now
-          </div>
-
-          <h2 class="section-title">
-            En qué estoy ahora.
-          </h2>
-
-        </div>
-
-        <ul class="now-list stagger">
-
-          <li class="now-item">
-            <strong>ARKUS</strong>
-            <p>Tras ganar la etapa clasificatoria de la Fintech World Cup, próximo paso: representar a México en Dubái.</p>
-          </li>
-
-          <li class="now-item">
-            <strong>KUBO</strong>
-            <p>Construyendo el sistema operativo autónomo para bienes raíces en Latinoamérica.</p>
-          </li>
-
-          <li class="now-item">
-            <strong>Aprendiendo</strong>
-            <p>Business &amp; Innovation en la Universidad de la Libertad, mientras construyo empresas reales.</p>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         VISIÓN
-    ===================================================== -->
-
-    <section
-      class="section future"
-      id="vision"
-    >
-
-      <div class="container">
-
-
-        <div class="future-grid">
-
-
-          <div class="reveal-left">
-
-            <div class="eyebrow">
-              Hacia dónde voy
-            </div>
-
-            <h2 class="section-title">
-              El futuro que estoy construyendo.
-            </h2>
-
-            <div class="gold-line"></div>
-
-          </div>
-
-
-          <div class="future-card reveal">
-
-            <div class="future-icon">
-
-              <svg viewBox="0 0 48 48">
-
-                <circle cx="24" cy="24" r="18" />
-
-                <path d="M6 24h36" />
-                <path d="M24 6c5 5 7 11 7 18s-2 13-7 18" />
-                <path d="M24 6c-5 5-7 11-7 18s2 13 7 18" />
-
-              </svg>
-
-            </div>
-
-            <h3>
-              Internacional
-            </h3>
-
-            <p>
-              Llevar tecnología desde Latinoamérica
-              al mundo.
-            </p>
-
-          </div>
-
-
-          <div class="future-card reveal">
-
-            <div class="future-icon">
-
-              <svg viewBox="0 0 48 48">
-
-                <path d="M8 44V18l16-10 16 10v26" />
-
-                <path d="M17 44V29h14v15" />
-
-                <path d="M14 22h3" />
-                <path d="M24 22h3" />
-                <path d="M33 22h3" />
-
-              </svg>
-
-            </div>
-
-            <h3>
-              Empresas
-            </h3>
-
-            <p>
-              Construir compañías que resuelvan
-              problemas reales.
-            </p>
-
-          </div>
-
-
-          <div class="future-card reveal">
-
-            <div class="future-icon">
-
-              <svg viewBox="0 0 48 48">
-
-                <circle cx="24" cy="24" r="18" />
-
-                <path d="M24 13v22" />
-                <path d="M18 18c1-3 4-5 7-5 5 0 8 3 8 6 0 8-17 3-17 11 0 3 3 5 8 5 4 0 7-2 8-5" />
-
-              </svg>
-
-            </div>
-
-            <h3>
-              Inversión
-            </h3>
-
-            <p>
-              Respaldar fundadores e ideas con
-              potencial global.
-            </p>
-
-          </div>
-
-
-          <div class="future-card reveal">
-
-            <div class="future-icon">
-
-              <svg viewBox="0 0 48 48">
-
-                <path d="M24 43S8 34 8 20C8 12 14 7 20 7c4 0 7 2 9 6 2-4 5-6 9-6 6 0 10 5 10 13 0 14-16 23-16 23z" />
-
-                <path d="M18 25l4 4 9-10" />
-
-              </svg>
-
-            </div>
-
-            <h3>
-              Impacto
-            </h3>
-
-            <p>
-              Tecnología que genere resultados
-              reales.
-            </p>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACTO
-    ===================================================== -->
-
-    <section
-      class="section contact"
-      id="contacto"
-    >
-
-      <div class="container">
-
-
-        <div class="contact-grid">
-
-
-          <div class="reveal-left">
-
-            <div class="eyebrow">
-              Hablemos
-            </div>
-
-            <h2 class="contact-title">
-              Construyamos algo.
-            </h2>
-
-            <p class="contact-description">
-
-              Abierto a conversaciones, alianzas,
-              proyectos y oportunidades que puedan
-              convertirse en algo más.
-
-            </p>
-
-            <a
-              href="mailto:ricardo@arkusevent.com?subject=Contacto%20-%20Ricardo%20Barr%C3%B3n"
-              class="hero-button"
-            >
-
-              Contactar
-
-              <span aria-hidden="true">→</span>
-
-            </a>
-
-          </div>
-
-
-          <div class="contact-column reveal">
-
-            <h3>
-              Trabajemos
-            </h3>
-
-            <a
-              href="mailto:ricardo@arkusevent.com?subject=Work%20with%20Ricardo"
-            >
-              Work with me
-            </a>
-
-            <a
-              href="mailto:ricardo@arkusevent.com?subject=Speaking%20-%20Ricardo%20Barr%C3%B3n"
-            >
-              Speaking
-            </a>
-
-            <a
-              href="mailto:ricardo@arkusevent.com?subject=Partnership%20-%20Ricardo%20Barr%C3%B3n"
-            >
-              Partnerships
-            </a>
-
-            <a
-              href="mailto:ricardo@arkusevent.com?subject=Media%20-%20Ricardo%20Barr%C3%B3n"
-            >
-              Media
-            </a>
-
-          </div>
-
-
-          <div class="contact-column reveal">
-
-            <h3>
-              Social
-            </h3>
-
-            <a
-              href="https://www.instagram.com/r_barron.avi/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
-            </a>
-
-            <a
-              href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="mailto:ricardo@arkusevent.com"
-            >
-              Email
-            </a>
-
-          </div>
-
-
-          <!-- FOTO BIBLIOTECA -->
-
-          <div class="contact-photo reveal">
-
-            <picture>
-              <source srcset="assets/01_foto.webp" type="image/webp">
-              <img
-                src="assets/01_foto.jpeg"
-                alt="Ricardo Barrón"
-                width="977"
-                height="1280"
-                loading="lazy"
-                decoding="async"
-              >
-            </picture>
-
-          </div>
-
-
-        </div>
-
-
-        <footer>
-
-          <div class="footer-logo">
-            RB
-          </div>
-
-          <div>
-            © 2026 Ricardo Barrón
-          </div>
-
-          <div>
-            CDMX · MÉXICO
-          </div>
-
-        </footer>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- =====================================================
-       JAVASCRIPT
-  ===================================================== -->
-
-  <script>
-
-    /* -----------------------------------------
-       LOADER
-    ----------------------------------------- */
-
-    /* Se quita en cuanto el HTML está listo (sin esperar
-       a todas las fotos) y con una pausa corta. */
-    function hideLoader() {
-      document
-        .getElementById("loader")
-        .classList.add("hidden");
-
-      document.body.classList.remove("loading");
-    }
-
-    const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", () => {
-        setTimeout(hideLoader, reduceMotion ? 0 : 300);
-      });
-    } else {
-      setTimeout(hideLoader, reduceMotion ? 0 : 300);
-    }
-
-    /* -----------------------------------------
-       MENÚ MÓVIL
-    ----------------------------------------- */
-
-    const menuToggle =
-      document.querySelector(".menu-toggle");
-
-    const menu =
-      document.getElementById("menu");
-
-    function setMenu(open) {
-      menu.classList.toggle("open", open);
-      menuToggle.setAttribute("aria-expanded", String(open));
-      menuToggle.setAttribute(
-        "aria-label",
-        open ? "Cerrar menú" : "Abrir menú"
-      );
-    }
-
-    menuToggle.addEventListener("click", () => {
-      setMenu(!menu.classList.contains("open"));
-    });
-
-    menu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => setMenu(false));
-    });
-
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape" && menu.classList.contains("open")) {
-        setMenu(false);
-        menuToggle.focus();
-      }
-    });
-
-
-    /* -----------------------------------------
-       SCROLL REVEAL
-    ----------------------------------------- */
-
-    const revealElements =
-      document.querySelectorAll(
-        ".reveal, .reveal-left, .stagger"
-      );
-
-
-    const revealObserver =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              entry.target.classList.add("visible");
-
-              revealObserver.unobserve(
-                entry.target
-              );
-
-            }
-
-          });
-
-        },
-        {
-          threshold: .12,
-          rootMargin: "0px 0px -45px 0px"
-        }
-      );
-
-
-    revealElements.forEach(element => {
-
-      revealObserver.observe(element);
-
-    });
-
-
-    /* -----------------------------------------
-       NAV BACKGROUND
-    ----------------------------------------- */
-
-    const nav =
-      document.getElementById("nav");
-
-
-    window.addEventListener("scroll", () => {
-
-      if (window.scrollY > 50) {
-
-        nav.classList.add("scrolled");
-
-      } else {
-
-        nav.classList.remove("scrolled");
-
-      }
-
-    });
-
-
-    /* -----------------------------------------
-       ACTIVE NAVIGATION
-    ----------------------------------------- */
-
-    const sections =
-      document.querySelectorAll("section[id]");
-
-    const navLinks =
-      document.querySelectorAll(".nav-links a");
-
-
-    const sectionObserver =
-      new IntersectionObserver(
-        entries => {
-
-          entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-              const id =
-                entry.target.getAttribute("id");
-
-              navLinks.forEach(link => {
-
-                link.classList.remove("active");
-
-                if (
-                  link.getAttribute("href") ===
-                  "#" + id
-                ) {
-
-                  link.classList.add("active");
-
-                }
-
-              });
-
-            }
-
-          });
-
-        },
-        {
-          threshold: .3
-        }
-      );
-
-
-    sections.forEach(section => {
-
-      sectionObserver.observe(section);
-
-    });
-
-
-    /* -----------------------------------------
-       MAILTO FALLBACK (Gmail web)
-       Si no hay cliente de correo configurado,
-       redirige a una ventana de Gmail lista
-       para redactar el mensaje.
-    ----------------------------------------- */
-
-    function gmailComposeUrl(mailtoHref) {
-
-      const [address, query] = mailtoHref
-        .replace("mailto:", "")
-        .split("?");
-
-      const params = new URLSearchParams(query || "");
-
-      const gmailParams = new URLSearchParams({
-        view: "cm",
-        fs: "1",
-        to: address,
-        su: params.get("subject") || ""
-      });
-
-      return `https://mail.google.com/mail/?${gmailParams.toString()}`;
-
-    }
-
-    document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        const fallbackUrl = gmailComposeUrl(link.getAttribute("href"));
-
-        let handled = false;
-
-        const onBlur = () => {
-          handled = true;
-        };
-
-        /* Si el navegador abre una app de correo, la página
-           pierde el foco: así sabemos que no hace falta Gmail. */
-        window.addEventListener("blur", onBlur, { once: true });
-
-        setTimeout(() => {
-
-          window.removeEventListener("blur", onBlur);
-
-          /* Si se abrió una app de correo, la página perdió el
-             foco y no hacemos nada. Si no, abrimos Gmail web. */
-          if (!handled) {
-            window.open(fallbackUrl, "_blank", "noopener");
-          }
-
-        }, 700);
-
-      });
-
-    });
-
-
-  </script>
-
+    </article>
+
+    <div class="ms-grid">
+      <article>
+        <img src="assets/05_foto.webp" alt="Equipo en el VC Pitch de Open Finance 2050" width="1400" height="1050" loading="lazy">
+        <p class="when">Open Finance 2050</p>
+        <h3><span class="es">Finalistas del VC Pitch</span><span class="en">VC Pitch finalists</span></h3>
+        <p><span class="es">Presentamos ARKUS en el pitch ante inversionistas.</span><span class="en">We pitched ARKUS to investors.</span></p>
+      </article>
+      <article>
+        <img src="assets/15_foto.webp" alt="PropTech LATAM Summit 2026" width="1400" height="1050" loading="lazy">
+        <p class="when">PropTech LATAM Summit, 2026</p>
+        <h3><span class="es">NUMI AI, entre los ganadores</span><span class="en">NUMI AI among the winners</span></h3>
+        <p><span class="es">Presentamos NUMI, entonces KUBO, y quedamos entre los ganadores.</span><span class="en">We presented NUMI, then KUBO, and finished among the winners.</span></p>
+      </article>
+      <article>
+        <img style="object-position:50% 35%" src="assets/04_foto.webp" alt="Google Student Ambassador" width="1080" height="1350" loading="lazy">
+        <p class="when">Google, 2026</p>
+        <h3>Google Student Ambassador</h3>
+        <p><span class="es">Embajador estudiantil del programa de Google Gemini.</span><span class="en">Student ambassador for Google's Gemini program.</span></p>
+      </article>
+    </div>
+    <p class="edu"><span class="es"><b>Formación:</b> Business &amp; Innovation, Universidad de la Libertad.</span><span class="en"><b>Education:</b> Business &amp; Innovation, Universidad de la Libertad.</span></p>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="block contact" id="contacto">
+  <div class="wrap">
+    <h2 class="h2"><span class="es">¿Construimos algo juntos?</span><span class="en">Shall we build something together?</span></h2>
+    <p class="bridge es">Elige el motivo y se abre el correo con el asunto listo.</p>
+    <p class="bridge en">Pick a reason and your email opens with the subject ready.</p>
+    <ul class="ways">
+      <li><a href="mailto:ricardo@arkusevent.com?subject=IA%20para%20mi%20empresa%20%2F%20AI%20for%20my%20business">
+        <h3><span class="es">IA para tu empresa</span><span class="en">AI for your business</span></h3>
+        <p><span class="es">Agentes, automatización o una estrategia de IA con Eaisylabs.</span><span class="en">Agents, automation or an AI strategy with Eaisylabs.</span></p>
+        <span class="go"><span class="es">Escribirme</span><span class="en">Email me</span></span></a></li>
+      <li><a href="mailto:ricardo@arkusevent.com?subject=Inversi%C3%B3n%20y%20alianzas%20%2F%20Investment%20and%20partnerships">
+        <h3><span class="es">Inversión y alianzas</span><span class="en">Investment and partnerships</span></h3>
+        <p><span class="es">ARKUS, NUMI AI o una alianza estratégica.</span><span class="en">ARKUS, NUMI AI or a strategic partnership.</span></p>
+        <span class="go"><span class="es">Escribirme</span><span class="en">Email me</span></span></a></li>
+      <li><a href="mailto:ricardo@arkusevent.com?subject=Speaking%20y%20medios%20%2F%20Speaking%20and%20media">
+        <h3><span class="es">Speaking y medios</span><span class="en">Speaking and media</span></h3>
+        <p><span class="es">Eventos, charlas, entrevistas y prensa.</span><span class="en">Events, talks, interviews and press.</span></p>
+        <span class="go"><span class="es">Escribirme</span><span class="en">Email me</span></span></a></li>
+    </ul>
+    <dl class="direct">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/525575178424" target="_blank" rel="noopener">+52 55 7517 8424</a></dd></div>
+      <div><dt><span class="es">Correo</span><span class="en">Email</span></dt><dd><a href="mailto:ricardo@arkusevent.com">ricardo@arkusevent.com</a><br><a href="mailto:avilaricardo278@icloud.com">avilaricardo278@icloud.com</a></dd></div>
+      <div><dt><span class="es">Redes</span><span class="en">Social</span></dt><dd><a href="https://www.instagram.com/r_barron.avi/" target="_blank" rel="noopener">Instagram</a><br><a href="https://www.linkedin.com/in/ricardo-gabriel-barr%C3%B3n-avila-0423a8328/" target="_blank" rel="noopener">LinkedIn</a></dd></div>
+    </dl>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/brand/rb-dorado.png" alt="RB" width="160" height="84">
+    <span>© 2026 Ricardo Barrón. <span class="es">Ciudad de México y Dubái.</span><span class="en">Mexico City and Dubai.</span></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('langBtn');
+  function set(l){
+    root.setAttribute('lang',l);
+    btn.textContent=l==='es'?'EN':'ES';
+    btn.setAttribute('aria-label',l==='es'?'Change language to English':'Cambiar idioma a español');
+    document.title=l==='es'?'Ricardo Barrón | Founder de ARKUS':'Ricardo Barrón | Founder of ARKUS';
+    try{localStorage.setItem('rb-lang',l)}catch(e){}
+  }
+  var saved=null;try{saved=localStorage.getItem('rb-lang')}catch(e){}
+  var nav=(navigator.language||'es').toLowerCase();
+  set(saved||(nav.indexOf('es')===0?'es':(nav.indexOf('en')===0?'en':'es')));
+  btn.addEventListener('click',function(){set(root.getAttribute('lang')==='es'?'en':'es')});
+})();
+</script>
 </body>
 </html>
